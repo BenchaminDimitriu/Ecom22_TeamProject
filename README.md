@@ -24,7 +24,7 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 
 • Customer service system (ticketing)/invoice **(How many features in the ticketing system? The user creates a service ticket and then admins respond? 2?)**
 
-• Cart **(add to cart, delete from cart?)**
+• Cart where client can add/delete/view details items. **(add to cart, delete from cart?)**
 
 • Checkout/payments
 
