@@ -16,8 +16,53 @@ are close to them.
 We will be using Sublime Text as our text editor. We will be using PHP, HTML and CSS to create our Web Application. **(This is just a text editor. You may wish to talk about PHP, HTML, CSS, and JavaScript.)**
 
 ## As a user I can:
+• Registration, Login, Logout, 2-factor authentication (as per class instruction)
+
+• Order history
+
+• Order tracking
+
+• Customer service system (ticketing)/invoice 
+
+• Cart where client can add/delete/view details for items. 
+
+• Checkout/payments
+
+• Products/Catalogue
+
+• Product details
+
+• Save/hold/watchlist item before bid/purchase. As well as add and delete item from watchlist.
+
+• Bidder history (last bid)
+
+• Search bar 
+
+• Navigation bar
+
+• Contact page (form) for the client to the store about any queries they have.  
+
+• Pop-ad of new featured item
+
+• Social media/About us page 
 
 ## As a seller I can:
+
+• Seller listing/sales tracking 
+
+• Products/Catalogue
+
+• Product details
+
+• Search bar 
+
+• Navigation bar
+
+• Contact page (form) for the client to the store about any queries they have.  
+
+• Pop-ad of new featured item
+
+• Social media/About us page 
 
 ## 4. Features(20):
 • Registration, Login, Logout, 2-factor authentication (as per class instruction)
