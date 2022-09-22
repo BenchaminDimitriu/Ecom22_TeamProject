@@ -28,10 +28,6 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 
 • Checkout/payments
 
-• Products/Catalogue
-
-• Product details
-
 • Save/hold/watchlist item before bid/purchase. As well as add and delete item from watchlist.
 
 • Bidder history (last bid)
@@ -46,13 +42,15 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 
 • Social media/About us page 
 
-## As a seller I can:
-
-• Seller listing/sales tracking 
+## As a seller and a user I can:
 
 • Products/Catalogue
 
 • Product details
+
+## As a seller I can:
+
+• Seller listing/sales tracking 
 
 • Search bar 
 
