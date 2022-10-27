@@ -20,7 +20,7 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 
 2. access my current bid by a order tracking page that displays my current ongoing bids. 
 
-3. access my seller statistic such as its number of sold item, number of item the seller have.
+3. access my seller statistic such as the number of sold item, number of item the seller have.
 
 4. access a cart that can add/delete/view details of items that can be bought now but not bidding items. 
 
