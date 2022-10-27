@@ -18,49 +18,43 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 ## As a user I can:
 1. Registration, Login, Logout, 2-factor authentication (as per class instruction)
 
-• Order history
+2. Order history
 
-• Order tracking
+3. Order tracking
 
-• Customer service system (ticketing)/invoice 
+4. Customer service system (ticketing)/invoice 
 
-• Cart where client can add/delete/view details for items. 
+5. Cart where client can add/delete/view details for items. 
 
-• Checkout/payments
+6. Checkout/payments
 
-• Save/hold/watchlist item before bid/purchase. As well as add and delete item from watchlist.
+7. Save/hold/watchlist item before bid/purchase. As well as add and delete item from watchlist.
 
-• Bidder history (last bid)
+8. Bidder history (last bid)
 
-• Search bar 
+9. Search bar 
 
-• Navigation bar
+10. Navigation bar
 
-• Contact page (form) for the client to the store about any queries they have.  
+11. Contact page (form) for the client to the store about any queries they have.  
 
-• Pop-ad of new featured item
+12. Pop-ad of new featured item
 
-• Social media/About us page 
+13. Social media/About us page 
 
 ## As a seller and a user I can:
 
-• Products/Catalogue
+14. Products/Catalogue
 
-• Product details
+15. Product details
 
 ## As a seller I can:
 
-• Seller listing/sales tracking 
+16. Seller listing/sales tracking 
 
-• Search bar 
+17. Search bar and Navigation bar
 
-• Navigation bar
-
-• Contact page (form) for the client to the store about any queries they have.  
-
-• Pop-ad of new featured item
-
-• Social media/About us page 
+18. Pop-ad of new featured item
 
 ## 4. Features(16):
 • Registration, Login, Logout, 2-factor authentication (as per class instruction)
