@@ -5,26 +5,26 @@ Name of Team: The Crying kids
 Contributors: Dimitriu Jonathan, Emmy Ea
 
 ## 1. Clientele:
-A client that needs a Web Application**(The term Web Application is more accurate because we are not building a static set of webpages)** to sell auctioned antiques and keep track of inventory. Have features for clients to easily navigate the **Web Application** for the lastest bids and purchases/sales.
+A client that needs a Web Application**(The term Web Application is more accurate because we are not building a static set of webpages)** to sell auctioned antiques and keep track of inventory. Have features for clients to easily navigate the **Web Application** for the lastest bids and purchases/sales. 
 
 ## 2. Project description/goals: 
 Our goal is to build an auction model **Web Application** geared towards selling antiques. 
 In other words, it will be an online garage sale which would aim towards people that
-are close to them.
+are close to them. Somewhat similar to Ebay. 
 
 ## 3. Platform of choice:
 We will be using Sublime Text as our text editor. We will be using PHP, HTML and CSS to create our Web Application. **(This is just a text editor. You may wish to talk about PHP, HTML, CSS, and JavaScript.)**
 
 ## As a user I can:
-1. Order history.
+1. access my order history. I can view my list of complete orders in detail. 
 
-2. Order tracking
+2. access my current bid by a order tracking page that displays my current ongoing bids. 
 
-3. Customer service system (ticketing)/invoice.
+3. access 
 
-4. Cart where client can add/delete/view details for items. 
+4. access a cart that can add/delete/view details of items. 
 
-5. Checkout/payments.
+5. access a checkout/payment.
 
 6. Save/hold/watchlist item before bid/purchase. As well as add and delete item from watchlist.
 
@@ -45,9 +45,11 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 
 14. Pop-ad of new featured item.
 
+15. Notification to show recent sold item/bought item.
+
 ## As a seller I can:
 
-15. Seller listing/sales tracking. 
+16. Seller listing/sales tracking. 
 
 ## 4. Feedback for Features(16):
 • Registration, Login, Logout, 2-factor authentication (as per class instruction)
