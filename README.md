@@ -20,36 +20,36 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 
 2. access my current bid by a order tracking page that displays my current ongoing bids. 
 
-3. access 
+3. 
 
 4. access a cart that can add/delete/view details of items. 
 
-5. access a checkout/payment.
+5. access a checkout/payment where I can input my information to pay for my purchases.
 
-6. Save/hold/watchlist item before bid/purchase. As well as add and delete item from watchlist.
+6. save/hold/watchlist item before bid/purchase. As well as add and delete item from my watchlist.
 
-7. Bidder history (last bid).
+7. 
 
-8. Contact page (form) from user to seller for inqueries. 
+8. access a contact page (form) from user to seller for inqueries. 
 
-9. Help Box that allows users to search/type in keywords and is provided with a guide page.  
+9. access a help box that allows to search/type in keywords and will provide with a guide page.  
 
 ## As a seller and a user I can:
-10. Registration, Login, Logout, 2-factor authentication (as per class instruction).
+10. access registration, login, logout, 2-factor authentication (as per class instruction).
 
-11. Products/Catalogue.
+11. view all products/catalogue.
 
-12. Product details.
+12. view all product details.
 
-13. Search bar and Navigation bar.
+13. access a search bar and navigation bar.
 
-14. Pop-ad of new featured item.
+14. view a pop-ad of new featured item.
 
 15. Notification to show recent sold item/bought item.
 
 ## As a seller I can:
 
-16. Seller listing/sales tracking. 
+16. track my listings and view how many users have bid for my products. 
 
 ## 4. Feedback for Features(16):
 • Registration, Login, Logout, 2-factor authentication (as per class instruction)
