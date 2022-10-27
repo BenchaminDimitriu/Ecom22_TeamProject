@@ -16,47 +16,38 @@ are close to them.
 We will be using Sublime Text as our text editor. We will be using PHP, HTML and CSS to create our Web Application. **(This is just a text editor. You may wish to talk about PHP, HTML, CSS, and JavaScript.)**
 
 ## As a user I can:
-1. Registration, Login, Logout, 2-factor authentication (as per class instruction)
+1. Order history
 
-2. Order history
+2. Order tracking
 
-3. Order tracking
+3. Customer service system (ticketing)/invoice 
 
-4. Customer service system (ticketing)/invoice 
+4. Cart where client can add/delete/view details for items. 
 
-5. Cart where client can add/delete/view details for items. 
+5. Checkout/payments
 
-6. Checkout/payments
+6. Save/hold/watchlist item before bid/purchase. As well as add and delete item from watchlist.
 
-7. Save/hold/watchlist item before bid/purchase. As well as add and delete item from watchlist.
+7. Bidder history (last bid)
 
-8. Bidder history (last bid)
-
-9. Search bar 
-
-10. Navigation bar
-
-11. Contact page (form) for the client to the store about any queries they have.  
-
-12. Pop-ad of new featured item
-
-13. Social media/About us page 
+8. Contact page (form) for the client to the store about any queries they have.  
 
 ## As a seller and a user I can:
+9. Registration, Login, Logout, 2-factor authentication (as per class instruction)
 
-14. Products/Catalogue
+10. Products/Catalogue
 
-15. Product details
+11. Product details
+
+12. Search bar and Navigation bar
+
+13. Pop-ad of new featured item
 
 ## As a seller I can:
 
-16. Seller listing/sales tracking 
+14. Seller listing/sales tracking 
 
-17. Search bar and Navigation bar
-
-18. Pop-ad of new featured item
-
-## 4. Features(16):
+## 4. Feedback for Features(16):
 • Registration, Login, Logout, 2-factor authentication (as per class instruction)
 
 • Order history
