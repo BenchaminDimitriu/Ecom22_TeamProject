@@ -30,7 +30,7 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 
 7. Bidder history (last bid)
 
-8. Contact page (form) for the client to the store about any queries they have.  
+8. Contact page (form) from user to seller for inqueries. 
 
 ## As a seller and a user I can:
 9. Registration, Login, Logout, 2-factor authentication (as per class instruction)
