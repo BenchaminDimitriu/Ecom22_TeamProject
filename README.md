@@ -16,7 +16,7 @@ are close to them.
 We will be using Sublime Text as our text editor. We will be using PHP, HTML and CSS to create our Web Application. **(This is just a text editor. You may wish to talk about PHP, HTML, CSS, and JavaScript.)**
 
 ## As a user I can:
-• Registration, Login, Logout, 2-factor authentication (as per class instruction)
+1. Registration, Login, Logout, 2-factor authentication (as per class instruction)
 
 • Order history
 
