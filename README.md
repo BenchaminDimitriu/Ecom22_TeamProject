@@ -87,4 +87,5 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 **(Please rephrase everything as follows: As a user (or other role), I can do something)**
 
 ## 5. Estimated Time:
-We estimate that we will need about 80 hours per person to complete this project. At a total of 160 hours.  **(Time estimates don't count decimals because the level of prcision to do so would mean that you have a complete understanding of exactly how much work you will accomplish..)**
+We estimate that we will need about 80 hours per person to complete this project. At a total of 160 hours.  
+Feedback: **(Time estimates don't count decimals because the level of prcision to do so would mean that you have a complete understanding of exactly how much work you will accomplish..)**
