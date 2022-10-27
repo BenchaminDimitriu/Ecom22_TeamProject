@@ -15,7 +15,7 @@ are close to them. Somewhat similar to Ebay.
 ## 3. Platform of choice:
 We will be using Sublime Text as our text editor. We will be using PHP, HTML and CSS to create our Web Application. **(This is just a text editor. You may wish to talk about PHP, HTML, CSS, and JavaScript.)**
 
-## As a user I can:
+## As a buyer I can:
 1. access my order history. I can view my list of complete orders in detail. 
 
 2. access my current bid by a order tracking page that displays my current ongoing bids. 
@@ -28,9 +28,9 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 
 6. save/hold/watchlist item before bid/purchase. As well as add and delete item from my watchlist.
 
-7. access a contact page (form) from user to seller for inqueries. 
+7. access a contact page (form) from buyer to seller for inqueries. 
 
-## As a seller and a user I can:
+## As a seller and a buyer I can:
 8. create and modify my store profile. 
 
 9. view the homepage change based on the holiday.
@@ -49,7 +49,7 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 
 ## As a seller I can:
 
-16. track my listings and view how many users have bid for my products. 
+16. track my listings and view how many buyers have bid for my products. 
 
 ## 4. Feedback for Features(16):
 • Registration, Login, Logout, 2-factor authentication (as per class instruction)
