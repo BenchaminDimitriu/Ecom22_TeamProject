@@ -45,7 +45,7 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 
 14. view a pop-ad of new featured item.
 
-15. Notification to show recent sold item/bought item.
+15. click in a notification icon to show recent sold item/bought item.
 
 ## As a seller I can:
 
