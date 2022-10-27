@@ -30,9 +30,9 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 
 7. access a contact page (form) from user to seller for inqueries. 
 
-8. access a help box that allows to search/type in keywords and will provide with a guide page.  
-
 ## As a seller and a user I can:
+8. create and modify my store profile. 
+
 9. view the homepage change based on the holiday.
 
 10. access registration, login, logout, 2-factor authentication (as per class instruction).
