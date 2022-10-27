@@ -22,7 +22,7 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 
 3. access my seller statistic such as its number of sold item, number of item the seller have.
 
-4. access a cart that can add/delete/view details of items. 
+4. access a cart that can add/delete/view details of items that can be bought now but not bidding items. 
 
 5. access a checkout/payment where I can input my information to pay for my purchases.
 
@@ -45,7 +45,7 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 
 14. view a pop-ad of new featured item.
 
-15. click in a notification icon to show recent sold item/bought item.
+15. click in a notification icon to show recent sold item/bought item and bid has ended(lost bid).
 
 ## As a seller I can:
 
