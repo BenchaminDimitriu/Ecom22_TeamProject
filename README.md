@@ -62,7 +62,7 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 
 • Social media/About us page 
 
-## 4. Features(20):
+## 4. Features(16):
 • Registration, Login, Logout, 2-factor authentication (as per class instruction)
 
 • Order history
