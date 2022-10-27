@@ -20,7 +20,7 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 
 2. access my current bid by a order tracking page that displays my current ongoing bids. 
 
-3. 
+3. access my seller statistic such as its number of sold item, number of item the seller have.
 
 4. access a cart that can add/delete/view details of items. 
 
@@ -28,13 +28,13 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 
 6. save/hold/watchlist item before bid/purchase. As well as add and delete item from my watchlist.
 
-7. 
+7. access a contact page (form) from user to seller for inqueries. 
 
-8. access a contact page (form) from user to seller for inqueries. 
-
-9. access a help box that allows to search/type in keywords and will provide with a guide page.  
+8. access a help box that allows to search/type in keywords and will provide with a guide page.  
 
 ## As a seller and a user I can:
+9. view the homepage change based on the holiday.
+
 10. access registration, login, logout, 2-factor authentication (as per class instruction).
 
 11. view all products/catalogue.
