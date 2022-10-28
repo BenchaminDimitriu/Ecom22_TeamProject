@@ -15,22 +15,22 @@ are close to them. Somewhat similar to Ebay.
 ## 3. Platform of choice:
 We will be using Sublime Text as our text editor. We will be using PHP, HTML and CSS to create our Web Application. **(This is just a text editor. You may wish to talk about PHP, HTML, CSS, and JavaScript.)**
 
-## As a user I can:
+## As a buyer I can:
 1. access my order history. I can view my list of complete orders in detail. 
 
 2. access my current bid by a order tracking page that displays my current ongoing bids. 
 
-3. access my seller statistic such as its number of sold item, number of item the seller have.
+3. access my seller statistic such as the number of sold item, number of item the seller have.
 
-4. access a cart that can add/delete/view details of items. 
+4. access a cart that can add/delete/view details of items that can be bought now but not bidding items. 
 
 5. access a checkout/payment where I can input my information to pay for my purchases.
 
 6. save/hold/watchlist item before bid/purchase. As well as add and delete item from my watchlist.
 
-7. access a contact page (form) from user to seller for inqueries. 
+7. access a contact page (form) from buyer to seller for inqueries. 
 
-## As a seller and a user I can:
+## As a seller and a buyer I can:
 8. create and modify my store profile. 
 
 9. view the homepage change based on the holiday.
@@ -45,11 +45,11 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 
 14. view a pop-ad of new featured item.
 
-15. click in a notification icon to show recent sold item/bought item.
+15. click in a notification icon to show recent sold item/bought item and bid has ended(lost bid).
 
 ## As a seller I can:
 
-16. track my listings and view how many users have bid for my products. 
+16. track my listings and view how many buyers have bid for my products. 
 
 ## 4. Feedback for Features(16):
 • Registration, Login, Logout, 2-factor authentication (as per class instruction)
