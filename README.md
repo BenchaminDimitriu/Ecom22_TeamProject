@@ -22,16 +22,17 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 
 3. access my seller statistic such as the number of sold item, number of item the seller have.
 
-4. access a cart that can add/delete/view details of items that can be bought now but not bidding items. 
+4. access a cart that can add/delete/view details of items that can be bought now (cannot add to cart bidding items). 
 
-5. access a checkout/payment where I can input my information to pay for my purchases.
+5. bid on items on the catalogue by inputting my desired amount.  
 
-6. save/hold/watchlist item before bid/purchase. As well as add and delete item from my watchlist.
+6. access a checkout/payment where I can input my information to pay for my purchases.
 
-7. access a contact page (form) from buyer to seller for inqueries. 
+7. save/hold/watchlist item before bid/purchase. As well as add and delete item from my watchlist.
+
+8. access a contact page (form) from buyer to seller for inqueries. 
 
 ## As a seller and a buyer I can:
-8. create and modify my store profile. 
 
 9. view the homepage change based on the holiday.
 
