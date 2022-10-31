@@ -21,6 +21,11 @@ if(isset($_GET['error'])){
 	<label>Password:<input type="password" name="password" /></label><br>
 	<input type="submit" name="action" value="Login" />
 </form>
+<<<<<<< Updated upstream
 <a href="/Login/register">Register</a>
+=======
+
+<a href="/Login/register"></a>
+>>>>>>> Stashed changes
 </body>
 </html>
