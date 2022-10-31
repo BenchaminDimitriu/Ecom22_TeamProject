@@ -4,5 +4,5 @@ Feature: view catalogue
      I want to see all items  
      
  Scenario: view all item listings
-     Given I am on "Main/catalogue"
+     Given I am on "Main/index"
      Then I should see all item listings

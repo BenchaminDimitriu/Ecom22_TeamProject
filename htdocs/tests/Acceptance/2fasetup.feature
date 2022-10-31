@@ -4,7 +4,7 @@ Feature: setup 2fa
     I need to scan the QR code with my device and input the code. Click "Verify code" submit button.
 
   Scenario: try to setup 2fa 
-    Given I am on "User/twofasetup"
+    Given I am on "Login/twofasetup"
     When I scan the QR code with my device
     Then I should be authenticated 
     And I should receive a code through google authenticator 

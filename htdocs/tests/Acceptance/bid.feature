@@ -4,7 +4,7 @@ Feature: bid item
     I need to select the item and click the "bid" submit button
 
   Scenario: try bidding on "vase"
-    Given I am on "Main/catalogue"
+    Given I am on "Main/index"
     When I select "vase" 
     And I click on "bid" button
     Then I should be able to input an amount

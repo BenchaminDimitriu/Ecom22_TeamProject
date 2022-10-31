@@ -4,7 +4,7 @@ Feature: view item details in catalogue
     I need to click "details" 
 
   Scenario: try viewing details from catalogue 
-     Given I am on "Main/catalogue"  
+     Given I am on "Main/index"  
      When I select "vase"
      Then I should see an option for details
      When I click on "details" submit button 

@@ -4,7 +4,7 @@ Feature: stats
      I need to be click on "details" submit button
 
  Scenario: try to view a seller's profile 
-     Given I am on "Main/catalogue"  
+     Given I am on "Main/index"  
      When I select "vase"
      Then I should see an option for details
      When I click on "details" submit button
