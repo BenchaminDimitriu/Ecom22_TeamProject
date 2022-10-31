@@ -21,6 +21,6 @@ if(isset($_GET['error'])){
 	<label>Password:<input type="password" name="password" /></label><br>
 	<input type="submit" name="action" value="Login" />
 </form>
-
+<a href="/Login/register">Register</a>
 </body>
 </html>
