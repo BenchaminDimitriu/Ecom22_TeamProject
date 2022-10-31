@@ -30,7 +30,7 @@
 				<label class="col-sm-2 col-form-label">Item Price:<input class='form-control' type="password" name="item_price"/></label>
 			</div>
 				<div class="form-group">
-				<label class="col-sm-2 col-form-label">Image:<input class='form-control' type="file" name="item_image" id="picture" /></label><img id='pic_preview' src='/images/blank.jpg' style="max-width:200px;max-height:200px" />
+				<label class="col-sm-2 col-form-label">Image:<input class='form-control' type="file" name="item_image" /></label><img src='/images/blank.jpg' style="max-width:200px;max-height:200px" />
 			</div>
 			<input class='btn btn-primary' type="submit" name="action" value="Add Item" />
 		</form>
