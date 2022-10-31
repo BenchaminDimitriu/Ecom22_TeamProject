@@ -1,7 +1,7 @@
-Login<?php
+<?php
 namespace app\models;
 
-class User extends \app\core\Model{
+class Login extends \app\core\Model{
 
 	public function get($username){
 		$SQL = "SELECT * FROM login WHERE username=:username";

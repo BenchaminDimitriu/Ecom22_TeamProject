@@ -24,7 +24,7 @@ if(isset($_GET['message'])){
 <?php
 }
 ?>
-<a href="/User/setup2fa"> Set up 2-factor authentication
+<a href="/Login/setup2fa"> Set up 2-factor authentication
 
 
 
@@ -35,7 +35,7 @@ if(isset($_GET['message'])){
 	<input type="submit" name="action" value="Change password" />
 </form>
 
-<a href="/User/logout">Log out</a>
+<a href="/Login/logout">Log out</a>
 
 
 </body>

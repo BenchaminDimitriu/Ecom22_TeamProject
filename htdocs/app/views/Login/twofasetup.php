@@ -3,7 +3,7 @@
 <title>2fa set up</title>
 </head>
 <body>
-	<img src="/User/makeQRCode?data=<?= $data ?>" />
+	<img src="/Login/makeQRCode?data=<?= $data ?>" />
 		Please scan the QR-code on the screen with your favorite
 		Authenticator software, such as Google Authenticator. The
 		authenticator software will generate codes that are valid for 30

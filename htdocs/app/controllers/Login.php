@@ -36,7 +36,7 @@ class Login extends \app\core\Controller{
 		}
 	}
 
-	#[\app\filters\Login]
+	//#[\app\filters\Login]
 	public function account(){
 		//password modification
 		if(isset($_POST['action'])){
@@ -76,7 +76,7 @@ class Login extends \app\core\Controller{
 					$user->insert();
 					header('location:/Login/index');
 				}else{
-					header('location:/Login/regiLoginster?error=The username "'.$_POST['username'].'" is already in use. Select another.');
+					header('location:/Login/register?error=The username "'.$_POST['username'].'" is already in use. Select another.');
 				}
 			}else{
 				header('location:/Login/register?error=Passwords do not match.');
