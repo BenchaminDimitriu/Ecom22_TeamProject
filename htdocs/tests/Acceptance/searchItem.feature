@@ -6,5 +6,5 @@ Feature: search item
  Scenario: search "vase"
      Given I am on "Main/index" 
      When I input "vase" on the search bar 
-     And I click on the "search" icon submit button
-     Then I should see all the findings for items having string "vase" in their name
+     And I click on the "search" icon 
+     Then I see "vase"

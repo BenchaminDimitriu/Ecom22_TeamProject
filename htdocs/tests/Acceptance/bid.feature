@@ -1,12 +1,20 @@
 Feature: bid item 
-    In order to bid on items 
+    In order to bid on an item
     As a buyer
-    I need to select the item and click the "bid" submit button
+    I need to click the "bid"
 
-  Scenario: try bidding on "vase"
-    Given I am on "Main/index"
-    When I select "vase" 
-    And I click on "bid" button
-    Then I should be able to input an amount
-    When I click "confirm bid" button
-    Then I should be redirected to "Buyer/bids"
+  Scenario: try bidding on "vase" with correct information
+    Given I am logged in
+    And I am on "Main/index"
+    And I click on "bid" on "vase"
+    And I input "bid_amount"
+    When I click "confirm bid" 
+    Then I see "bid_amount" for "vase"
+
+    Scenario: try bidding on "vase with incorrect information
+    Given I am logged in
+    And I am on "Main/index"
+    And I click on "bid" on "vase"
+    And I input "bid_amount"
+    When I click "confirm bid" 
+    Then I do not see "bid_amount" for "vase"

@@ -1,11 +1,11 @@
 Feature: add to watchlist
-    In order to save an item into my watchlist
+    In order to save an item to my watchlist
     As a buyer
-    I need to select the item and click "save to watchlist" submit button  
+    I need to click "save to watchlist"
 
-  Scenario: try to add "vase" to watchlist
-    Given I am on "Main/index"
-    When I select "vase" 
-    And I click "save to watchlist" submit button 
-    Then I should be able to see "vase" in my watchlist
+  Scenario: try adding "vase" to watchlist
+    Given I am logged in
+    And I am on "Main/index"
+    And I click "save to watchlist" on "vase"
+    Then I see "vase"  in my watchlist
 

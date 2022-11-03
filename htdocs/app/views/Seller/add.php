@@ -9,16 +9,50 @@
 </head>
 
 <body>
-<h1>Add item</h1>
+<div class="bg-image"style="background-image: url('../../images/p.png');">
+
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 20px;">
+            <div class="card-body p-5">
+              <h2 class="text-center mb-5">Add Item</h2>
+
+                <form action='' enctype="multipart/form-data" method='post'>
+                 <div class="form-outline mb-4">
+
+
 
 <form action='' method='post' enctype='multipart/form-data'>
-	<label>Item Name:<input type="text" name="item_name" /></label><br>
-	<label>Price:<input type="text" name="item_price" /></label><br>
-	<!-- <label>Description:<input type="date" name="item_description" /></label><br> -->
-	<label>Item Description:<textarea name='item_description'></textarea></label></br>
-	<label>Image:<input type="file" name="item_image" id="item_image" /></label><img id='item_image_preview' src='/images/blank.jpg' style="max-width:200px;max-height:200px" /><br>
+	 <div class="form-outline mb-4">
+	<label class="form-label">Item Name:<input class="form-control" rows="3" type="text" name="item_name" /></label><br>
+</div>
+
+<div class="form-outline mb-4">
+	<label>Price:<input class="form-control" rows="3" type="text" name="item_price" /></label><br>
+</div>
+<div class="form-outline mb-4">
+	<label>Description:<textarea class="form-control" rows="3" name='item_description'></textarea></label></br>
+</div>
+
+<div class="form-outline mb-4">
+	<label>Image:<input class="form-control" rows="3" type="file" name="item_image" id="item_image" /></label>
+</br>
+</br>
+  <img id='item_image_preview' src='/images/blank.jpg' style="max-width:200px;max-height:200px" /><br>
+</div>
 	<input type="submit" name="action" value="Add new item" />
 </form>
+
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <script>
 	item_image.onchange = evt => {

@@ -1,11 +1,10 @@
 Feature: delete item from cart
     In order to delete an item from cart
     As a buyer
-    I need to select the item and click the "delete" submit button
+    I need to click the "delete"
 
-  Scenario: try adding "vase"
-    Given I am on "Buyer/cart"
-    When I select "vase" 
-    And I click "delete" submit button
-    Then I should not see "vase" in my cart 
-
+  Scenario: try deleting "vase"
+    Given I am logged in
+    And I am on "Buyer/cart" 
+    And I click "delete" on "vase"
+    Then I do not see "vase" 

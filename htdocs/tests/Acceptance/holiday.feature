@@ -1,13 +1,14 @@
 Feature: display homepage 
     In order to change the display of the homepage 
     As a buyer and a seller  
-    I need to access the site during a holiday date
+    I need to be on "Main/index"
 
-  Scenario: view homepage 
+  Scenario: view homepage
     Given I am on "Main/index"
-    And it is a holiday date 
-    Then I should see a different homepage background
-    But if it is not a holiday date 
-    Then I should see the regular homepage background
+    Then I see "Main/index" 
+
+  Scenario: view non-holiday homepage
+    Given I am on "Main/index" 
+    Then I see "Main/index"
   
 

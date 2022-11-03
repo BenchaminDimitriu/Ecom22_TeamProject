@@ -1,13 +1,21 @@
 Feature: login
-    In order to login
-    As a buyer and a seller
-    I need to enter my username and my password. Click the "login" submit button. 
+In order to login in my account
+As a user
+I need to click on the "login"
 
-  Scenario: try login in
-    Given I am on "http://localhost/login"
-    When I input my username and my password correctly
-    And I click "login" submit button
-    Then I should be redirected to "Login/check2fa"
-    But if I input my username and my password incorrectly
-    And I click "login" submit button
-    Then I should be see an alert 
+  Scenario: try to login with correct information
+    Given I am on "Login/register"
+    When I fill in "username" with "newUser"
+    And I fill in "password" with "newPassword"
+    And I click "register"
+    And I fill in "username" with "newUser"
+    And I fill in "password" with "newPassword"
+    And I click "login"
+    Then I see "Welcome newUser"
+
+  Scenario: try to login with incorrect information
+    Given I am on "Login/index"
+    And I fill in "username" with "newUser" 
+    And I fill in "password" with "newPassword" 
+    And I click "login"
+    Then I do not see "Welcome newUser"

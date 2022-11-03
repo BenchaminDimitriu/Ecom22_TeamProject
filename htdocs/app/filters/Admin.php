@@ -11,4 +11,15 @@ class Admin extends \app\core\AccessFilter{
 		return false;
 	}
 }
+
+#[\Attribute]
+class Seller extends \app\core\AccessFilter{
+	public function execute(){
+		if($_SESSION['role'] != 'seller'){
+			header('location:/Main/index?error=You may not access the administration features.');
+			return true;
+		}
+		return false;
+	}
+}
 ?>

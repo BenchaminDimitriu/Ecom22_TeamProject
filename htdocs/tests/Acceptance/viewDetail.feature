@@ -5,7 +5,5 @@ Feature: view item details in catalogue
 
   Scenario: try viewing details from catalogue 
      Given I am on "Main/index"  
-     When I select "vase"
-     Then I should see an option for details
-     When I click on "details" submit button 
-     Then I should see "seller_id", "item_id", "item_image", "item_price" and "item_description"
+     When I click on "details"
+     Then I see "seller_id", "item_id", "item_image", "item_price" and "item_description"

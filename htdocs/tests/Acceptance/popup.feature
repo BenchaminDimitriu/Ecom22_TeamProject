@@ -1,12 +1,9 @@
 Feature: pop up feature item 
     In order to be aware of the latest feature item
     As a buyer 
-    I need to view the display on the homepage 
+    I need to be on "Main/index"
 
   Scenario: view homepage  
     Given I am on "Main/index"
-    Then I should see a pop alert of the lastest feature item 
-    And if I click on "close" submit button 
-    Then I should no longer see the pop up 
-
+    Then I see a "pop_alert"
 

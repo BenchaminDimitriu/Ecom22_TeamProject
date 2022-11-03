@@ -1,11 +1,14 @@
 Feature: register
-    In order to register
-    As a buyer and a seller
-    I need to enter a username and a password. Click the "register" submit button. 
+In order to register a new account
+As a user
+I need to click the "register" 
 
-  Scenario: try to register
-    Given I am on "Login/register"
-    When I input a username and a password 
-    And I click "register" submit button
-    Then I should be redirected to "Login/twofasetup"
-  
+Scenario: try to register user "user"
+  Given I am on "Login/register"
+  When I fill in "username" with "newUser"
+  And I fill in "password" with "newPassword"
+  And I click "register"
+  And I fill in "username" with "newUser"
+  And I fill in "password" with "newPassword"
+  And I click "login"
+  Then I see "Welcome newUser"
