@@ -31,13 +31,14 @@
                   <div class="form-outline mb-4">
                     
     <table width="100%" border="1" cellpadding="5" cellspacing="5">
-    <tr><th>Name</th><th>Price</th><th>Description</th><th>Image</th><th>Action</th></tr>
+    <tr><th>Seller ID</th><th>Name</th><th>Price</th><th>Description</th><th>Image</th><th>Action</th></tr>
 	
 	<?php
 	$item = new \app\models\Item();
 	$items = $item->getAll();
 	foreach ($data as $item) {
 		echo "<tr>
+     <td type=name>$item->seller_id</td>
 		<td type=name>$item->item_name</td>
 		<td type=name>$item->item_price</td>
 		<td type=name>$item->item_description</td>

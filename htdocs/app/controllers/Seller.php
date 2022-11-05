@@ -32,11 +32,12 @@ class Seller extends \app\core\Controller{
 			$item->item_name = $_POST['item_name'];
 			$item->item_price = $_POST['item_price'];
 			$item->item_description = $_POST['item_description'];
-
 			$filename = $this->saveFile($_FILES['item_image']);
 			$item->item_image = $filename;
 			
-			$item->insert();
+			// $item->insert();
+			$item->seller_id = $_SESSION['seller_id'];
+			$_SESSION['item_id'] = $item->insert();
 			header('location:/Seller/listings');
 		}else{
 			$this->view('Seller/add');
