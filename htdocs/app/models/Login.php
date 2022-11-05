@@ -11,11 +11,20 @@ class Login extends \app\core\Model{
 		return $STMT->fetch();
 	}
 
+	public function getProfile(){
+		$SQL = "SELECT * FROM buyer WHERE user_id=:user_id";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['user_id'=>$this->user_id]);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Buyer');
+		return $STMT->fetch();
+	}
+
 	public function insert(){
-		$SQL = "INSERT INTO login(username, password_hash) VALUES (:username, :password_hash)";
+		$SQL = "INSERT INTO login(username, password_hash, role) VALUES (:username, :password_hash, :role)";
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['username'=>$this->username,
-						'password_hash'=>$this->password_hash]);
+						'password_hash'=>$this->password_hash,
+						'role'=>$this->role]);
 	}
 
 	public function updatePassword(){

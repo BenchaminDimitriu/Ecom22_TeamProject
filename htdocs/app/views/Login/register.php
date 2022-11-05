@@ -32,13 +32,26 @@ if(isset($_GET['error'])){
                 </div>
 
                
-                  <label for="role">Role:</label>
+         <!--          <label for="role">Role:</label>
                    <select name="role" id="role">
                       <option value="buyer">Buyer</option>
                       <option value="seller">Seller</option>
                     </optgroup>
                   </select>
-                
+                 -->
+
+                 <div class="input-group form-group">
+                    <label class="radio">Buyer
+                      <input type="radio" checked="checked" name="role" value="Buyer" />
+                      <span class="radiocheckmark"></span>
+                    </label>
+                    
+                    <label class="radio">Seller
+                      <input type="radio" name="role" value="Seller" />
+                      <span class="radiocheckmark"></span>
+                    </label>
+                </div>
+
 
                 <div class="form-outline mb-4">
                   <input type="password" id="inputPassword" class="form-control form-control-lg" name="password" required/>

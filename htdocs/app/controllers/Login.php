@@ -12,6 +12,8 @@ class Login extends \app\core\Controller{
 				$_SESSION['username'] = $user->username;
 				$_SESSION['role'] = $user->role;
 				$_SESSION['secret_key'] = $user->secret_key;
+				$buyer = $user->getProfile();
+				$_SESSION['buyer_id'] = $buyer->buyer_id;
 				header('location:/Login/account');
 			}else{
 				header('location:/Login/index?error=Wrong username/password combination!');
@@ -73,6 +75,7 @@ class Login extends \app\core\Controller{
 				if(!$check){
 					$user->username = $_POST['username'];
 					$user->password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
+					$user->role = $_POST['role'];
 					$user->insert();
 					header('location:/Login/index');
 				}else{
