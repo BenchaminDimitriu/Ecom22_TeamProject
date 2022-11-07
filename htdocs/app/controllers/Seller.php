@@ -7,11 +7,9 @@ class Seller extends \app\core\Controller{
 	//#[\app\filters\Seller]
 	public function index(){
 		$item = new \app\models\Item();
-		//call getAll on that object to get the collection of all items
 		$items = $item->getAll();
-		//call a view and pass the collection for display
-		//$this->view('Vet/index',$owners);
-		$item = $item->get($_SESSION['user_id']); 
+		//$item = $item->get($_SESSION['user_id']); 
+	//$item->seller_id = $_SESSION['seller_id'];
 		$this->view('Seller/listings', $items);
 	}
 	
@@ -36,6 +34,7 @@ class Seller extends \app\core\Controller{
 			$item->item_image = $filename;
 			
 			// $item->insert();
+			$item->user_id = $_SESSION['user_id'];
 			$item->seller_id = $_SESSION['seller_id'];
 			$_SESSION['item_id'] = $item->insert();
 			header('location:/Seller/listings');

@@ -20,9 +20,10 @@ class Item extends \app\core\Model{
 	}
 
 	public function insert(){
-		$SQL = "INSERT INTO item(seller_id, item_name, item_price, item_description, item_image) VALUES (:seller_id, :item_name, :item_price, :item_description, :item_image)";
+		$SQL = "INSERT INTO item(seller_id, user_id, item_name, item_price, item_description, item_image) VALUES (:seller_id, :user_id, :item_name, :item_price, :item_description, :item_image)";
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['seller_id'=>$this->seller_id,
+						'user_id'=>$this->user_id,
 						'item_name'=>$this->item_name,
 						'item_price'=>$this->item_price,
 						'item_description'=>$this->item_description,

@@ -13,6 +13,11 @@
 </style>
 
 <body>
+              <a href="Main/index" target="_blank"><strong>AucBay</strong></a>
+              <a href="http://localhost/Login/register" target="_blank">Register</a>
+              <a href="http://localhost/Login/login" target="_blank" id="login">Login</a>
+              <a href="http://localhost/Login/logout" target="_blank" id="logout">Logout</a>
+              
 <p><!--display the data as a table-->
 <div class="bg-image"style="background-image: url('../../images/p.png');">
 
@@ -22,7 +27,7 @@
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
           <div class="card" style="border-radius: 20px;">
             <div class="card-body p-5">
-              <h2 class="text-center mb-5">Listing</h2>
+              <h2 class="text-center mb-5">My Listing</h2>
             
                 <a href="/Seller/add"><center>Add a new item</center></a>
                 </br>

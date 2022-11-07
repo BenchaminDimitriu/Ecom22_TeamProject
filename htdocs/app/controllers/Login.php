@@ -12,8 +12,8 @@ class Login extends \app\core\Controller{
 				$_SESSION['username'] = $user->username;
 				$_SESSION['role'] = $user->role;
 				$_SESSION['secret_key'] = $user->secret_key;
-				$buyer = $user->getProfile();
-				$_SESSION['buyer_id'] = $buyer->buyer_id;
+				$seller = $user->getSeller();
+				$_SESSION['seller_id'] = $seller->seller_id;
 				header('location:/Login/account');
 			}else{
 				header('location:/Login/index?error=Wrong username/password combination!');

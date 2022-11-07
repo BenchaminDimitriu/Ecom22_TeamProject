@@ -13,6 +13,12 @@
 </style>
 
 <body>
+
+              <a href="Main/index" target="_blank"><strong>AucBay</strong></a>
+              <a href="http://localhost/Login/register" target="_blank">Register</a>
+              <a href="http://localhost/Login/login" target="_blank" id="login">Login</a>
+              <a href="http://localhost/Login/logout" target="_blank" id="logout">Logout</a>
+              
 <p><!--display the data as a table-->
 <div class="bg-image"style="background-image: url('../../images/p.png');">
 

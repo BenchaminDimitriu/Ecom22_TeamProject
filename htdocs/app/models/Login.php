@@ -11,11 +11,11 @@ class Login extends \app\core\Model{
 		return $STMT->fetch();
 	}
 
-	public function getProfile(){
-		$SQL = "SELECT * FROM buyer WHERE user_id=:user_id";
+	public function getSeller(){
+		$SQL = "SELECT * FROM seller WHERE user_id=:user_id";
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['user_id'=>$this->user_id]);
-		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Buyer');
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Seller');
 		return $STMT->fetch();
 	}
 

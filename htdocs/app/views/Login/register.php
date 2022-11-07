@@ -16,6 +16,11 @@ if(isset($_GET['error'])){
 }
 ?>
 
+              <a href="Main/index" target="_blank"><strong>AucBay</strong></a>
+              <a href="http://localhost/Login/register" target="_blank">Register</a>
+              <a href="http://localhost/Login/login" target="_blank" id="login">Login</a>
+              <a href="http://localhost/Login/logout" target="_blank" id="logout">Logout</a>
+
 <form action='' method='post'>
   <div class="mask d-flex align-items-center h-100 gradient-custom-3">
     <div class="container h-100">
@@ -68,7 +73,7 @@ if(isset($_GET['error'])){
                     class="btn btn-success btn-block btn-lg gradient-custom-4" name="action">Register</button>
                 </div>
 
-                <p class="text-center text-muted mt-5 mb-0">Already a user? <a href="/User/index"
+                <p class="text-center text-muted mt-5 mb-0">Already a user? <a href="/Login/index"
                     class="fw-bold text-body"><u>Login here</u></a></p>
               </form>
 

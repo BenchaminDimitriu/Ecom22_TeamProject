@@ -4,7 +4,7 @@ namespace app\models;
 class Seller extends \app\core\Model{
 
 	public function getAll(){
-		$SQL = "SELECT * FROM seller";
+		$SQL = "SELECT * FROM seller" ;
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute();
 		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Seller');
