@@ -13,19 +13,19 @@ class Seller extends \app\core\Controller{
 	
 	public function listings(){
 		$item = new \app\models\Item();
-		$items = $item->getForSeller($_SESSION['seller_id']);
+		$items = $item->getAll();
 		$this->view('Seller/listings', $items);
 	}
 
 	public function stats(){
 		$item = new \app\models\Item();
-		$items = $item->getForSeller($_SESSION['seller_id']);
+		//call getAll on that object to get the collection of all items
+		$items = $item->getAll();
 		$this->view('Seller/stats', $items);
 	}
 
 	public function add(){
 		if(isset($_POST['action'])){
-			//if(isset($_POST['action']) && $item->seller_id == $_SESSION['seller_id']){
 			$item = new \app\models\Item();
 			$item->item_name = $_POST['item_name'];
 			$item->item_price = $_POST['item_price'];

@@ -4,8 +4,9 @@ namespace app\controllers;
 class Buyer extends \app\core\Controller{
 
 	public function index(){
-		$buyer = new \app\models\Buyer();	
-		$this->view('Buyer/index', $buyer);
+		$buyer = new \app\models\Buyer();
+		$buyers = $buyer->get($_SESSION['buyer_id']);			
+		$this->view('Buyer/index',['buyer']=>$buyer);
 	}
 
 	// public function details($buyer_id){
