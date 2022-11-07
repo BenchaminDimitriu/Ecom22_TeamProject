@@ -30,7 +30,7 @@
             <div class="card-body p-5">
               <h2 class="text-center mb-5">My Profile</h2>
             
-                <a href="/Buyer/editProfile"><center>Edit Profile</center></a>
+                <a href="/Seller/editProfile"><center>Edit Profile</center></a>
                 </br>
               
               
@@ -42,19 +42,19 @@
                     First name:
                   </dt>
                   <dd>
-                    <?= $data->seller_fname ?>
+                    <?= $data['seller']->seller_fname ?>
                   </dd>
                   <dt>
                     Last name:
                   </dt>
                   <dd>
-                    <?= $data->seller_lname ?>
+                    <?= $data['seller']->seller_lname ?>
                   </dd>
                   <dt>
                     Email:
                   </dt>
                   <dd>
-                    <?= $data->seller_email ?>
+                    <?= $data['seller']->seller_email ?>
                   </dd>
                 </dl>
 

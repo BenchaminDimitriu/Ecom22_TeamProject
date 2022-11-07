@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 07, 2022 at 05:19 PM
+-- Generation Time: Nov 01, 2022 at 06:19 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `aucbay`
 --
+CREATE DATABASE IF NOT EXISTS `aucbay` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `aucbay`;
 
 -- --------------------------------------------------------
 
@@ -27,6 +29,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `auction`
 --
 
+DROP TABLE IF EXISTS `auction`;
 CREATE TABLE `auction` (
   `auction_id` int(11) NOT NULL,
   `item_id` int(11) NOT NULL,
@@ -40,9 +43,9 @@ CREATE TABLE `auction` (
 -- Table structure for table `buyer`
 --
 
+DROP TABLE IF EXISTS `buyer`;
 CREATE TABLE `buyer` (
   `buyer_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
   `bidder_id` int(11) DEFAULT NULL,
   `buyer_fname` varchar(25) NOT NULL,
   `buyer_lname` varchar(25) NOT NULL,
@@ -55,6 +58,7 @@ CREATE TABLE `buyer` (
 -- Table structure for table `contact`
 --
 
+DROP TABLE IF EXISTS `contact`;
 CREATE TABLE `contact` (
   `invoice_id` int(11) NOT NULL,
   `buyer_email` varchar(50) NOT NULL,
@@ -67,10 +71,9 @@ CREATE TABLE `contact` (
 -- Table structure for table `item`
 --
 
+DROP TABLE IF EXISTS `item`;
 CREATE TABLE `item` (
   `item_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `seller_id` int(11) NOT NULL,
   `item_name` varchar(30) NOT NULL,
   `item_price` float NOT NULL,
   `item_description` varchar(50) NOT NULL,
@@ -81,8 +84,9 @@ CREATE TABLE `item` (
 -- Dumping data for table `item`
 --
 
-INSERT INTO `item` (`item_id`, `user_id`, `seller_id`, `item_name`, `item_price`, `item_description`, `item_image`) VALUES
-(4, 3, 2, 'Chinese Vase ', 200.99, 'v', '63692ff0e93c2.jpg');
+INSERT INTO `item` (`item_id`, `item_name`, `item_price`, `item_description`, `item_image`) VALUES
+(2, 'Vase', 12.99, 'A green vase ', ''),
+(3, 'Vase', 12.99, 'Same green vase ', '');
 
 -- --------------------------------------------------------
 
@@ -90,6 +94,7 @@ INSERT INTO `item` (`item_id`, `user_id`, `seller_id`, `item_name`, `item_price`
 -- Table structure for table `login`
 --
 
+DROP TABLE IF EXISTS `login`;
 CREATE TABLE `login` (
   `user_id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
@@ -103,7 +108,19 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`user_id`, `username`, `password_hash`, `secret_key`, `role`) VALUES
-(3, 'seller1', '$2y$10$d0RClPqD/lUZXHZVz/UDKOhzSWBYpYHHWab4KZHW3WhfiamP7fpT6', NULL, 'seller');
+(1, 'soup', '$2y$10$YDWFGrM9aJQrbUyzXGLg9e7jEU6xvKkiPdzi7Zu4eduIEFO57x2ue', NULL, 'buyer');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order`
+--
+
+DROP TABLE IF EXISTS `order`;
+CREATE TABLE `order` (
+  `order_id` int(11) NOT NULL,
+  `transaction_number` int(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -111,6 +128,7 @@ INSERT INTO `login` (`user_id`, `username`, `password_hash`, `secret_key`, `role
 -- Table structure for table `order_history`
 --
 
+DROP TABLE IF EXISTS `order_history`;
 CREATE TABLE `order_history` (
   `order_id` int(11) NOT NULL,
   `buyer_id` int(11) NOT NULL,
@@ -126,20 +144,15 @@ CREATE TABLE `order_history` (
 -- Table structure for table `seller`
 --
 
+DROP TABLE IF EXISTS `seller`;
 CREATE TABLE `seller` (
   `seller_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
   `seller_fname` varchar(25) NOT NULL,
   `seller_lname` varchar(25) NOT NULL,
-  `seller_email` varchar(50) NOT NULL
+  `seller_email` varchar(50) NOT NULL,
+  `number_of_items` smallint(6) NOT NULL,
+  `number_of_itemSold` smallint(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `seller`
---
-
-INSERT INTO `seller` (`seller_id`, `user_id`, `seller_fname`, `seller_lname`, `seller_email`) VALUES
-(2, 3, 's1', 's', 's@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -159,8 +172,7 @@ ALTER TABLE `auction`
 --
 ALTER TABLE `buyer`
   ADD PRIMARY KEY (`buyer_id`),
-  ADD UNIQUE KEY `bidder_unique` (`bidder_id`),
-  ADD KEY `buyer_to_login` (`user_id`);
+  ADD UNIQUE KEY `bidder_unique` (`bidder_id`);
 
 --
 -- Indexes for table `contact`
@@ -172,9 +184,7 @@ ALTER TABLE `contact`
 -- Indexes for table `item`
 --
 ALTER TABLE `item`
-  ADD PRIMARY KEY (`item_id`),
-  ADD KEY `seller_to_item` (`seller_id`),
-  ADD KEY `login_to_item` (`user_id`);
+  ADD PRIMARY KEY (`item_id`);
 
 --
 -- Indexes for table `login`
@@ -182,6 +192,12 @@ ALTER TABLE `item`
 ALTER TABLE `login`
   ADD PRIMARY KEY (`user_id`),
   ADD UNIQUE KEY `username` (`username`);
+
+--
+-- Indexes for table `order`
+--
+ALTER TABLE `order`
+  ADD PRIMARY KEY (`order_id`);
 
 --
 -- Indexes for table `order_history`
@@ -196,8 +212,7 @@ ALTER TABLE `order_history`
 -- Indexes for table `seller`
 --
 ALTER TABLE `seller`
-  ADD PRIMARY KEY (`seller_id`),
-  ADD KEY `seller_to_login` (`user_id`);
+  ADD PRIMARY KEY (`seller_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -225,13 +240,19 @@ ALTER TABLE `contact`
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `order`
+--
+ALTER TABLE `order`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `order_history`
@@ -243,7 +264,7 @@ ALTER TABLE `order_history`
 -- AUTO_INCREMENT for table `seller`
 --
 ALTER TABLE `seller`
-  MODIFY `seller_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `seller_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -258,31 +279,12 @@ ALTER TABLE `auction`
   ADD CONSTRAINT `seller_to_auction` FOREIGN KEY (`seller_id`) REFERENCES `seller` (`seller_id`);
 
 --
--- Constraints for table `buyer`
---
-ALTER TABLE `buyer`
-  ADD CONSTRAINT `buyer_to_login` FOREIGN KEY (`user_id`) REFERENCES `login` (`user_id`);
-
---
--- Constraints for table `item`
---
-ALTER TABLE `item`
-  ADD CONSTRAINT `login_to_item` FOREIGN KEY (`user_id`) REFERENCES `login` (`user_id`),
-  ADD CONSTRAINT `seller_to_item` FOREIGN KEY (`seller_id`) REFERENCES `seller` (`seller_id`);
-
---
 -- Constraints for table `order_history`
 --
 ALTER TABLE `order_history`
   ADD CONSTRAINT `buyer_to_orderHistory` FOREIGN KEY (`buyer_id`) REFERENCES `buyer` (`buyer_id`),
   ADD CONSTRAINT `item_to_orderHistory` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`),
   ADD CONSTRAINT `seller_to_orderHistory` FOREIGN KEY (`seller_id`) REFERENCES `seller` (`seller_id`);
-
---
--- Constraints for table `seller`
---
-ALTER TABLE `seller`
-  ADD CONSTRAINT `seller_to_login` FOREIGN KEY (`user_id`) REFERENCES `login` (`user_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

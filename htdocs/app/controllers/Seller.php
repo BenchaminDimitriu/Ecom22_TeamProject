@@ -6,15 +6,15 @@ class Seller extends \app\core\Controller{
 	//#[\app\filters\Login]
 	//#[\app\filters\Seller]
 	public function index(){
-		$item = new \app\models\Item();
-		$items = $item->getAll();
-		//$item = $item->get($_SESSION['user_id']); 
-	//$item->seller_id = $_SESSION['seller_id'];
-		$this->view('Seller/listings', $items);
+		$seller = new \app\models\Seller();
+		$sellers = $seller->get($_SESSION['seller_id']);
+		$this->view('Seller/index', ['seller'=>$sellers]);
 	}
 	
-	public function profile(){
-		$this->view('Seller/profile');
+	public function listings(){
+		$item = new \app\models\Item();
+		$items = $item->getAll();
+		$this->view('Seller/listings', $items);
 	}
 
 	public function stats(){
@@ -63,7 +63,7 @@ class Seller extends \app\core\Controller{
 			$seller->update();
 			header('location:/Seller/index');
 		}else{
-			$this->view('Seller/editProfile', $seller);
+			$this->view('Seller/editProfile');
 		}
 
 	}
