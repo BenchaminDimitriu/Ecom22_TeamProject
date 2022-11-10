@@ -9,6 +9,18 @@ class Main extends \app\core\Controller{
 		$this->view('Main/index', $items);
 	}
 
+	public function home(){
+
+		$this->view('Main/home');
+	}
+
+	public function search(){
+		//To find interesting publications, as a person or user, I can search for captions by search terms.
+		$item = new \app\models\Item();
+		$items = $item->search($_GET['search_term']);
+		$this->view('Main/index', $items);
+	}
+
 	// public function buy(){
 	// }
 

@@ -19,6 +19,8 @@ class Buyer extends \app\core\Model{
 		return $STMT->fetch();
 	}
 
+	
+
 	public function insert(){
 		$SQL = "INSERT INTO buyer (user_id, buyer_fname, buyer_lname, buyer_email) VALUES (:user_id, :buyer_fname, :buyer_lname, :buyer_email)";
 		$STMT = self::$_connection->prepare($SQL);

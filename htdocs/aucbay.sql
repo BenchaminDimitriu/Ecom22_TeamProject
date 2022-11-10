@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 07, 2022 at 06:28 PM
+-- Generation Time: Nov 10, 2022 at 07:16 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -62,8 +62,9 @@ CREATE TABLE `buyer` (
 DROP TABLE IF EXISTS `contact`;
 CREATE TABLE `contact` (
   `invoice_id` int(11) NOT NULL,
-  `buyer_email` varchar(50) NOT NULL,
-  `seller_email` varchar(50) NOT NULL
+  `seller_id` int(11) NOT NULL,
+  `buyer_id` int(11) NOT NULL,
+  `message` varchar(75) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -80,18 +81,20 @@ CREATE TABLE `item` (
   `item_name` varchar(30) NOT NULL,
   `item_price` float NOT NULL,
   `item_description` varchar(50) NOT NULL,
-  `item_image` varchar(50) NOT NULL
+  `item_image` varchar(50) NOT NULL,
+  `item_bidPrice` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `item`
 --
 
-INSERT INTO `item` (`item_id`, `user_id`, `seller_id`, `item_name`, `item_price`, `item_description`, `item_image`) VALUES
-(4, 3, 2, 'Chinese Vase ', 200.99, 'v', '63692ff0e93c2.jpg'),
-(5, 3, 2, 'Commode', 500.99, 'c', '6369370a68f43.jpg'),
-(6, 4, 3, 'Brass Planter', 80.99, 'b', '6369375996a30.jpg'),
-(7, 4, 3, 'Commode', 180.99, 'c', '63693cddcd9af.jpg');
+INSERT INTO `item` (`item_id`, `user_id`, `seller_id`, `item_name`, `item_price`, `item_description`, `item_image`, `item_bidPrice`) VALUES
+(8, 3, 2, 'Chinese Porcelain Vase', 200.99, 'Glazed porcelain with intermingled colors ', '636d26fdd3b03.jpg', NULL),
+(9, 3, 2, 'Greek Amphora', 160.99, 'Ancient vessel form used as a storage jar', '636d2758ac3a6.jpg', NULL),
+(10, 3, 2, 'Commode', 500.99, 'A chest of drawers or chiffonier of a decorative t', '636d279328db4.jpg', NULL),
+(11, 4, 3, 'Planter', 80.99, 'Used for growing plants', '636d28106935c.jpg', NULL),
+(12, 4, 3, 'Victorian Chair ', 50.99, 'Deep tufted fabric design', '636d28c2bcf92.jpg', NULL);
 
 -- --------------------------------------------------------
 
@@ -144,17 +147,16 @@ CREATE TABLE `seller` (
   `user_id` int(11) NOT NULL,
   `seller_fname` varchar(25) NOT NULL,
   `seller_lname` varchar(25) NOT NULL,
-  `seller_email` varchar(50) NOT NULL,
-  `number_of_itemSold` smallint(6) NOT NULL
+  `seller_email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `seller`
 --
 
-INSERT INTO `seller` (`seller_id`, `user_id`, `seller_fname`, `seller_lname`, `seller_email`, `number_of_itemSold`) VALUES
-(2, 3, 's1', 's', 's@gmail.com', 0),
-(3, 4, 'ss2', 's', 's2@gmail.com', 0);
+INSERT INTO `seller` (`seller_id`, `user_id`, `seller_fname`, `seller_lname`, `seller_email`) VALUES
+(2, 3, 's1', 's', 's@gmail.com'),
+(3, 4, 'ss2', 's', 's2@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -181,7 +183,9 @@ ALTER TABLE `buyer`
 -- Indexes for table `contact`
 --
 ALTER TABLE `contact`
-  ADD PRIMARY KEY (`invoice_id`);
+  ADD PRIMARY KEY (`invoice_id`),
+  ADD KEY `contact_to_buyer` (`buyer_id`),
+  ADD KEY `contact_to_seller` (`seller_id`);
 
 --
 -- Indexes for table `item`
@@ -240,7 +244,7 @@ ALTER TABLE `contact`
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `login`
@@ -277,6 +281,13 @@ ALTER TABLE `auction`
 --
 ALTER TABLE `buyer`
   ADD CONSTRAINT `buyer_to_login` FOREIGN KEY (`user_id`) REFERENCES `login` (`user_id`);
+
+--
+-- Constraints for table `contact`
+--
+ALTER TABLE `contact`
+  ADD CONSTRAINT `contact_to_buyer` FOREIGN KEY (`buyer_id`) REFERENCES `buyer` (`buyer_id`),
+  ADD CONSTRAINT `contact_to_seller` FOREIGN KEY (`seller_id`) REFERENCES `seller` (`seller_id`);
 
 --
 -- Constraints for table `item`

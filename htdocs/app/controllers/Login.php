@@ -12,8 +12,8 @@ class Login extends \app\core\Controller{
 				$_SESSION['username'] = $user->username;
 				$_SESSION['role'] = $user->role;
 				$_SESSION['secret_key'] = $user->secret_key;
-				$buyer = $user->getBuyer();
 				$seller = $user->getSeller();
+				$buyer = $user->getBuyer();
 				$_SESSION['buyer_id'] = $buyer->buyer_id;
 				$_SESSION['seller_id'] = $seller->seller_id;
 				header('location:/Login/account');
