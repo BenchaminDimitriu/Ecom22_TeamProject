@@ -16,77 +16,46 @@ are close to them. Somewhat similar to Ebay.
 We will be using Sublime Text as our text editor. We will be using PHP, HTML and CSS to create our Web Application. **(This is just a text editor. You may wish to talk about PHP, HTML, CSS, and JavaScript.)**
 
 ## As a buyer I can:
-1. access my order history. I can view my list of complete orders in detail. 
-
-2. access my current bid by a order tracking page that displays my current ongoing bids. 
-
-3. access my seller statistic such as the number of sold item, number of item the seller have.
-
-4. access a cart that can add/delete/view details of items that can be bought now (cannot add to cart bidding items). 
-
-5. bid on items on the catalogue by inputting my desired amount.  
-
-6. access a checkout/payment where I can input my information to pay for my purchases.
-
-7. save/hold/watchlist item before bid/purchase. As well as add and delete item from my watchlist.
-
-8. access a contact page (form) from buyer to seller for inqueries. 
+• access my order history. I can view my list of complete orders in detail. (1 feature)
+• access my current bid by a order tracking page that displays my current ongoing bids. (1 feature)
+• access a seller's statistic such as the number of sold item, number of item the seller have. (1 feature)
+• access a cart that can add/delete/view details of items that can be bought now (cannot add to cart bidding items). (2 features)
+• bid on items on the catalogue by inputting my desired amount. (1 feature)
+• access a checkout/payment where I can input my information to pay for my purchases. (1 feature)
+• save/hold/watchlist item before bid/purchase. As well as add and delete item from my watchlist. (2 features)
+• access a contact page (form) from buyer to sellers for inqueries. (1 features)
 
 ## As a seller and a buyer I can:
-
-9. view the homepage change based on the holiday.
-
-10. access registration, login, logout, 2-factor authentication (as per class instruction).
-
-11. view all products/catalogue.
-
-12. view all product details.
-
-13. access a search bar and navigation bar.
-
-14. view a pop-ad of new featured item.
-
-15. click in a notification icon to show recent sold item/bought item and bid has ended(lost bid).
+• create/edit my profile. (2 features)
+• view the homepage change based on the holiday. (1 feature)
+• access registration, login, logout, 2-factor authentication (as per class instruction). (0 feature)
+• view all products/catalogue. (0 feature)
+• view all product details. (0 feature)
+• access a search bar and navigation bar. (1 feature)
+• view a pop-ad of new featured item. (1 feature)
 
 ## As a seller I can:
-
-16. track my listings and view how many buyers have bid for my products. 
+• sell items (1 feature)
+• track my listings and view how many buyers have bid for my products. (1 feature)
 
 ## 4. Feedback for Features(16):
 • Registration, Login, Logout, 2-factor authentication (as per class instruction)
-
 • Order history
-
 • Order tracking
-
 • Customer service system (ticketing)/invoice **(How many features in the ticketing system? The user creates a service ticket and then admins respond? 2?)**
-
 • Cart where client can add/delete/view details for items. **(add to cart, delete from cart?)**
-
 • Checkout/payments
-
 • Seller listing/sales tracking **(2)**
-
 • Products/Catalogue
-
 • Product details
-
 • Localisation EN/FR **(This is part of the base requirements)**
-
 • Save/hold/watchlist item before bid/purchase. As well as add and delete item from watchlist. **(add to and delete from watchlist?)**
-
 • Bidder history (last bid)
-
 • Search bar 
-
 • Navigation bar **(Web application navigation is a fact of life. Is this a special navigation bar?)**
-
 • Contact page (form) for the client to the store about any queries they have.  **(Who for?)**
-
 • Pop-ad of new featured item
-
 • Social media/About us page **(Unless there is interaction with this feature, it's just part of the static webpages and does not count.)**
-
 **(Please rephrase everything as follows: As a user (or other role), I can do something)**
 
 ## 5. Estimated Time:
