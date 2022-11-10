@@ -48,7 +48,7 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 • view a pop-ad of new featured item. (1 feature)
 
 ## As a seller I can:
-• sell items (1 feature)
+• sell/delete items (2 feature)
 
 • track my listings and view how many buyers have bid for my products. (1 feature)
 
