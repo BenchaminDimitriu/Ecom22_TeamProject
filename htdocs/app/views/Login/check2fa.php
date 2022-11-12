@@ -50,7 +50,6 @@ if(isset($_GET['message'])){
   </div>
 </nav>
 
-<div class="bg-image"style="background-image: url('../../images/listing.png');">
 
 <form action='' method='post'>
 	<label>Username: <?= $_SESSION['username']?> <input type="text" name="username" /></label><br>

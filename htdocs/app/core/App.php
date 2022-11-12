@@ -3,7 +3,7 @@ namespace app\core;
 
 class App{
 	private $controller = 'Main';
-	private $method = 'index';
+	private $method = 'home';
 
 	public function __construct(){
 		//echo $_GET['url'];

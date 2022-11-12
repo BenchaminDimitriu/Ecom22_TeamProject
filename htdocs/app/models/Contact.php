@@ -11,28 +11,35 @@ class Contact extends \app\core\Model{
 		return $STMT->fetchAll();
 	}
 
-	public function get($invoice_id){
-		$SQL = "SELECT * FROM contact WHERE invoice_id=:invoice_id";
+	public function get($contact_id){
+		$SQL = "SELECT * FROM contact WHERE contact_id=:contact_id";
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['invoice_id'=>$invoice_id]);
+		$STMT->execute(['contact_id'=>$contact_id]);
 		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Contact');
 		return $STMT->fetch();
 	}
 
-	
-	public function insert(){
-		$SQL = "INSERT INTO contact (invoice_id, buyer_id, seller_id, message) VALUES (:invoice_id, :buyer_id, :seller_id, :message)";
+	public function getSeller($seller_id){
+		$SQL = "SELECT * FROM contact WHERE seller_id=:seller_id";
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['invoice_id'=>$this->invoice_id,
-						'buyer_id'=>$this->buyer_id,
+		$STMT->execute(['seller_id'=>$seller_id]);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Contact');
+		return $STMT->fetchAll();
+	}
+
+	public function insert(){
+		$SQL = "INSERT INTO contact (buyer_id, seller_id, title, message) VALUES (:buyer_id, :seller_id, :title, :message)";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['buyer_id'=>$this->buyer_id,
 						'seller_id'=>$this->seller_id,
+						'title'=>$this->title,
 						'message'=>$this->message]);
 		return self::$_connection->lastInsertId();
 	}
 
 	public function delete(){
-		$SQL = "DELETE FROM contact WHERE invoice_id=:invoice_id";
+		$SQL = "DELETE FROM contact WHERE contact_id=:contact_id";
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['invoice_id'=>$this->invoice_id]);
+		$STMT->execute(['contact_id'=>$this->contact_id]);
 	}	
 }

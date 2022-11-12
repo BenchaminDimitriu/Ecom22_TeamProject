@@ -1,7 +1,7 @@
 <html>
 <head>
 
-<title>Seller listings</title>
+<title>My Message Board</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
@@ -10,23 +10,30 @@
 body{
 background-color: steelblue;
 } 
+.card {
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+}
 </style>
 </head>
 
 <body>
-
- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">AucBay</a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">ShopMart</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+  <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="http://localhost/Main/home">Home <span class="sr-only"></span></a>
       </li>
-        <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Seller/index">Profile</a>
+         <li class="nav-item">
+        <a class="nav-link" href="http://localhost/Main/catalogue">Catalogue</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="http://localhost/Seller/profile">Profile</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="http://localhost/Seller/listings">Listing</a>
@@ -40,42 +47,44 @@ background-color: steelblue;
        <li class="nav-item">
         <a class="nav-link" href="http://localhost/Login/logout">Logout</a>
       </li>
-        </div>
       </li>
     </ul>
   </div>
 </nav>
 
-  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
-    <div class="container h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-          <div class="card" style="border-radius: 20px;">
-            <div class="card-body p-5">
-              <h2 class="text-center mb-5">Seller Stats</h2>
-              
-                <form action='' enctype="multipart/form-data" method='post'>
-                  <div class="form-outline mb-4">
+</br>
+</br>
+<div class="card w-75">
+<div class="card-body">
+<div class="mask d-flex align-items-center h-100 gradient-custom-3">
+<div class="card" style="border-radius: 20px;">
+<div class="card-body p-200" style="" >
+
+<h2 class="text-center mb-5">My Messages</h2>
+            
+<form action='' enctype="multipart/form-data" method='post'>
+<div class="form-outline mb-4">
                     
-    <table width="100%" border="1" cellpadding="5" cellspacing="5">
-    <tr><th>Name</th><th>Price</th><th>Description</th><th>Image</th></tr>
+<table width="100%" border="1" cellpadding="5" cellspacing="5">
+<tr><th>Buyer</th><th>Title</th><th>Message</th></tr>
 	
-	<?php
-	$item = new \app\models\Item();
-	$items = $item->getAll();
-	foreach ($data as $item) {
-		echo "<tr>
-		<td type=name>$item->item_name</td>
-		<td type=name>$item->item_price</td>
-		<td type=name>$item->item_description</td>
-		<td> <img src='/images/".$item->item_image."'style='max-width:200px;max-height:100px'/></td></td>
-		</td>
-		</tr>";
-	}
-?>
+          	<?php
+          	$contact = new \app\models\Contact();
+          	$contacts = $contact->getAll();
+          	foreach ($data as $contact) {
+          		echo "<tr>
+              <td type=name>$contact->buyer_id</td> 
+          		<td type=name>$contact->title</td>
+              <td type=name>$contact->message</td>
+              <td type=action>
+          		</td>
+          		</tr>";
+          	}
+          ?>
 
 </table>
-                  </div>  
+    
+                 
                 </div>
               </form>
             </div>

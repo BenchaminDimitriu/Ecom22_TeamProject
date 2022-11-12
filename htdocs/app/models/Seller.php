@@ -29,6 +29,14 @@ class Seller extends \app\core\Model{
 		return self::$_connection->lastInsertId();
 	}
 
+		public function getForContact($seller_id){
+		$SQL = "SELECT * FROM seller WHERE seller_id=:seller_id";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['seller_id'=>$seller_id]);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Seller');
+		return $STMT->fetchAll();
+	}
+
 	public function update(){
 		$SQL = "UPDATE seller SET seller_fname=:seller_fname, seller_lname=:seller_lname, seller_email=:seller_email WHERE seller_id=:seller_id";
 		$STMT = self::$_connection->prepare($SQL);

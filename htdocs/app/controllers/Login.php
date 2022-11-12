@@ -3,7 +3,7 @@ namespace app\controllers;
 
 class Login extends \app\core\Controller{
 
-	public function index(){
+	public function home(){
 		if(isset($_POST['action'])){
 			$user = new \app\models\Login();
 			$user = $user->get($_POST['username']);
@@ -40,7 +40,7 @@ class Login extends \app\core\Controller{
 		}
 	}
 
-	//#[\app\filters\Login]
+	#[\app\filters\Login]
 	public function account(){
 		//password modification
 		if(isset($_POST['action'])){
@@ -93,10 +93,10 @@ class Login extends \app\core\Controller{
 
 	}
 
-	#[\app\filters\Admin]
-	public function admin(){
-		echo "Yay!";
-	}
+	// #[\app\filters\Admin]
+	// public function admin(){
+	// 	echo "Yay!";
+	// }
 	// Use: /Default/makeQRCode?data=protocol://address
 	//http://localhost/User/makeQRCode?data=ABC
 	// data encode data you provide it

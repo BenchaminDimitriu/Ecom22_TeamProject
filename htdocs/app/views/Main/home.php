@@ -1,7 +1,7 @@
 <html>
 <head>
 
-	<title>Welcome to AucBay</title>
+	<title>Welcome to ShopMart</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
@@ -54,7 +54,10 @@
 
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item active">
-                <a class="nav-link" href="Main/index" target="_blank"><strong>AucBay</strong></a>
+                <a class="nav-link" href="Main/index" target="_blank"><strong>ShopMart</strong></a>
+            </li>
+             <li class="nav-item">
+            <a class="nav-link" href="http://localhost/Main/index">Catalogue</a>
             </li>
               <li class="nav-item">
               <a class="nav-link" href="http://localhost/Login/register" target="_blank">Register</a>

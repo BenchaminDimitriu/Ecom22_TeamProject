@@ -16,17 +16,20 @@ background-color: steelblue;
 <body>
 
  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">AucBay</a>
+  <a class="navbar-brand" href="#">ShopMart</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+  <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="http://localhost/Main/home">Home <span class="sr-only"></span></a>
       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="http://localhost/Main/catalogue">Catalogue</a>
+      </li>
         <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Seller/index">Profile</a>
+        <a class="nav-link" href="http://localhost/Seller/profile">Profile</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="http://localhost/Seller/listings">Listing</a>
@@ -40,7 +43,6 @@ background-color: steelblue;
        <li class="nav-item">
         <a class="nav-link" href="http://localhost/Login/logout">Logout</a>
       </li>
-        </div>
       </li>
     </ul>
   </div>
@@ -54,7 +56,7 @@ background-color: steelblue;
             <div class="card-body p-5">
               <h2 class="text-center mb-5">My Profile</h2>
             
-                <!-- <a href="/Seller/editProfile"><center>Edit Profile</center></a> -->
+
                 <button class='btn btn-warning'> <a class='nav-link' href="/Seller/editProfile"><center>Edit Profile</center></a></button>
                 </br>
                 </br>
