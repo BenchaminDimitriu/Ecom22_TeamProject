@@ -22,7 +22,7 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 
 • access a cart that can add/delete/view details of purchased items. (2 features)
 
-• save/hold/watchlist item before bid/purchase. As well as add and delete item from my watchlist. (2 features)
+• save/delete watchlist item before purchase.(2 features)
 
 • access a checkout/payment where I can input my information to pay for my purchases. (1 feature)
 
@@ -31,7 +31,7 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 
 • create/edit my profile. (4 features)
 
-• view catalogue. (0 feature)
+• view catalogue. (1 feature)
 
 • view the homepage change based on the holiday. (1 feature)
 
