@@ -5,12 +5,12 @@ Name of Team: The Crying kids
 Contributors: Dimitriu Jonathan, Emmy Ea
 
 ## 1. Clientele:
-A client that needs a Web Application**(The term Web Application is more accurate because we are not building a static set of webpages)** to sell auctioned antiques and keep track of inventory. Have features for clients to easily navigate the **Web Application** for the lastest bids and purchases/sales. 
+A client that needs a Web Application**(The term Web Application is more accurate because we are not building a static set of webpages)** to sell antiques and keep track of inventory. Have features for clients to easily navigate the **Web Application** for the purchases. 
 
 ## 2. Project description/goals: 
-Our goal is to build an auction model **Web Application** geared towards selling antiques. 
+Our goal is to build an store **Web Application** geared towards selling antiques. 
 In other words, it will be an online garage sale which would aim towards people that
-are close to them. Somewhat similar to Ebay. 
+are close to them. Somewhat similar to Ebay.  
 
 ## 3. Platform of choice:
 We will be using Sublime Text as our text editor. We will be using PHP, HTML and CSS to create our Web Application. **(This is just a text editor. You may wish to talk about PHP, HTML, CSS, and JavaScript.)**
@@ -18,39 +18,33 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 ## As a buyer I can:
 • access my order history. I can view my list of complete orders in detail. (1 feature)
 
-• access my current bid by a order tracking page that displays my current ongoing bids. (1 feature)
-
 • access a seller's statistic such as the number of sold item, number of item the seller have. (1 feature)
 
-• access a cart that can add/delete/view details of items that can be bought now (cannot add to cart bidding items). (2 features)
-
-• bid on items on the catalogue by inputting my desired amount. (1 feature)
-
-• access a checkout/payment where I can input my information to pay for my purchases. (1 feature)
+• access a cart that can add/delete/view details of purchased items. (2 features)
 
 • save/hold/watchlist item before bid/purchase. As well as add and delete item from my watchlist. (2 features)
 
-• access a contact page (form) from buyer to sellers for inqueries. (1 features)
+• access a checkout/payment where I can input my information to pay for my purchases. (1 feature)
 
 ## As a seller and a buyer I can:
-• create/edit my profile. (2 features)
+• access registration, login, logout, 2-factor authentication (as per class instruction). (0 feature)
+
+• create/edit my profile. (4 features)
+
+• view catalogue. (0 feature)
 
 • view the homepage change based on the holiday. (1 feature)
 
-• access registration, login, logout, 2-factor authentication (as per class instruction). (0 feature)
-
-• view all products/catalogue. (0 feature)
-
-• view all product details. (0 feature)
+• send/reply a message to seller or buyer and view my messageboard(4 features)
 
 • access a search bar and navigation bar. (1 feature)
 
-• view a pop-ad of new featured item. (1 feature)
+• filter the catalogue by price. (1 feature)
 
 ## As a seller I can:
-• sell/delete items (2 feature)
+• sell/edit/delete items (3 features)
 
-• track my listings and view how many buyers have bid for my products. (1 feature)
+• view my listings. (1 feature)
 
 ## 4. Feedback for Features(16):
 • Registration, Login, Logout, 2-factor authentication (as per class instruction)
