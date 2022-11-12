@@ -42,7 +42,7 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 • filter the catalogue by price. (1 feature)
 
 ## As a seller I can:
-• sell/edit/delete items (3 features)
+• add/edit/delete items (3 features)
 
 • view my listings. (1 feature)
 
