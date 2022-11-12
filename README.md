@@ -5,15 +5,15 @@ Name of Team: The Crying kids
 Contributors: Dimitriu Jonathan, Emmy Ea
 
 ## 1. Clientele:
-A client that needs a Web Application**(The term Web Application is more accurate because we are not building a static set of webpages)** to sell antiques and keep track of inventory. Have features for clients to easily navigate the **Web Application** for the purchases. 
+A client that needs a Web Application to sell antiques and keep track of inventory. Have features for clients to easily navigate the Web Application for the purchases. 
 
 ## 2. Project description/goals: 
-Our goal is to build an store **Web Application** geared towards selling antiques. 
+Our goal is to build a store Web Application geared towards selling antiques. 
 In other words, it will be an online garage sale which would aim towards people that
 are close to them. Somewhat similar to Ebay.  
 
 ## 3. Platform of choice:
-We will be using Sublime Text as our text editor. We will be using PHP, HTML and CSS to create our Web Application. **(This is just a text editor. You may wish to talk about PHP, HTML, CSS, and JavaScript.)**
+We will be using Sublime Text as our text editor. We will be using PHP, HTML and CSS to create our Web Application. 
 
 ## As a buyer I can:
 • access my order history. I can view my list of complete orders in detail. (1 feature)
