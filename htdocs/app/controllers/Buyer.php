@@ -59,7 +59,9 @@ class Buyer extends \app\core\Controller{
 	}
 
 	public function messageboard(){
-		$this->view('Buyer/messageboard');
+		$contact = new \app\models\Contact();
+	    $contacts = $contact->getForBuyer($_SESSION['buyer_id']);
+		$this->view('Buyer/messageboard' , $contacts);
 	}
 
 	public function cart(){

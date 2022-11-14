@@ -108,6 +108,8 @@ class Seller extends \app\core\Controller{
 	}
 
 	public function messageboard(){
-		$this->view('Seller/messageboard');
+		$contact = new \app\models\Contact();
+	    $contacts = $contact->getForSellerContact($_SESSION['seller_id']);
+		$this->view('Seller/messageboard' , $contacts);
 	}
 }

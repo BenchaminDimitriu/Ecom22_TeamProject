@@ -19,7 +19,15 @@ class Contact extends \app\core\Model{
 		return $STMT->fetch();
 	}
 
-	public function getSeller($seller_id){
+	public function getForBuyer($buyer_id){
+		$SQL = "SELECT * FROM contact WHERE buyer_id=:buyer_id";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['buyer_id'=>$buyer_id]);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Contact');
+		return $STMT->fetchAll();
+	}
+
+	public function getForSellerContact($seller_id){
 		$SQL = "SELECT * FROM contact WHERE seller_id=:seller_id";
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['seller_id'=>$seller_id]);

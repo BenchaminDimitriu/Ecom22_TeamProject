@@ -28,6 +28,9 @@ background-color: steelblue;
        <li class="nav-item">
         <a class="nav-link" href="http://localhost/Seller/profile">Profile</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost/Buyer/messageboard">Message Board</a>
+      </li>
        <li class="nav-item">
         <a class="nav-link" href="http://localhost/Login/logout">Logout</a>
       </li>

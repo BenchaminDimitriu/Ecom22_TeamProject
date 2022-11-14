@@ -20,17 +20,17 @@ background-color: steelblue;
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="http://localhost/Main/home">ShopMart</a>
+  <a class="navbar-brand" href="#">ShopMart</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
+         <li class="nav-item">
+        <a class="nav-link" href="http://localhost/Main/catalogue">Catalogue</a>
+      </li>
        <li class="nav-item">
         <a class="nav-link" href="http://localhost/Seller/profile">Profile</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Seller/listings">Listing</a>
       </li>
        <li class="nav-item">
         <a class="nav-link" href="http://localhost/Login/logout">Logout</a>
@@ -55,19 +55,19 @@ background-color: steelblue;
                     
 <table width="100%" border="1" cellpadding="5" cellspacing="5">
 <tr><th>Buyer</th><th>Title</th><th>Message</th></tr>
-	
-          	<?php
-          	$contact = new \app\models\Contact();
-          	$contacts = $contact->getAll();
-          	foreach ($data as $contact) {
-          		echo "<tr>
+  
+            <?php
+            $contact = new \app\models\Contact();
+            $contacts = $contact->getAll();
+            foreach ($data as $contact) {
+              echo "<tr>
               <td type=name>$contact->buyer_id</td> 
-          		<td type=name>$contact->title</td>
+              <td type=name>$contact->title</td>
               <td type=name>$contact->message</td>
               <td type=action>
-          		</td>
-          		</tr>";
-          	}
+              </td>
+              </tr>";
+            }
           ?>
 
 </table>
