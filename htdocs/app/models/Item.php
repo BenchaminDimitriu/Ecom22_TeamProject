@@ -27,18 +27,10 @@ class Item extends \app\core\Model{
 		return $STMT->fetchAll();
 	}
 
-		public function search($searchTerm){
-		$SQL = "SELECT * FROM item WHERE item_name LIKE :searchTerm";
+		public function search($searchTerm, $order = "asc"){
+		$SQL = "SELECT * FROM item WHERE item_name LIKE :searchTerm  ORDER BY item_price " . ($order == 'asc'?'asc':'desc');
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['searchTerm'=>"%$searchTerm%"]);
-		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Item');
-		return $STMT->fetchAll();
-	}
-
-		public function filter(){
-		$SQL = "SELECT * FROM item ORDER BY item_price ASC";
-		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['item_price'=>$item_price]);
 		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Item');
 		return $STMT->fetchAll();
 	}

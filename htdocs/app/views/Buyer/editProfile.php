@@ -59,7 +59,7 @@ if(isset($_GET['error'])){
 
               <form action='' method='post'>
                 <div class="form-outline mb-4">
-                  <input type="text" id="inputFname" class="form-control form-control-lg" name="buyer_fname" required/>
+                  <input type="text" id="inputFname" value="<?= $data->buyer_fname ?>" class="form-control form-control-lg" name="buyer_fname" required/>
                   <label class="form-label" for="inputFname">First Name</label>
                 </div>
 

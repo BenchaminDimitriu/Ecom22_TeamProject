@@ -23,7 +23,7 @@ class Seller extends \app\core\Controller{
 			$seller->update();
 			header('location:/Seller/profile');
 		}else{
-			$this->view('Seller/editProfile');
+			$this->view('Seller/editProfile', $seller);
 		}
 
 	}

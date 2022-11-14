@@ -42,13 +42,13 @@ class Buyer extends \app\core\Controller{
 
 	}
 
-	public function contact(){
+	public function contact($seller_id){
 		$seller = new \app\models\Seller();
-		$sellers = $seller->getForContact($_SESSION['seller_id']);
+		$sellers = $seller->getForContact($seller_id);
 		if(isset($_POST['action'])){
 			$contact = new \app\models\Contact();
 			$contact->buyer_id = $_SESSION['buyer_id'];
-			//$contact->seller_id = $_SESSION['seller_id'];
+			$contact->seller_id = $seller_id;
 		    $contact->title = $_POST['title'];
 			$contact->message = $_POST['message'];
 			$contact->insert();
@@ -62,9 +62,8 @@ class Buyer extends \app\core\Controller{
 		$this->view('Buyer/messageboard');
 	}
 
-	public function addToCart($item_id){
-		
-
+	public function cart(){
+		$this->view('Buyer/cart');
 	}
 
 	public function deleteFromCart(){
@@ -72,8 +71,8 @@ class Buyer extends \app\core\Controller{
 	}
 
 
-	public function addToWatchlist(){
-
+	public function watchlist(){
+		$this->view('Buyer/watchlist');
 	}
 
 	public function deleteFromWatchlist(){

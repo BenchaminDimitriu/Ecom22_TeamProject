@@ -22,11 +22,11 @@ class Main extends \app\core\Controller{
 		$this->view('Main/catalogue', $items);
 	}
 
-	public function filter(){
-		$item = new \app\models\Item();
-		$items = $item->filter($_GET['filter']);
-		$this->view('Main/catalogue', $items);
-	}
+	// public function filter(){
+	// 	$item = new \app\models\Item();
+	// 	$items = $item->filter($_GET['filter']);
+	// 	$this->view('Main/catalogue', $items);
+	// }
 	// public function buy(){
 	// }
 

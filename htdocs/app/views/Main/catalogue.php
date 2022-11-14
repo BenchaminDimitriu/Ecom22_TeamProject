@@ -34,9 +34,15 @@ background-color: steelblue;
     <ul class="navbar-nav">
 
    <form action="/Main/search" method="get" style='display:inline-block'>         
-      <div class="input-group">
-          <input type="search" name='search_term' class="form-control" placeholder="Enter search term" />
+        <div class="input-group">
+        <input type="search" name='search_term' class="form-control" placeholder="Enter search term" />
         <button type="submit" class="btn btn-primary" value="Search"><i class="bi-search"></i></button>
+        
+    <!--         <label>Filter by price:</label>
+    <select name="filter">
+        <option value="asc" <?php if(isset($_GET['search_term']) && $_GET['search_term'] == "asc") {echo "selected";} ?>>Lowest to Highest</option>
+        <option value="desc"  <?php if(isset($_GET['search_term']) && $_GET['search_term'] == "desc") {echo "selected";} ?>>Highest to Lowest</option>
+    </select> -->
       </div>    
     </form>
 
@@ -53,18 +59,6 @@ background-color: steelblue;
     </ul>
   </div>
 </nav>
-
-</br>
-  <!-- <form action="/Main/filter" method="get" style='display:inline-block'>      -->
-  <form action="" method="get" style='display:inline-block'>     
-  <label style="color:white;">Filter by price:</label>
-  <select name="filter">
-    <option value="asc" <?php if(isset($_GET['filter']) && $_GET['filter'] == "asc") {echo "selected";} ?>>Lowest to Highest</option>
-    <option value="desc"  <?php if(isset($_GET['filter']) && $_GET['filter'] == "desc") {echo "selected";} ?>>Highest to Lowest</option>
-  </select>
-  <input type="submit" value="Filter">
-</form>
-
 
 </br>
 </br>
@@ -96,7 +90,7 @@ background-color: steelblue;
                           <button class='btn btn-info'><a class='nav-link' href='/Buyer/contact/$item->seller_id'>Contact seller</a></button>
                           </td>
                           <td type=action>
-                          <button class='btn btn-secondary'><a class='nav-link' href='/Seller/delete/$item->item_id'>Add to watchlist</a></button>
+                          <button class='btn btn-secondary'><a class='nav-link' href='/Buyer/watchlist/$item->item_id'>Add to watchlist</a></button>
                           </td>
                       		<td type=action>
                       	  <button class='btn btn-warning'><a class='nav-link' href='/Buyer/addToCart/$item->item_id'>Add to cart</a></button>
