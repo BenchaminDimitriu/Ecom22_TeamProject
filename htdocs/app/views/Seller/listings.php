@@ -1,7 +1,7 @@
 <html>
 <head>
 
-<title>Seller listings</title>
+<title><?=_("Seller listings")?></title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
@@ -20,20 +20,20 @@ background-color: steelblue;
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="http://localhost/Main/home">ShopMart</a>
+  <a class="navbar-brand" href="http://localhost/Main/home"><?=_("ShopMart")?></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
        <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Seller/profile">Profile</a>
+        <a class="nav-link" href="http://localhost/Seller/profile"><?=_("Profile")?></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Seller/listings">Listing</a>
+        <a class="nav-link" href="http://localhost/Seller/listings"><?=_("Listing")?></a>
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Login/logout">Logout</a>
+        <a class="nav-link" href="http://localhost/Login/logout"><?=_("Logout")?></a>
       </li>
       </li>
     </ul>
@@ -48,9 +48,9 @@ background-color: steelblue;
 <div class="card" style="border-radius: 20px;">
 <div class="card-body p-200" style="" >
 
-<h2 class="text-center mb-5">My Listing</h2>
+<h2 class="text-center mb-5"><?=_("My Listing")?></h2>
             
-<button class='btn btn-success'> <a class='nav-link' href="/Seller/add"><center>Add a new item</center></a></button>
+<button class='btn btn-success'> <a class='nav-link' href="/Seller/add"><center><?=_("Add a new item")?></center></a></button>
 </br>
 </br>
 
@@ -58,8 +58,9 @@ background-color: steelblue;
 <div class="form-outline mb-4">
                     
 <table width="100%" border="1" cellpadding="5" cellspacing="5">
-<tr><th>Name</th><th>Description</th><th>Image</th><th>Price</th><th>Action</th><th>Action</th></tr>
+<tr><th><?=_("Name")?></th><th><?=_("Description")?></th><th><?=_("Image")?></th><th><?=_("Price")?></th><th><?=_("Action")?></th><th><?=_("Action")?></th></tr>
 	
+<!--   how to localise that? -->
           	<?php
           	$item = new \app\models\Item();
           	$items = $item->getAll();

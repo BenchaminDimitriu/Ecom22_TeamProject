@@ -1,7 +1,7 @@
 <html>
 <head>
 
-<title>Buyer Profile</title>
+<title><?=_("Buyer Profile")?></title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
@@ -18,23 +18,23 @@ background-color: steelblue;
 
 
  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="http://localhost/Main/home">ShopMart</a>
+  <a class="navbar-brand" href="http://localhost/Main/home"><?=_("ShopMart")?></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
        <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Main/catalogue">Catalogue</a>
+        <a class="nav-link" href="http://localhost/Main/catalogue"><?=_("Catalogue")?></a>
       </li>
         <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Buyer/profile">Profile</a>
+        <a class="nav-link" href="http://localhost/Buyer/profile"><?=_("Profile")?></a>
       </li>
         <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Buyer/messageboard">Message Board</a>
+        <a class="nav-link" href="http://localhost/Buyer/messageboard"><?=_("Message Board")?></a>
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Login/logout">Logout</a>
+        <a class="nav-link" href="http://localhost/Login/logout"><?=_("Logout")?></a>
       </li>
       </li>
     </ul>
@@ -47,32 +47,32 @@ background-color: steelblue;
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
           <div class="card" style="border-radius: 20px;">
             <div class="card-body p-5">
-              <h2 class="text-center mb-5">My Profile</h2>
+              <h2 class="text-center mb-5"><?=_("My Profile")?></h2>
             
 
-                <button class='btn btn-warning'> <a class='nav-link' href="/Buyer/editProfile"><center>Edit Profile</center></a></button>
+                <button class='btn btn-warning'> <a class='nav-link' href="/Buyer/editProfile"><center><?=_("Edit Profile")?></center></a></button>
                 </br>
                 </br>
               
               
                 <form action='' enctype="multipart/form-data" method='post'>
                   <div class="form-outline mb-4">
-                        
+
                            <dl>
                   <dt>
-                    First name:
+                    <?=_("First name:")?>
                   </dt>
                   <dd>
                     <?= $data['buyer']->buyer_fname ?>
                   </dd>
                   <dt>
-                    Last name:
+                    <?=_("Last name:")?>
                   </dt>
                   <dd>
                     <?= $data['buyer']->buyer_lname ?>
                   </dd>
                   <dt>
-                    Email:
+                    <?=_("Email:")?>
                   </dt>
                   <dd>
                     <?= $data['buyer']->buyer_email ?>

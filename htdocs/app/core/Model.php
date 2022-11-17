@@ -15,7 +15,7 @@ class Model{
 											$username,$password);
 			self::$_connection->setAttribute(\PDO::ATTR_ERRMODE,\PDO::ERRMODE_EXCEPTION);
 		}catch(\Exception $e){
-			echo "Failed connecting to the database";
+			echo _("Failed connecting to the database");
 			exit(0);
 		}
 	}

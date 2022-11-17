@@ -18,6 +18,7 @@ class Login extends \app\core\Controller{
 				$_SESSION['seller_id'] = $seller->seller_id;
 				header('location:/Login/account');
 			}else{
+				/*how to localise that?*/
 				header('location:/Login/index?error=Wrong username/password combination!');
 			}
 		}else{
@@ -51,11 +52,14 @@ class Login extends \app\core\Controller{
 				if($_POST['password'] == $_POST['password_confirm']){
 					$user->password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
 					$user->updatePassword();
+					/*and this*/
 					header('location:/Login/account?message=Password changed successfully.');
 				}else{
+					/*and that*/
 					header('location:/Login/account?error=Passwords do not match.');
 				}
-			}else{
+			}else{ 
+				/*and this*/
 				header('location:/Login/account?error=Wrong old password provided.');
 			}
 		}else{
@@ -81,9 +85,11 @@ class Login extends \app\core\Controller{
 					$user->insert();
 					header('location:/Login/index');
 				}else{
+					/*this aswell */
 					header('location:/Login/register?error=The username "'.$_POST['username'].'" is already in use. Select another.');
 				}
-			}else{
+			}else{ 
+				/*that too*/
 				header('location:/Login/register?error=Passwords do not match.');
 			}
 
@@ -118,6 +124,7 @@ class Login extends \app\core\Controller{
 			 $user->update2fa();
 		 	 header('location:/Login/account');
 		 }else{
+		 	/*and finally this one*/
 		     header('location:/Login/setup2fa?error=token not verified!');//reload
 		 	}
 		 }else{

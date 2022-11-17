@@ -1,7 +1,7 @@
 <html>
 <head>
 
-<title>Seller Profile</title>
+<title><?=_("Seller Profile")?></title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
@@ -16,20 +16,20 @@ background-color: steelblue;
 <body>
 
  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="http://localhost/Main/home">ShopMart</a>
+  <a class="navbar-brand" href="http://localhost/Main/home"><?=_("ShopMart")?></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Seller/profile">Profile</a>
+        <a class="nav-link" href="http://localhost/Seller/profile"><?=_("Profile")?></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Seller/listings">Listing</a>
+        <a class="nav-link" href="http://localhost/Seller/listings"><?=_("Listing")?></a>
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Login/logout">Logout</a>
+        <a class="nav-link" href="http://localhost/Login/logout"><?=_("Logout")?></a>
       </li>
       </li>
     </ul>
@@ -42,10 +42,10 @@ background-color: steelblue;
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
           <div class="card" style="border-radius: 20px;">
             <div class="card-body p-5">
-              <h2 class="text-center mb-5">My Profile</h2>
+              <h2 class="text-center mb-5"><?=_("My Profile")?></h2>
             
 
-                <button class='btn btn-warning'> <a class='nav-link' href="/Seller/editProfile"><center>Edit Profile</center></a></button>
+                <button class='btn btn-warning'> <a class='nav-link' href="/Seller/editProfile"><center><?=_("Edit Profile")?></center></a></button>
                 </br>
                 </br>
               
@@ -55,19 +55,19 @@ background-color: steelblue;
                         
                 <dl>
                   <dt>
-                    First name:
+                    <?=_("First name:")?>
                   </dt>
                   <dd>
                     <?= $data['seller']->seller_fname ?>
                   </dd>
                   <dt>
-                    Last name:
+                    <?=_("Last name:")?>
                   </dt>
                   <dd>
                     <?= $data['seller']->seller_lname ?>
                   </dd>
                   <dt>
-                    Email:
+                    <?=_("Email:")?>
                   </dt>
                   <dd>
                     <?= $data['seller']->seller_email ?>

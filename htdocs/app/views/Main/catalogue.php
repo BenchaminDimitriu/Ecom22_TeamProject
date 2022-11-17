@@ -26,13 +26,14 @@ background-color: steelblue;
 <body>
 
  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="http://localhost/Main/home">ShopMart</a>
+  <a class="navbar-brand" href="http://localhost/Main/home"><?=_("ShopMart")?></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
 
+<!--         how to localise that? -->
    <form action="/Main/search" method="get" style='display:inline-block'>         
         <div class="input-group">
         <input type="search" name='search_term' class="form-control" placeholder="Enter search term" />
@@ -43,17 +44,21 @@ background-color: steelblue;
         <option value="asc" <?php if(isset($_GET['search_term']) && $_GET['search_term'] == "asc") {echo "selected";} ?>>Lowest to Highest</option>
         <option value="desc"  <?php if(isset($_GET['search_term']) && $_GET['search_term'] == "desc") {echo "selected";} ?>>Highest to Lowest</option>
     </select> -->
-      </div>    
+      </div>
+<!--                      ^
+                          |
+                        ?????            -->
+
     </form>
 
        <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Main/catalogue">Catalogue</a>
+        <a class="nav-link" href="http://localhost/Main/catalogue"><?=_("Catalogue")?></a>
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Buyer/profile">Profile</a>
+        <a class="nav-link" href="http://localhost/Buyer/profile"><?=_("Profile")?></a>
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Login/logout">Logout</a>
+        <a class="nav-link" href="http://localhost/Login/logout"><?=_("Logout")?></a>
       </li>
       </li>
     </ul>
@@ -69,14 +74,15 @@ background-color: steelblue;
 <div class="card-body p-200" style="" >
 
 
-<h2 class="text-center mb-5">Catalogue</h2>
+<h2 class="text-center mb-5"><?=_("Catalogue")?></h2>
      
 <form action='' enctype="multipart/form-data" method='post'>
 <div class="form-outline mb-4">
 <table width="100%" border="1" cellpadding="5" cellspacing="5">
 
-<tr><th>Name</th><th>Description</th><th>Price</th><th>Image</th><th>Action</th><th>Action</th><th>Action</th></tr>
+<tr><th><?=_("Name")?></th><th><?=_("Description")?></th><th><?=_("Price")?></th><th><?=_("Image")?></th><th><?=_("Action")?></th><th><?=_("Action")?></th><th><?=_("Action")?></th></tr>
                 	
+<!--                     how to localise that? -->
                       	<?php
                       	$item = new \app\models\Item();
                       	$items = $item->getAll();

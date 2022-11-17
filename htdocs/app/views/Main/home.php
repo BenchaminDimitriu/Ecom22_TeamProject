@@ -1,7 +1,7 @@
 <html>
 <head>
 
-	<title>Welcome to ShopMart</title>
+	<title><?=_("Welcome to ShopMart")?></title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
@@ -54,16 +54,16 @@
 
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item active">
-                <a class="nav-link" href="http://localhost/"><strong>ShopMart</strong></a>
+                <a class="nav-link" href="http://localhost/Main/home"><strong><?=_("ShopMart")?></strong></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="http://localhost/Login/register" target="_blank">Register</a>
+              <a class="nav-link" href="http://localhost/Login/register"><?=_("Register")?></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="http://localhost/Login/index" target="_blank" id="login">Login</a>
+              <a class="nav-link" href="http://localhost/Login/index" id="login"><?=_("Login")?></a>
             </li>
               <li class="nav-item">
-              <a class="nav-link" href="/Login/logout" target="_blank" id="logout">Logout</a>
+              <a class="nav-link" href="/Login/logout" id="logout"><?=_("Logout")?></a>
             </li>
           </ul>
 
@@ -83,8 +83,8 @@
         <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
           <div class="d-flex justify-content-center align-items-center h-100">
             <div class="text-white text-center">
-                  <h1 class="mb-3">Welcome to ShopMart</h1>
-                  <h5 class="mb-4">By Jonathan Dimitriu and Emmy Ea</h5>
+                  <h1 class="mb-3"><?=_("Welcome to ShopMart")?></h1>
+                  <h5 class="mb-4"><?=_("By Jonathan Dimitriu and Emmy Ea")?></h5>
             </div>
           </div>
         </div>

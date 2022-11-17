@@ -1,7 +1,7 @@
 <html>
 <head>
 
-<title>Add Seller Item</title>
+<title><?=_("Edit Seller Item")?></title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
@@ -16,20 +16,20 @@ background-color: steelblue;
 
 <body>
  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="http://localhost/Main/home">ShopMart</a>
+  <a class="navbar-brand" href="http://localhost/Main/home"><?=_("ShopMart")?></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
        <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Seller/profile">Profile</a>
+        <a class="nav-link" href="http://localhost/Seller/profile"><?=_("Profile")?></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Seller/listings">Listing</a>
+        <a class="nav-link" href="http://localhost/Seller/listings"><?=_("Listing")?></a>
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Login/logout">Logout</a>
+        <a class="nav-link" href="http://localhost/Login/logout"><?=_("Logout")?></a>
       </li>
     </div>
       </li>
@@ -43,32 +43,32 @@ background-color: steelblue;
           <div class="card" style="border-radius: 20px;">
             <div class="card-body p-5">
 
-<h2 class="text-center mb-5">Edit Item</h2>
+<h2 class="text-center mb-5"><?=_("Edit Item")?></h2>
 
 <form action='' method='post' enctype='multipart/form-data'>
 <div class="form-outline mb-4">
-<label class="form-label">Name</label>
+<label class="form-label"><?=_("Name")?></label>
 <input type="text" name="item_name" value="<?= $data['item']->item_name ?>">
 </div>
 
 <div class="form-outline mb-4">
-<label>Price</label>
+<label<?=_(">Price")?></label>
  <input type="text" type="text" name="item_price" value="<?= $data['item']->item_price ?>">
 </div>
 
 <div class="form-outline mb-4">
-<label>Description</label>
+<label><?=_("Description")?></label>
 <textarea class="form-control" rows="3" name="item_description" ><?= $data['item']->item_description ?></textarea>
 </div>
 
 <div class="form-outline mb-4">
-<label class="form-label">Select Picture
+<label class="form-label"><?=_("Select Picture")?>
 <input type="file" name="item_image" id="item_image"class="form-control form-control-lg"/></label>
 <img id='item_image_preview' src='/images/<?= $data['item']->item_image ?>' value="<?= $data['item']->item_image ?>" style="max-width:200px;max-height:200px" id="item_image_preview" />
 </div>
 
 <div class="d-flex justify-content-center">
-<button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4" name="action">Edit</button>
+<button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4" name="action"><?=_("Edit")?></button>
 </div>
 </form>
 <script>

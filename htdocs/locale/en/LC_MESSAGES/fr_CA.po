@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-03 12:15-0400\n"
-"PO-Revision-Date: 2022-11-03 12:19-0400\n"
+"POT-Creation-Date: 2022-11-17 12:23-0500\n"
+"PO-Revision-Date: 2022-11-17 12:30-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_CA\n"
@@ -18,14 +18,39 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.2\n"
 
-#: app/views/Main/index.php:3
-msgid "Index"
-msgstr "Indice"
+#: app/views/Login/index.php:3 app/views/Login/index.php:35
+#: app/views/Login/index.php:54
+msgid "Login"
+msgstr "Connexion"
 
-#: app/views/Main/index.php:17
-msgid "Hello World!"
-msgstr "Bonjour le monde !"
+#: app/views/Login/index.php:25
+msgid "ShopMart"
+msgstr "MarchéMagasin"
 
-#: app/views/Main/index.php:18
-msgid "I like cats."
-msgstr "J'aime les chats."
+#: app/views/Login/index.php:32
+msgid "Register"
+msgstr "S'inscrire"
+
+#: app/views/Login/index.php:38
+msgid "Logout"
+msgstr "Déconnexion"
+
+#: app/views/Login/index.php:59
+msgid "Username"
+msgstr "Nom d'utilisateur"
+
+#: app/views/Login/index.php:64
+msgid "Password"
+msgstr "Mot de passe"
+
+#: app/views/Login/index.php:69
+msgid "Get Started"
+msgstr "Commencer"
+
+#: app/views/Login/index.php:71
+msgid "New here?"
+msgstr "Nouveau ici?"
+
+#: app/views/Login/index.php:72
+msgid "Create an Account"
+msgstr "Créer un compte"

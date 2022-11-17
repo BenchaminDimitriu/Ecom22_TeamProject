@@ -1,7 +1,7 @@
 <html>
 <head>
 
-<title>My Message Board</title>
+<title><?=_("My Message Board")?></title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
@@ -20,20 +20,20 @@ background-color: steelblue;
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">ShopMart</a>
+  <a class="navbar-brand" href="http://localhost/Main/home"><?=_("ShopMart")?></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
          <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Main/catalogue">Catalogue</a>
+        <a class="nav-link" href="http://localhost/Main/catalogue"><?=_("Catalogue")?></a>
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Seller/profile">Profile</a>
+        <a class="nav-link" href="http://localhost/Seller/profile"><?=_("Profile")?></a>
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Login/logout">Logout</a>
+        <a class="nav-link" href="http://localhost/Login/logout"><?=_("Logout")?></a>
       </li>
       </li>
     </ul>
@@ -48,14 +48,15 @@ background-color: steelblue;
 <div class="card" style="border-radius: 20px;">
 <div class="card-body p-200" style="" >
 
-<h2 class="text-center mb-5">My Messages</h2>
+<h2 class="text-center mb-5"><?=_("My Messages")?></h2>
             
 <form action='' enctype="multipart/form-data" method='post'>
 <div class="form-outline mb-4">
                     
 <table width="100%" border="1" cellpadding="5" cellspacing="5">
-<tr><th>Buyer</th><th>Title</th><th>Message</th></tr>
+<tr><th><?=_("Buyer")?></th><th><?=_("Title")?></th><th><?=_("Message")?></th></tr>
   
+<!--   how to localise that? -->
             <?php
             $contact = new \app\models\Contact();
             $contacts = $contact->getAll();

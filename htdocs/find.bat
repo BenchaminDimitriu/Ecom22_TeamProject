@@ -1,1 +1,1 @@
-"\Program Files (x86)\GnuWin32\bin\find" %*
+"\GnuWin32\find\bin\find" %*
