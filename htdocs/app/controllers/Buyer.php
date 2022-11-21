@@ -74,6 +74,8 @@ class Buyer extends \app\core\Controller{
 	public function addToCart(){
 	   $cart = new \app\models\Cart();
 	   $carts = $cart->getAll();
+
+	   
 	   $this->view('Buyer/cart' , $carts);
 	}
 

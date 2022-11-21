@@ -43,15 +43,15 @@ background-color: steelblue;
           <div class="card" style="border-radius: 20px;">
             <div class="card-body p-5">
 
-<h2 class="text-center mb-5"><?=_("Add Item"?></h2>
+<h2 class="text-center mb-5"><?=_("Add Item")?></h2>
 
 <form action='' method='post' enctype='multipart/form-data'>
 <div class="form-outline mb-4">
-<label class="form-label"><?=_("Item Name:")?><input class="form-control" rows="3" type="text" name="item_name" /></label><br>
+<label class="form-label"><?=_("Item Name:")?><input class="form-control" rows="3" type="text" name="item_name" required /></label><br>
 </div>
 
 <div class="form-outline mb-4">
-<label><?=_("Price:")?><input class="form-control" rows="3" type="text" name="item_price" /></label><br>
+<label><?=_("Price:")?><input class="form-control" rows="3" type="number" step="any" min="0" name="item_price" required /></label><br>
 </div>
 
 <div class="form-outline mb-4">

@@ -20,9 +20,9 @@ class Cart extends \app\core\Model{
 	}
 
 	public function create(){
-		$SQL = "INSERT INTO cart(order_id, item_id, qty, price) VALUES (:order_id, :item_id, :qty, :price)";
+		$SQL = "INSERT INTO cart(user_id, item_id, qty, price) VALUES (:user_id, :item_id, :qty, :price)";
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['order_id'=>$this->order_id,
+		$STMT->execute(['user_id'=>$this->user_id,
 						'item_id'=>$this->item_id,
 						'qty'=>$this->qty,
 						'price'=>$this->price]);
