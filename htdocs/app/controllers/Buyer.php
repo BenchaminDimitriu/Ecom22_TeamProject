@@ -85,6 +85,13 @@ class Buyer extends \app\core\Controller{
 
 	}
 
+	public function checkout(){
+
+	$this->view('Buyer/checkout');
+
+	}
+
+
 	public function deleteFromCart(){
 	}
 
