@@ -50,7 +50,7 @@ background-color: steelblue;
 <div class="card" style="border-radius: 20px;">
 <div class="card-body p-200" style="" >
 
-<h2 class="text-center mb-5"><?=_("Cart")?></h2>
+<h2 class="text-center mb-5"><?=_("Checkout")?></h2>
             
 <form action='' enctype="multipart/form-data" method='post'>
 <div class="form-outline mb-4">
@@ -58,7 +58,7 @@ background-color: steelblue;
 <!-- <th><?=_("Quantity")?></th> -->
                     
 <table width="100%" border="1" cellpadding="5" cellspacing="5">
-<tr><th><?=_("Picture")?></th><th><?=_("Name")?></th><th><?=_("Unit Price")?></th><th><?=_("Action")?></th></tr>
+<tr><th><?=_("Picture")?></th><th><?=_("Name")?></th><th><?=_("Unit Price")?></th></tr>
 	
 <!--   how to localise that? -->
           	<?php
