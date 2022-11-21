@@ -60,7 +60,6 @@ background-color: steelblue;
 <table width="100%" border="1" cellpadding="5" cellspacing="5">
 <tr><th><?=_("Picture")?></th><th><?=_("Name")?></th><th><?=_("Unit Price")?></th><th><?=_("Action")?></th></tr>
 	
-<!--   how to localise that? -->
           	<?php
           	$cart = new \app\models\Cart();
           	$carts = $cart->getAll();

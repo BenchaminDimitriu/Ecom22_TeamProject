@@ -3,60 +3,58 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-21 12:23-0500\n"
-"PO-Revision-Date: 2022-11-21 12:50-0500\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: fr_CA\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.2\n"
 
 #: controllers/Login.php:22
 msgid "Wrong username/password combination!"
-msgstr "Mauvaise combinaison nom d'utilisateur/mot de passe !"
+msgstr ""
 
 #: controllers/Login.php:56
 msgid "Password changed successfully."
-msgstr "Le mot de passe a été changé avec succès."
+msgstr ""
 
 #: controllers/Login.php:59 controllers/Login.php:93
 msgid "Passwords do not match."
-msgstr "Le mot de passe ne correspond pas."
+msgstr ""
 
 #: controllers/Login.php:63
 msgid "Wrong old password provided."
-msgstr "L'ancien mot de passe fourni est erroné."
+msgstr ""
 
 #: controllers/Login.php:89
 msgid "The username \""
-msgstr "Le nom d'utilisateur \""
+msgstr ""
 
 #: controllers/Login.php:89
 msgid "username"
-msgstr "Nom d'utilisateur"
+msgstr ""
 
 #: controllers/Login.php:89
 msgid "\" is already in use. Select another."
-msgstr "\"est déjà utilisé. Sélectionnez-en un autre."
+msgstr ""
 
 #: controllers/Login.php:128
 msgid "token not verified!"
-msgstr "jeton non vérifié !"
+msgstr ""
 
 #: core/Model.php:18
 msgid "Failed connecting to the database"
-msgstr "Échec de la connexion à la base de données"
+msgstr ""
 
 #: views/Buyer/cart.php:4 views/Buyer/cart.php:53
 msgid "My Cart"
-msgstr "Mon panier"
+msgstr ""
 
 #: views/Buyer/cart.php:23 views/Buyer/contact.php:19
 #: views/Buyer/createProfile.php:25 views/Buyer/editProfile.php:25
@@ -69,7 +67,7 @@ msgstr "Mon panier"
 #: views/Seller/listings.php:23 views/Seller/messageboard.php:23
 #: views/Seller/profile.php:19
 msgid "ShopMart"
-msgstr "MarchéMagasin"
+msgstr ""
 
 #: views/Buyer/cart.php:30 views/Buyer/contact.php:26
 #: views/Buyer/createProfile.php:32 views/Buyer/editProfile.php:35
@@ -87,12 +85,12 @@ msgstr ""
 #: views/Seller/editProfile.php:36 views/Seller/listings.php:30
 #: views/Seller/messageboard.php:33 views/Seller/profile.php:26
 msgid "Profile"
-msgstr "Profil"
+msgstr ""
 
 #: views/Buyer/cart.php:36 views/Buyer/contact.php:32
 #: views/Buyer/messageboard.php:36 views/Buyer/profile.php:34
 msgid "Message Board"
-msgstr "Babillard"
+msgstr ""
 
 #: views/Buyer/cart.php:39 views/Buyer/contact.php:35
 #: views/Buyer/createProfile.php:35 views/Buyer/editProfile.php:41
@@ -105,24 +103,24 @@ msgstr "Babillard"
 #: views/Seller/listings.php:36 views/Seller/messageboard.php:36
 #: views/Seller/profile.php:32
 msgid "Logout"
-msgstr "Déconnexion"
+msgstr ""
 
 #: views/Buyer/cart.php:58
 msgid "Quantity"
-msgstr "Quantité"
+msgstr ""
 
 #: views/Buyer/cart.php:61
 msgid "Picture"
-msgstr "Image"
+msgstr ""
 
-#: views/Buyer/cart.php:61 views/Main/catalogue.php:84 views/Seller/edit.php:50
-#: views/Seller/listings.php:61
+#: views/Buyer/cart.php:61 views/Main/catalogue.php:84
+#: views/Seller/edit.php:50 views/Seller/listings.php:61
 msgid "Name"
-msgstr "Nom"
+msgstr ""
 
 #: views/Buyer/cart.php:61
 msgid "Unit Price"
-msgstr "Prix ​​unitaire"
+msgstr ""
 
 #: views/Buyer/cart.php:61 views/Main/catalogue.php:84
 #: views/Seller/listings.php:61
@@ -131,15 +129,15 @@ msgstr ""
 
 #: views/Buyer/contact.php:4
 msgid "Contact Seller"
-msgstr "Contacter le vendeur"
+msgstr ""
 
 #: views/Buyer/contact.php:49 views/Seller/contact.php:43
 msgid "Send a message"
-msgstr "Envoyer un message"
+msgstr ""
 
 #: views/Buyer/contact.php:53 views/Seller/contact.php:47
 msgid "Title:"
-msgstr "Un titre quelconque"
+msgstr ""
 
 #: views/Buyer/contact.php:57 views/Seller/add.php:58
 #: views/Seller/contact.php:51
@@ -148,177 +146,177 @@ msgstr ""
 
 #: views/Buyer/contact.php:60 views/Seller/contact.php:54
 msgid "Send"
-msgstr "Envoyer"
+msgstr ""
 
 #: views/Buyer/createProfile.php:3
 msgid "Create Buyer Profile"
-msgstr "Créer un profil d'acheteur"
+msgstr ""
 
 #: views/Buyer/createProfile.php:52 views/Seller/createProfile.php:55
 msgid "Create a Profile"
-msgstr "Créer un profil"
+msgstr ""
 
 #: views/Buyer/createProfile.php:57 views/Buyer/editProfile.php:63
 #: views/Seller/createProfile.php:60 views/Seller/editProfile.php:60
 msgid "First Name"
-msgstr "Prénom"
+msgstr ""
 
 #: views/Buyer/createProfile.php:64 views/Buyer/editProfile.php:70
 #: views/Seller/createProfile.php:67 views/Seller/editProfile.php:67
 msgid "Last Name"
-msgstr "Nom"
+msgstr ""
 
 #: views/Buyer/createProfile.php:71 views/Buyer/editProfile.php:77
 #: views/Seller/createProfile.php:74 views/Seller/editProfile.php:74
 msgid "Email"
-msgstr "Courriel"
+msgstr ""
 
 #: views/Buyer/createProfile.php:76 views/Seller/createProfile.php:79
 msgid "Create Profile"
-msgstr "Créer un profil"
+msgstr ""
 
 #: views/Buyer/createProfile.php:78
 msgid "Already have a profile?"
-msgstr "Vous avez déjà un profil ?"
+msgstr ""
 
 #: views/Buyer/createProfile.php:79 views/Seller/createProfile.php:82
 msgid "Go to Profile"
-msgstr "Aller au profil"
+msgstr ""
 
 #: views/Buyer/editProfile.php:3
 msgid "Edit Buyer Profile"
-msgstr "Modifier le profil de l'acheteur"
+msgstr ""
 
 #: views/Buyer/editProfile.php:32
 msgid "Home"
-msgstr "Accueil"
+msgstr ""
 
 #: views/Buyer/editProfile.php:58 views/Buyer/editProfile.php:82
 #: views/Buyer/profile.php:53 views/Seller/editProfile.php:55
 #: views/Seller/editProfile.php:79 views/Seller/profile.php:48
 msgid "Edit Profile"
-msgstr "Editer le profil"
+msgstr ""
 
 #: views/Buyer/messageboard.php:4 views/Seller/messageboard.php:4
 msgid "My Message Board"
-msgstr "Mon babillard"
+msgstr ""
 
 #: views/Buyer/messageboard.php:54 views/Seller/messageboard.php:51
 msgid "My Messages"
-msgstr "Mes messages"
+msgstr ""
 
 #: views/Buyer/messageboard.php:60 views/Login/register.php:76
 msgid "Seller"
-msgstr "Vendeur"
+msgstr ""
 
 #: views/Buyer/messageboard.php:60 views/Seller/messageboard.php:57
 msgid "Title"
-msgstr "Titre"
+msgstr ""
 
 #: views/Buyer/messageboard.php:60 views/Seller/messageboard.php:57
 msgid "Message"
-msgstr "Message"
+msgstr ""
 
 #: views/Buyer/profile.php:4
 msgid "Buyer Profile"
-msgstr "Profil de l'acheteur"
+msgstr ""
 
 #: views/Buyer/profile.php:50 views/Seller/profile.php:45
 msgid "My Profile"
-msgstr "Mon Profil"
+msgstr ""
 
 #: views/Buyer/profile.php:63 views/Seller/profile.php:58
 msgid "First name:"
-msgstr "Prénom:"
+msgstr ""
 
 #: views/Buyer/profile.php:69 views/Seller/profile.php:64
 msgid "Last name:"
-msgstr "Nom:"
+msgstr ""
 
 #: views/Buyer/profile.php:75 views/Seller/profile.php:70
 msgid "Email:"
-msgstr "Courriel:"
+msgstr ""
 
 #: views/Login/account.php:3
 msgid "2FA Account"
-msgstr "Compte 2FA"
+msgstr ""
 
 #: views/Login/account.php:41 views/Login/check2fa.php:41
 #: views/Login/index.php:32 views/Login/register.php:3
 #: views/Login/register.php:31 views/Login/register.php:95
 #: views/Main/home.php:60
 msgid "Register"
-msgstr "S'inscrire"
+msgstr ""
 
 #: views/Login/account.php:44 views/Login/check2fa.php:44
 #: views/Login/index.php:3 views/Login/index.php:35 views/Login/index.php:54
 #: views/Login/register.php:34 views/Main/home.php:63
 msgid "Login"
-msgstr "Connexion"
+msgstr ""
 
 #: views/Login/account.php:57
 msgid "Set up 2-factor authentication"
-msgstr "Configurer l'authentification à 2 facteurs"
+msgstr ""
 
 #: views/Login/account.php:62
 msgid "Verify 2-factor authentication"
-msgstr "Vérifier l'authentification à 2 facteurs"
+msgstr ""
 
 #: views/Login/check2fa.php:3
 msgid "2fa Check"
-msgstr "Verifier 2fa"
+msgstr ""
 
 #: views/Login/check2fa.php:57
 msgid "Username:"
-msgstr "Nom d'utilisateur:"
+msgstr ""
 
 #: views/Login/check2fa.php:58
 msgid "2fa verification code:"
-msgstr "Code de vérification 2fa :"
+msgstr ""
 
 #: views/Login/index.php:59 views/Login/register.php:58
 msgid "Username"
-msgstr "Nom d'utilisateur"
+msgstr ""
 
 #: views/Login/index.php:64 views/Login/register.php:85
 msgid "Password"
-msgstr "Mot de passe"
+msgstr ""
 
 #: views/Login/index.php:69
 msgid "Get Started"
-msgstr "Commencer"
+msgstr ""
 
 #: views/Login/index.php:71
 msgid "New here?"
-msgstr "Nouveau ici?"
+msgstr ""
 
 #: views/Login/index.php:72
 msgid "Create an Account"
-msgstr "Créer un compte"
+msgstr ""
 
 #: views/Login/register.php:53
 msgid "Create an account"
-msgstr "Créer un compte"
+msgstr ""
 
 #: views/Login/register.php:71 views/Seller/messageboard.php:57
 msgid "Buyer"
-msgstr "Acheteur"
+msgstr ""
 
 #: views/Login/register.php:90
 msgid "Password Confirmation"
-msgstr "Confirmation mot de passe"
+msgstr ""
 
 #: views/Login/register.php:98
 msgid "Already a user?"
-msgstr "Déjà utilisateur ?"
+msgstr ""
 
 #: views/Login/register.php:99
 msgid "Login here"
-msgstr "Connectez-vous ici"
+msgstr ""
 
 #: views/Login/twofasetup.php:3
 msgid "2fa set up"
-msgstr "configuration 2fa"
+msgstr ""
 
 #: views/Login/twofasetup.php:6
 msgid ""
@@ -329,27 +327,27 @@ msgid ""
 "\t\tseconds only. Enter such a code while and submit it while it is\n"
 "\t\tstill valid to confirm that the 2-factor authentication can be\n"
 "\t\tapplied to your account."
-msgstr "Veuillez scanner le code QR à l'écran avec votre favori Logiciel d'authentification, tel que Google Authenticator. La logiciel d'authentification générera des codes valables 30 secondes seulement. Entrez un tel code pendant et soumettez-le pendant qu'il est toujours valide pour confirmer que l'authentification à 2 facteurs peut être appliqué à votre compte."
+msgstr ""
 
 #: views/Login/twofasetup.php:14
 msgid "Current code:"
-msgstr "Code actuel :"
+msgstr ""
 
 #: views/Main/catalogue.php:4
 msgid "Index"
-msgstr "Indice"
+msgstr ""
 
 #: views/Main/catalogue.php:39
 msgid "Enter search term"
-msgstr "Entrez le terme de recherche"
+msgstr ""
 
 #: views/Main/catalogue.php:40
 msgid "Search"
-msgstr "Chercher"
+msgstr ""
 
 #: views/Main/catalogue.php:45 views/Main/catalogue.php:46
 msgid "selected"
-msgstr "choisi"
+msgstr ""
 
 #: views/Main/catalogue.php:84 views/Seller/edit.php:60
 #: views/Seller/listings.php:61
@@ -358,7 +356,7 @@ msgstr ""
 
 #: views/Main/catalogue.php:84 views/Seller/listings.php:61
 msgid "Price"
-msgstr "Prix"
+msgstr ""
 
 #: views/Main/catalogue.php:84 views/Seller/listings.php:61
 msgid "Image"
@@ -366,41 +364,41 @@ msgstr ""
 
 #: views/Main/catalogue.php:120
 msgid "Hello World!"
-msgstr "Bonjour le monde !"
+msgstr ""
 
 #: views/Main/catalogue.php:121
 msgid "I like cats."
-msgstr "J'aime les chats."
+msgstr ""
 
 #: views/Main/home.php:4 views/Main/home.php:86
 msgid "Welcome to ShopMart"
-msgstr "MarchéMagasin"
+msgstr ""
 
 #: views/Main/home.php:87
 msgid "By Jonathan Dimitriu and Emmy Ea"
-msgstr "Par Jonathan Dimitriu et Emmy Ea"
+msgstr ""
 
 #: views/Seller/add.php:4
 msgid "Add Seller Item"
-msgstr "Ajouter un article vendeur"
+msgstr ""
 
 #: views/Seller/add.php:29 views/Seller/createProfile.php:39
 #: views/Seller/edit.php:29 views/Seller/editProfile.php:39
 #: views/Seller/listings.php:33 views/Seller/profile.php:29
 msgid "Listing"
-msgstr "Référencement"
+msgstr ""
 
 #: views/Seller/add.php:46
 msgid "Add Item"
-msgstr "Ajouter un item"
+msgstr ""
 
 #: views/Seller/add.php:50
 msgid "Item Name:"
-msgstr "Nom de l'article:"
+msgstr ""
 
 #: views/Seller/add.php:54
 msgid "Price:"
-msgstr "Prix:"
+msgstr ""
 
 #: views/Seller/add.php:62
 msgid "Image:"
@@ -408,52 +406,52 @@ msgstr ""
 
 #: views/Seller/add.php:68
 msgid "Add new item"
-msgstr "Ajoute un nouvel objet"
+msgstr ""
 
 #: views/Seller/contact.php:4
 msgid "Contact Buyer"
-msgstr "Contacter l'acheteur"
+msgstr ""
 
 #: views/Seller/createProfile.php:4
 msgid "Create Seller Profile"
-msgstr "Créer un profil de vendeur"
+msgstr ""
 
 #: views/Seller/edit.php:4
 msgid "Edit Seller Item"
-msgstr "Modifier l'article du vendeur"
+msgstr ""
 
 #: views/Seller/edit.php:46
 msgid "Edit Item"
-msgstr "Modifier l'article"
+msgstr ""
 
 #: views/Seller/edit.php:55
 msgid ">Price"
-msgstr ">Prix"
+msgstr ""
 
 #: views/Seller/edit.php:65
 msgid "Select Picture"
-msgstr "Sélectionnez l'image"
+msgstr ""
 
 #: views/Seller/edit.php:71
 msgid "Edit"
-msgstr "Éditer"
+msgstr ""
 
 #: views/Seller/editProfile.php:4
 msgid "Edit Seller Profile"
-msgstr "Modifier le profil du vendeur"
+msgstr ""
 
 #: views/Seller/listings.php:4
 msgid "Seller listings"
-msgstr "Listes de vendeurs"
+msgstr ""
 
 #: views/Seller/listings.php:51
 msgid "My Listing"
-msgstr "Mon annonce"
+msgstr ""
 
 #: views/Seller/listings.php:53
 msgid "Add a new item"
-msgstr "Ajouter un nouvel élément"
+msgstr ""
 
 #: views/Seller/profile.php:4
 msgid "Seller Profile"
-msgstr "Profil du vendeur"
+msgstr ""

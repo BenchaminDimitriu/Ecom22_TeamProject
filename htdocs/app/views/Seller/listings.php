@@ -60,7 +60,7 @@ background-color: steelblue;
 <table width="100%" border="1" cellpadding="5" cellspacing="5">
 <tr><th><?=_("Name")?></th><th><?=_("Description")?></th><th><?=_("Image")?></th><th><?=_("Price")?></th><th><?=_("Action")?></th><th><?=_("Action")?></th></tr>
 	
-<!--   how to localise that? -->
+
           	<?php
           	$item = new \app\models\Item();
           	$items = $item->getAll();
