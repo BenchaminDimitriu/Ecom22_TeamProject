@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2022 at 05:12 PM
+-- Generation Time: Nov 19, 2022 at 07:59 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -43,7 +43,8 @@ CREATE TABLE `buyer` (
 --
 
 INSERT INTO `buyer` (`buyer_id`, `user_id`, `buyer_fname`, `buyer_lname`, `buyer_email`) VALUES
-(1, 3, 'buyer1', 'b1', 'b1@gmail.com');
+(1, 3, 'buyer1', 'b1', 'b1@gmail.com'),
+(2, 4, 'b2', 'b2', 'b2@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -59,6 +60,15 @@ CREATE TABLE `contact` (
   `title` varchar(20) NOT NULL,
   `message` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`contact_id`, `buyer_id`, `seller_id`, `title`, `message`) VALUES
+(4, 2, 1, 'Test', 'Test'),
+(5, 2, 1, 'Test2', 'Test'),
+(6, 2, 2, 'test3', '33');
 
 -- --------------------------------------------------------
 
@@ -82,10 +92,10 @@ CREATE TABLE `item` (
 --
 
 INSERT INTO `item` (`item_id`, `user_id`, `seller_id`, `item_name`, `item_description`, `item_image`, `item_price`) VALUES
-(1, 1, 1, 'Chinese Porcelain Vase', 'Glazed porcelain with intermingled colors', '636ebd4584c99.jpg', 200.99),
 (2, 1, 1, 'Greek Amphora', 'Ancient vessel form used as a storage jar', '636ebd66c61df.jpg', 300.99),
 (3, 2, 2, 'Commode', 'A chest of drawers or chiffonier of a decorative', '636ebdb7144db.jpg', 500.99),
-(4, 2, 2, 'Brass Planter Pot ', 'Used for growing plants', '636ebde038d64.jpg', 40.99);
+(4, 2, 2, 'Brass Planter Pot ', 'Used for growing plants', '636ebde038d64.jpg', 40.99),
+(5, 1, 1, 'Greek Vase ', 'Knock off Greek Amphora', '637272e27cd68.jpg', 12.99);
 
 -- --------------------------------------------------------
 
@@ -109,7 +119,37 @@ CREATE TABLE `login` (
 INSERT INTO `login` (`user_id`, `username`, `password_hash`, `secret_key`, `role`) VALUES
 (1, 'seller1', '$2y$10$zBs/SyOug5MX3vunTRnNr.NuOrxRl48Y3DgHIVfgL2uPNA1u1lfBC', NULL, 'seller'),
 (2, 'seller2', '$2y$10$Wm5qrVciVlrAE1khrQKfKeBkblPKQ/WVh4jNYPFSIBZMcwcvqF2nq', NULL, 'seller'),
-(3, 'buyer1', '$2y$10$oINKO7x/t8nyhcASASnnr.OXXRqk1yTe46ePW242WpMg.3RpkfA2C', NULL, 'buyer');
+(3, 'buyer1', '$2y$10$oINKO7x/t8nyhcASASnnr.OXXRqk1yTe46ePW242WpMg.3RpkfA2C', NULL, 'buyer'),
+(4, 'buyer2', '$2y$10$iNYhlhyvdHBIJeeMGtVu3.sBwkZrVAaa7HiIwiphTc5Zp64pPEw3S', 'WFIMQPPTZN5XJWF7', 'buyer');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order`
+--
+
+DROP TABLE IF EXISTS `order`;
+CREATE TABLE `order` (
+  `order_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `status` enum('cart','paid','shipped') NOT NULL,
+  `payment_id` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order_detail`
+--
+
+DROP TABLE IF EXISTS `order_detail`;
+CREATE TABLE `order_detail` (
+  `order_detail_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `item_id` int(11) NOT NULL,
+  `qty` int(11) NOT NULL,
+  `price` decimal(6,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -170,6 +210,21 @@ ALTER TABLE `login`
   ADD UNIQUE KEY `username` (`username`);
 
 --
+-- Indexes for table `order`
+--
+ALTER TABLE `order`
+  ADD PRIMARY KEY (`order_id`),
+  ADD KEY `order_to_user` (`user_id`);
+
+--
+-- Indexes for table `order_detail`
+--
+ALTER TABLE `order_detail`
+  ADD PRIMARY KEY (`order_detail_id`),
+  ADD KEY `order_detail_to_order` (`order_id`),
+  ADD KEY `order_detail_to_item` (`item_id`);
+
+--
 -- Indexes for table `seller`
 --
 ALTER TABLE `seller`
@@ -184,25 +239,37 @@ ALTER TABLE `seller`
 -- AUTO_INCREMENT for table `buyer`
 --
 ALTER TABLE `buyer`
-  MODIFY `buyer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `buyer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `order`
+--
+ALTER TABLE `order`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `order_detail`
+--
+ALTER TABLE `order_detail`
+  MODIFY `order_detail_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `seller`
@@ -233,6 +300,19 @@ ALTER TABLE `contact`
 ALTER TABLE `item`
   ADD CONSTRAINT `item_to_login` FOREIGN KEY (`user_id`) REFERENCES `login` (`user_id`),
   ADD CONSTRAINT `item_to_seller` FOREIGN KEY (`seller_id`) REFERENCES `seller` (`seller_id`);
+
+--
+-- Constraints for table `order`
+--
+ALTER TABLE `order`
+  ADD CONSTRAINT `order_to_user` FOREIGN KEY (`user_id`) REFERENCES `login` (`user_id`);
+
+--
+-- Constraints for table `order_detail`
+--
+ALTER TABLE `order_detail`
+  ADD CONSTRAINT `order_detail_to_item` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`),
+  ADD CONSTRAINT `order_detail_to_order` FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`);
 
 --
 -- Constraints for table `seller`

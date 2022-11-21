@@ -19,6 +19,15 @@ class Item extends \app\core\Model{
 		return $STMT->fetch();
 	}
 
+	public function getForUser($user_id){
+		$SQL = "SELECT * FROM item WHERE user_id=:user_id";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['user_id'=>$user_id]);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Item');
+		return $STMT->fetch();
+	}
+
+
 	public function getForSeller($seller_id){
 		$SQL = "SELECT * FROM item WHERE seller_id=:seller_id";
 		$STMT = self::$_connection->prepare($SQL);

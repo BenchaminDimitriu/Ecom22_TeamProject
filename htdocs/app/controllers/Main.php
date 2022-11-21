@@ -3,10 +3,11 @@ namespace app\controllers;
 
 class Main extends \app\core\Controller{
 
+
 	public function catalogue(){
 		$item = new \app\models\Item();
 		$items = $item->getAll();
-		// $item = $item->get($_SESSION['user_id']); 
+		//$item = $item->getForUser($_SESSION['user_id']); 
 		$this->view('Main/catalogue', $items);
 	}
 
@@ -27,15 +28,8 @@ class Main extends \app\core\Controller{
 	// 	$items = $item->filter($_GET['filter']);
 	// 	$this->view('Main/catalogue', $items);
 	// }
-	// public function buy(){
-	// }
 
 	// public function test(){
 	// 	phpinfo();
 	// }
-
-	// public function test(){
-	// 	$this->view('Main/test');
-	// }
-
 }

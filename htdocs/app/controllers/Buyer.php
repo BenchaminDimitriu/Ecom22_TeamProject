@@ -64,22 +64,36 @@ class Buyer extends \app\core\Controller{
 		$this->view('Buyer/messageboard' , $contacts);
 	}
 
-	public function cart(){
-		$this->view('Buyer/cart');
+	// public function addToCart($item_id){
+	//    $cart = new \app\models\Cart();
+	//    $carts = $cart->getForCart($item_id);
+		  
+	//    $this->view('Buyer/cart' , $carts);
+	// }
+
+	public function addToCart(){
+	   $cart = new \app\models\Cart();
+	   $carts = $cart->getAll();
+	   $this->view('Buyer/cart' , $carts);
+	}
+
+	public function viewCart(){
+
+	   //$this->view('Buyer/cart' , $items);
+
 	}
 
 	public function deleteFromCart(){
-		
 	}
 
 
-	public function watchlist(){
-		$this->view('Buyer/watchlist');
-	}
+	// public function watchlist(){
+	// 	$this->view('Buyer/watchlist');
+	// }
 
-	public function deleteFromWatchlist(){
+	// public function deleteFromWatchlist(){
 
-	}
+	// }
 
 
 }
