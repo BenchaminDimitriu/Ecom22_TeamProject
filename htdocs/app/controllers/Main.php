@@ -7,7 +7,7 @@ class Main extends \app\core\Controller{
 	public function catalogue(){
 		$item = new \app\models\Item();
 		$items = $item->getAll();
-		//$item = $item->getForUser($_SESSION['user_id']); 
+		$item = $item->getForUser($_SESSION['user_id']); 
 		$this->view('Main/catalogue', $items);
 	}
 
