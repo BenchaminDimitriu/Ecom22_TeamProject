@@ -85,7 +85,14 @@ class Buyer extends \app\core\Controller{
 		$newItem->price = $product->item_price;
 		$newItem->qty = 1;
 		$newItem->create();
-		header('location:/Main/catalogue');
+		// header('location:/Main/catalogue');
+		$this->view('Buyer/cart' , $newItem);
+	}
+
+	public function cart(){
+		$orderD = new \app\models\Order_detail();
+		$orderDs = $orderD->getForOrder($_SESSION['order_id']);
+		$this->view('Buyer/cart', $orderDs);
 	}
 
 	// public function deleteFromCart(){

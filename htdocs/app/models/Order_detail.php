@@ -11,11 +11,19 @@ class Order_detail extends \app\core\Model{
 		return $STMT->fetchAll();
 	}
 
+	// public function getForOrder($order_id){
+	// 	$SQL = "SELECT order_detail.order_detail_id, item.* FROM order_detail JOIN item ON order_detail.item_id = item.item_id";
+	// 	$STMT = self::$_connection->prepare($SQL);
+	// 	$STMT->execute();
+	// 	$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Order_detail');
+	// 	return $STMT->fetchAll();
+	// }
+
 	public function getForOrder($order_id){
-		$SQL = "SELECT order_detail.order_detail_id, item.* FROM order_detail JOIN item ON order_detail.item_id = item.item_id";
+		$SQL = "SELECT * FROM order_detail WHERE order_id=:order_id";
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute();
-		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Order_detail');
+		$STMT->execute(['order_id'=>$order_id]);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Order');
 		return $STMT->fetchAll();
 	}
 

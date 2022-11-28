@@ -50,12 +50,6 @@ class Seller extends \app\core\Controller{
 		$this->view('Seller/listings', $items);
 	}
 
-	// public function stats(){
-	// 	$item = new \app\models\Item();
-	// 	$items = $item->getForSeller($_SESSION['seller_id']);
-	// 	$this->view('Seller/stats', $items);
-	// }
-
 	public function add(){
 		if(isset($_POST['action'])){
 			//if(isset($_POST['action']) && $item->seller_id == $_SESSION['seller_id']){
