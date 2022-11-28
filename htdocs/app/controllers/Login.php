@@ -18,8 +18,8 @@ class Login extends \app\core\Controller{
 				$_SESSION['seller_id'] = $seller->seller_id;
 				header('location:/Login/account');
 			}else{
-				/*how to localise that?*/
-				header('location:/Login/index?error=Wrong username/password combination!');
+
+				header('location:/Login/index?error='._('Wrong username/password combination!'));
 			}
 		}else{
 			$this->view('Login/index');
@@ -52,15 +52,15 @@ class Login extends \app\core\Controller{
 				if($_POST['password'] == $_POST['password_confirm']){
 					$user->password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
 					$user->updatePassword();
-					/*and this*/
-					header('location:/Login/account?message=Password changed successfully.');
+					
+					header('location:/Login/account?message='._('Password changed successfully.'));
 				}else{
-					/*and that*/
-					header('location:/Login/account?error=Passwords do not match.');
+					
+					header('location:/Login/account?error='._('Passwords do not match.'));
 				}
 			}else{ 
-				/*and this*/
-				header('location:/Login/account?error=Wrong old password provided.');
+				
+				header('location:/Login/account?error='._('Wrong old password provided.'));
 			}
 		}else{
 			$this->view('Login/account');
@@ -85,12 +85,12 @@ class Login extends \app\core\Controller{
 					$user->insert();
 					header('location:/Login/index');
 				}else{
-					/*this aswell */
-					header('location:/Login/register?error=The username "'.$_POST['username'].'" is already in use. Select another.');
+					
+					header('location:/Login/register?error='._('The username "'.$_POST['username'].'" is already in use. Select another.'));
 				}
 			}else{ 
-				/*that too*/
-				header('location:/Login/register?error=Passwords do not match.');
+				
+				header('location:/Login/register?error='._('Passwords do not match.'));
 			}
 
 		}else{
@@ -124,8 +124,8 @@ class Login extends \app\core\Controller{
 			 $user->update2fa();
 		 	 header('location:/Login/account');
 		 }else{
-		 	/*and finally this one*/
-		     header('location:/Login/setup2fa?error=token not verified!');//reload
+		 	
+		     header('location:/Login/setup2fa?error='._('token not verified!'));//reload
 		 	}
 		 }else{
 			 $secretkey = \app\core\TokenAuth6238::generateRandomClue();

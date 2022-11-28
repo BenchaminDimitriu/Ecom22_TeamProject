@@ -56,7 +56,7 @@ background-color: steelblue;
 <table width="100%" border="1" cellpadding="5" cellspacing="5">
 <tr><th><?=_("Buyer")?></th><th><?=_("Title")?></th><th><?=_("Message")?></th></tr>
   
-<!--   how to localise that? -->
+
             <?php
             $contact = new \app\models\Contact();
             $contacts = $contact->getAll();
