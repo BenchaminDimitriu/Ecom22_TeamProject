@@ -56,7 +56,7 @@ background-color: steelblue;
 <table width="100%" border="1" cellpadding="5" cellspacing="5">
 <tr><th><?=_("ID")?></th><th><?=_("Quantity")?></th><th><?=_("Price")?></th><th><?=_("Action")?></th></tr>
 	
-<!--   how to localise that? -->
+
           	<?php
           	$order = new \app\models\Order_detail();
           	$orders = $order->getAll();
