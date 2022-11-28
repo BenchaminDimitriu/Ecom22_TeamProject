@@ -54,25 +54,26 @@ background-color: steelblue;
 <div class="form-outline mb-4">
                     
 <table width="100%" border="1" cellpadding="5" cellspacing="5">
-<tr><th><?=_("ID")?></th><th><?=_("Quantity")?></th><th><?=_("Price")?></th><th><?=_("Action")?></th></tr>
-	
-<!--   how to localise that? -->
+<tr><th><?=_("Name")?></th><th><?=_("Image")?><th><?=_("Quantity")?></th><th><?=_("Price")?></th><th><?=_("Action")?></th></tr>
+
           	<?php
-          	$order = new \app\models\Order_detail();
-          	$orders = $order->getAll();
-          	foreach ($data as $item) {
-          		echo "<tr>
-          		<td type=name>$order->item_id</td>
-              <td type=name>$order->qty</td>
-              <td type=name>$order->price</td>
-          		<td type=action>
-          		<button class='btn btn-danger'><a class='nav-link' href='/Buyer/delete/$order->order_id'>delete</a></button>
-          		</td>
-          		</tr>";
+
+                      foreach ($data as $cartUser) {
+                        echo "<tr>
+                              <td type=name id='prName'>$cartUser->item_name</td>
+                              <td> <img src='/images/".$cartUser->item_image."'style='max-width:200px;max-height:100px'/></td>
+                              <td type=name>$cartUser->qty</td>
+                              <td type=name>$cartUser->price</td>
+                              <td type=action>
+                              <button class='btn btn-warning'><a class='nav-link' href='/Cart/addToCart/$cartUser->item_id'>-</a></button>
+                              </td>
+                              </tr>";
           	}
           ?>
-
 </table>
+
+       <button class='btn btn-dark'><a class='nav-link' href='/Buyer/delete/$order->order_id'>Checkout</a></button>
+
     
                  
                 </div>

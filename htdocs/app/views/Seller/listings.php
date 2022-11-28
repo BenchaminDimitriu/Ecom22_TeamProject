@@ -30,6 +30,9 @@ background-color: steelblue;
         <a class="nav-link" href="http://localhost/Seller/profile"><?=_("Profile")?></a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="http://localhost/Seller/messageboard"><?=_("Message Board")?></a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="http://localhost/Seller/listings"><?=_("Listing")?></a>
       </li>
        <li class="nav-item">

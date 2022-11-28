@@ -64,40 +64,84 @@ class Buyer extends \app\core\Controller{
 		$this->view('Buyer/messageboard' , $contacts);
 	}
 
+	// public function addToCart($item_id){
+	// 	$cart = new \app\models\Order();
+	// 	$cart = $cart->findUserCart($_SESSION['user_id']);
+		
+	// 	if($cart==null){
+	// 		$cart = new \app\models\Order();
+	// 		$cart->user_id = $_SESSION['user_id'];
+	// 		$cart->status = 'cart';
+	// 		$cart->order_id = $cart->create();
+
+	// 	}
+		
+	// 	$product = new \app\models\Item();
+	// 	$product = $product->get($item_id);
+
+	// 	$newItem = new \app\models\Order_detail();
+	// 	$newItem->order_id = $cart->order_id;
+	// 	$newItem->item_id = $item_id;
+	// 	$newItem->price = $product->item_price;
+	// 	$newItem->qty = 1;
+	// 	$newItem->create();
+	// 	header('location:/Buyer/cart');
+	// 	//$this->view('Buyer/cart' , $newItem);
+	// }
+
+	// public function cart(){
+	// 	$order = new \app\models\Order();
+	// 	$orders = $order->getForOD($_SESSION['order_id']);
+	// 	$orderD = new \app\models\Order_detail();
+	// 	$orderDs = $orderD->getForOrder($_SESSION['order_id']);
+	// 	$this->view('Buyer/cart', $orderDs);
+	// }
+
+	// public function deleteFromCart($order_detail_id){
+	//     $order = new \app\models\Order_detail();
+	// 	$order = $order->get($order_detail_id);
+	// 	$order->delete();
+	// 	header('location:/Buyer/cart');
+	// }
+
 	public function addToCart($item_id){
-		$cart = new \app\models\Order();
-		$cart = $cart->findUserCart($_SESSION['user_id']);
-		
-		if($cart==null){
-			$cart = new \app\models\Order();
+		$cart = new \app\models\Cart();
+		$item = new \app\models\Item();
+		$item = $item->get($item_id);
+
+		$cartUser = $cart->getCartProduct($_SESSION['user_id'], $item_id);
+
+		if($cartUser){
 			$cart->user_id = $_SESSION['user_id'];
-			$cart->status = 'cart';
-			$cart->order_id = $cart->create();
-
+			$cart->item_id = $item_id;
+			$cart->updateQty();
+			$cart->updatePrice();
+		}else{
+			$cart->user_id = $_SESSION['user_id'];
+			$cart->item_id = $item_id;
+			$cart->qty = 1;
+			$cart->price = $item->item_price;
+			$cart->insertIntoCart();
 		}
-		
-		$product = new \app\models\Item();
-		$product = $product->get($item_id);
+		header('location:/Buyer/cart');
+	}
 
-		$newItem = new \app\models\Order_detail();
-		$newItem->order_id = $cart->order_id;
-		$newItem->item_id = $item_id;
-		$newItem->price = $product->item_price;
-		$newItem->qty = 1;
-		$newItem->create();
-		// header('location:/Main/catalogue');
-		$this->view('Buyer/cart' , $newItem);
+	public function deleteFromCart(){
+
 	}
 
 	public function cart(){
-		$orderD = new \app\models\Order_detail();
-		$orderDs = $orderD->getForOrder($_SESSION['order_id']);
-		$this->view('Buyer/cart', $orderDs);
+		$cart = new \app\models\Cart();
+		$cartUser = $cart->getCart($_SESSION['user_id']);
+		$this->view('Buyer/cart', $cartUser);
 	}
 
-	// public function deleteFromCart(){
-	// }
 
+
+
+    // public function checkout(){
+    // 	$this->view('Buyer/checkout');
+	// }
 
 	// public function watchlist(){
 	// 	$this->view('Buyer/watchlist');

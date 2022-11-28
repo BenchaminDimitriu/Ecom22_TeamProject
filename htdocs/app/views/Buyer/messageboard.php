@@ -65,13 +65,13 @@ background-color: steelblue;
           	$contacts = $contact->getAll();
           	
             foreach ($data as $contact) {
-          		echo _(""<tr>
+          		echo "<tr>
               <td type=name>$contact->seller_id</td> 
           		<td type=name>$contact->title</td>
               <td type=name>$contact->message</td>
               <td type=action>
           		</td>
-          		</tr>"")?>;
+          		</tr>";
           	}
           ?>
       <!-- ??? -->
