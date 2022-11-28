@@ -64,29 +64,39 @@ class Buyer extends \app\core\Controller{
 		$this->view('Buyer/messageboard' , $contacts);
 	}
 
-	// public function addToCart($item_id){
-	//    $cart = new \app\models\Cart();
-	//    $carts = $cart->getForCart($item_id);
-		  
-	//    $this->view('Buyer/cart' , $carts);
+	public function addToCart($item_id){
+		$cart = new \app\models\Order();
+		$cart = $cart->findUserCart($_SESSION['user_id']);
+		
+		if($cart==null){
+			$cart = new \app\models\Order();
+			$cart->user_id = $_SESSION['user_id'];
+			$cart->status = 'cart';
+			$cart->order_id = $cart->create();
+
+		}
+		
+		$product = new \app\models\Item();
+		$product = $product->get($item_id);
+
+		$newItem = new \app\models\Order_detail();
+		$newItem->order_id = $cart->order_id;
+		$newItem->item_id = $item_id;
+		$newItem->price = $product->item_price;
+		$newItem->qty = 1;
+		$newItem->create();
+		// header('location:/Main/catalogue');
+		$this->view('Buyer/cart' , $newItem);
+	}
+
+	public function cart(){
+		$orderD = new \app\models\Order_detail();
+		$orderDs = $orderD->getForOrder($_SESSION['order_id']);
+		$this->view('Buyer/cart', $orderDs);
+	}
+
+	// public function deleteFromCart(){
 	// }
-
-	public function addToCart(){
-	   $cart = new \app\models\Cart();
-	   $carts = $cart->getAll();
-
-	   
-	   $this->view('Buyer/cart' , $carts);
-	}
-
-	public function viewCart(){
-
-	   //$this->view('Buyer/cart' , $items);
-
-	}
-
-	public function deleteFromCart(){
-	}
 
 
 	// public function watchlist(){

@@ -59,22 +59,22 @@ background-color: steelblue;
 <table width="100%" border="1" cellpadding="5" cellspacing="5">
 <tr><th><?=_("Seller")?></th><th><?=_("Title")?></th><th><?=_("Message")?></th></tr>
 	
-
+  <!-- localise like that? ??? -->
           	<?php
           	$contact = new \app\models\Contact();
           	$contacts = $contact->getAll();
           	
             foreach ($data as $contact) {
-          		echo "<tr>
+          		echo _(""<tr>
               <td type=name>$contact->seller_id</td> 
           		<td type=name>$contact->title</td>
               <td type=name>$contact->message</td>
               <td type=action>
           		</td>
-          		</tr>";
+          		</tr>"")?>;
           	}
           ?>
-
+      <!-- ??? -->
 
 </table>
     

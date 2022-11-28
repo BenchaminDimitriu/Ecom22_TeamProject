@@ -33,17 +33,16 @@ background-color: steelblue;
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
 
-<!--         how to localise that? SOLVED -->
+<!--         how to localise that? -->
    <form action="/Main/search" method="get" style='display:inline-block'>         
         <div class="input-group">
-        <input type="search" name='search_term' class="form-control" placeholder="<?= _('Enter search term')?>" />
-        <button type="submit" class="btn btn-primary" value="<?=_('Search')?>"><i class="bi-search"></i></button>
+        <input type="search" name='search_term' class="form-control" placeholder="Enter search term" />
+        <button type="submit" class="btn btn-primary" value="Search"><i class="bi-search"></i></button>
         
-        <!-- gamble on solving this -->
     <!--         <label>Filter by price:</label>
     <select name="filter">
-        <option value="asc" <?php if(isset($_GET['search_term']) && $_GET['search_term'] == "asc") {echo _("selected");} ?>>Lowest to Highest</option>
-        <option value="desc"  <?php if(isset($_GET['search_term']) && $_GET['search_term'] == "desc") {echo _("selected");} ?>>Highest to Lowest</option>
+        <option value="asc" <?php if(isset($_GET['search_term']) && $_GET['search_term'] == "asc") {echo "selected";} ?>>Lowest to Highest</option>
+        <option value="desc"  <?php if(isset($_GET['search_term']) && $_GET['search_term'] == "desc") {echo "selected";} ?>>Highest to Lowest</option>
     </select> -->
       </div>
 <!--                      ^
@@ -83,7 +82,7 @@ background-color: steelblue;
 
 <tr><th><?=_("Name")?></th><th><?=_("Description")?></th><th><?=_("Price")?></th><th><?=_("Image")?></th><th><?=_("Action")?></th><th><?=_("Action")?></th><th><?=_("Action")?></th></tr>
                 	
-
+<!--                     how to localise that? -->
                       	<?php
                       	$item = new \app\models\Item();
                       	$items = $item->getAll();
