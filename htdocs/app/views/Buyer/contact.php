@@ -50,11 +50,11 @@ background-color: steelblue;
 
 <form action='' method='post' enctype='multipart/form-data'>
 <div class="form-outline mb-4">
-<label class="form-label"><?=_("Title:")?><input class="form-control" rows="3" type="text" name="title" /></label><br>
+<label class="form-label"><?=_("Title:")?><input class="form-control" rows="3" type="text" name="title" required/></label><br>
 </div>
 
 <div class="form-outline mb-4">
-<label><?=_("Description:")?><textarea rows="4" cols="50" maxlength="50" class="form-control form-control-lg" rows="3" name='message'></textarea></label></br>
+<label><?=_("Description:")?><textarea rows="4" cols="50" maxlength="50" class="form-control form-control-lg" rows="3" name='message'required></textarea></label></br>
 </div>
 
 <button type="submit"class="btn btn-success btn-block btn-lg gradient-custom-4" name="action"><?=_("Send")?></button>

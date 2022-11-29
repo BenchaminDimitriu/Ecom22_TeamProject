@@ -3,13 +3,15 @@ namespace app\controllers;
 
 class Buyer extends \app\core\Controller{
 
+	#[\app\filters\Buyer]
+	#[\app\filters\Login]
 	public function profile(){
 		$buyer = new \app\models\Buyer();	
 		$buyers = $buyer->get($_SESSION['buyer_id']);
 		$this->view('Buyer/profile', ['buyer'=>$buyers]);
 	}
-
 	
+	#[\app\filters\Buyer]
 	#[\app\filters\Login]
 	public function createProfile(){
 		if(isset($_POST['action'])){
@@ -23,9 +25,9 @@ class Buyer extends \app\core\Controller{
 		}else{
 			$this->view('Buyer/createProfile');
 		}
-
 	}
 
+	#[\app\filters\Buyer]
 	#[\app\filters\Login]
 	public function editProfile(){
 		$buyer = new \app\models\Buyer();
@@ -39,9 +41,10 @@ class Buyer extends \app\core\Controller{
 		}else{
 			$this->view('Buyer/editProfile', $buyer);
 		}
-
 	}
 
+	#[\app\filters\Buyer]
+	#[\app\filters\Login]
 	public function contact($seller_id){
 		$seller = new \app\models\Seller();
 		$sellers = $seller->getForContact($seller_id);
@@ -58,12 +61,20 @@ class Buyer extends \app\core\Controller{
 		}
 	}
 
+	#[\app\filters\Buyer]
+	#[\app\filters\Login]
 	public function messageboard(){
+		// $contact = new \app\models\Contact();
+	    // $contacts = $contact->getForBuyer($_SESSION['buyer_id']);
+		// $this->view('Buyer/messageboard' , $contacts);
+
 		$contact = new \app\models\Contact();
-	    $contacts = $contact->getForBuyer($_SESSION['buyer_id']);
+	    $contacts = $contact->getSEmailForContact($_SESSION['buyer_id']);
 		$this->view('Buyer/messageboard' , $contacts);
 	}
 
+	#[\app\filters\Buyer]
+	#[\app\filters\Login]
 	public function addToCart($item_id){
 		$cart = new \app\models\Cart();
 		$item = new \app\models\Item();
@@ -86,6 +97,8 @@ class Buyer extends \app\core\Controller{
 		header('location:/Buyer/cart');
 	}
 
+	#[\app\filters\Buyer]
+	#[\app\filters\Login]
 	public function deleteFromCart($cart_id){
 		$cart = new \app\models\Cart();
 		$cart = $cart->get($cart_id);
@@ -93,6 +106,8 @@ class Buyer extends \app\core\Controller{
 		header('location:/Buyer/cart');
 	}
 
+	#[\app\filters\Buyer]
+	#[\app\filters\Login]
 	public function cart(){
 		$cart = new \app\models\Cart();
 		$cartUser = $cart->getCart($_SESSION['user_id']);
@@ -103,6 +118,8 @@ class Buyer extends \app\core\Controller{
     // 	$this->view('Buyer/checkout');
 	// }
 
+	#[\app\filters\Buyer]
+	#[\app\filters\Login]
 	public function addToWatchlist($item_id){
 		$cart = new \app\models\Cart();
 		$item = new \app\models\Item();
@@ -125,12 +142,16 @@ class Buyer extends \app\core\Controller{
 		header('location:/Buyer/watchlist');
 	}
 
+	#[\app\filters\Buyer]
+	#[\app\filters\Login]
 	public function watchlist(){
 		$cart = new \app\models\Cart();
 		$cartUser = $cart->getCart($_SESSION['user_id']);
 		$this->view('Buyer/watchlist', $cartUser);
 	}
-
+	
+	#[\app\filters\Buyer]
+	#[\app\filters\Login]
 	public function deleteFromWatchlist($cart_id){
 		$cart = new \app\models\Cart();
 		$cart = $cart->get($cart_id);

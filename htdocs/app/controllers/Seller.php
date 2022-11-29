@@ -3,8 +3,7 @@ namespace app\controllers;
 
 class Seller extends \app\core\Controller{
 
-
-	//#[\app\filters\Seller]
+	#[\app\filters\Seller]
 	#[\app\filters\Login]
 	public function profile(){
 		$seller = new \app\models\Seller();
@@ -12,22 +11,7 @@ class Seller extends \app\core\Controller{
 		$this->view('Seller/profile', ['seller'=>$sellers]);
 	}
 
-	#[\app\filters\Login]
-	public function editProfile(){
-		$seller = new \app\models\Seller();
-		$seller = $seller->get($_SESSION['seller_id']);
-		if(isset($_POST['action'])){
-			$seller->seller_fname = $_POST['seller_fname'];
-			$seller->seller_lname = $_POST['seller_lname'];
-			$seller->seller_email = $_POST['seller_email'];
-			$seller->update();
-			header('location:/Seller/profile');
-		}else{
-			$this->view('Seller/editProfile', $seller);
-		}
-
-	}
-
+	#[\app\filters\Seller]
 	#[\app\filters\Login]
 	public function createProfile(){
 		if(isset($_POST['action'])){
@@ -41,15 +25,35 @@ class Seller extends \app\core\Controller{
 		}else{
 			$this->view('Seller/createProfile');
 		}
-
 	}
+
+	#[\app\filters\Seller]
+	#[\app\filters\Login]
+	public function editProfile(){
+		$seller = new \app\models\Seller();
+		$seller = $seller->get($_SESSION['seller_id']);
+		if(isset($_POST['action'])){
+			$seller->seller_fname = $_POST['seller_fname'];
+			$seller->seller_lname = $_POST['seller_lname'];
+			$seller->seller_email = $_POST['seller_email'];
+			$seller->update();
+			header('location:/Seller/profile');
+		}else{
+			$this->view('Seller/editProfile', $seller);
+		}
+	}
+
 	
+	#[\app\filters\Seller]
+	#[\app\filters\Login]
 	public function listings(){
 		$item = new \app\models\Item();
 		$items = $item->getForSeller($_SESSION['seller_id']);
 		$this->view('Seller/listings', $items);
 	}
 
+	#[\app\filters\Seller]
+	#[\app\filters\Login]
 	public function add(){
 		if(isset($_POST['action'])){
 			//if(isset($_POST['action']) && $item->seller_id == $_SESSION['seller_id']){
@@ -69,6 +73,7 @@ class Seller extends \app\core\Controller{
 		}
 	}
 
+	#[\app\filters\Seller]
 	public function delete($item_id){
 		$item = new \app\models\Item();
 		$item = $item->get($item_id);
@@ -78,6 +83,8 @@ class Seller extends \app\core\Controller{
 	    header('location:/Seller/listings');
 	}
 
+	#[\app\filters\Seller]
+	#[\app\filters\Login]
 	public function edit($item_id){
 		$item = new \app\models\Item();
 		$item = $item->get($item_id);
@@ -101,9 +108,31 @@ class Seller extends \app\core\Controller{
 		}
 	}
 
+	#[\app\filters\Seller]
+	#[\app\filters\Login]
 	public function messageboard(){
 		$contact = new \app\models\Contact();
-	    $contacts = $contact->getForSellerContact($_SESSION['seller_id']);
+	    $contacts = $contact->getBEmailForContact($_SESSION['seller_id']);
 		$this->view('Seller/messageboard' , $contacts);
+	}
+
+	
+	#[\app\filters\Seller]
+	#[\app\filters\Login]
+	public function contact($buyer_id){
+		$buyer = new \app\models\Buyer();
+		$buyers = $buyer->getForContact($buyer_id);
+		if(isset($_POST['action'])){
+			$contact = new \app\models\Contact();
+			$contact->seller_id = $_SESSION['seller_id'];
+			$contact->buyer_id = $buyer_id;
+		    $contact->title = $_POST['title'];
+			$contact->message = $_POST['message'];
+			$contact->insert();
+		$this->view('Seller/contact',['buyer'=>$buyers]);
+		header('location:/Seller/messageboard');
+		}else{
+			$this->view('Seller/contact',['buyer'=>$buyers]);
+		}
 	}
 }

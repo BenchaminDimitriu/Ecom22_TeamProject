@@ -26,11 +26,14 @@ background-color: steelblue;
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
-         <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Main/catalogue"><?=_("Catalogue")?></a>
-      </li>
-       <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link" href="http://localhost/Seller/profile"><?=_("Profile")?></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost/Seller/messageboard"><?=_("Message Board")?></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost/Seller/listings"><?=_("Listing")?></a>
       </li>
        <li class="nav-item">
         <a class="nav-link" href="http://localhost/Login/logout"><?=_("Logout")?></a>
@@ -54,7 +57,7 @@ background-color: steelblue;
 <div class="form-outline mb-4">
                     
 <table width="100%" border="1" cellpadding="5" cellspacing="5">
-<tr><th><?=_("Buyer")?></th><th><?=_("Title")?></th><th><?=_("Message")?></th></tr>
+<tr><th><?=_("Buyer")?></th><th><?=_("Title")?></th><th><?=_("Message")?></th><th><?=_("Action")?></th></tr>
   
 <!--   how to localise that? -->
             <?php
@@ -62,11 +65,12 @@ background-color: steelblue;
             $contacts = $contact->getAll();
             foreach ($data as $contact) {
               echo "<tr>
-              <td type=name>$contact->buyer_id</td> 
+              <td type=name>$contact->buyer_email</td> 
               <td type=name>$contact->title</td>
               <td type=name>$contact->message</td>
               <td type=action>
-              </td>
+              <button class='btn btn-info'><a class='nav-link' href='/Seller/contact/$contact->buyer_id'>Contact buyer</a></button>
+              </td>             
               </tr>";
             }
           ?>

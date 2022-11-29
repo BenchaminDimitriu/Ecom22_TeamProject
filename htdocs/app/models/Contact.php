@@ -35,6 +35,23 @@ class Contact extends \app\core\Model{
 		return $STMT->fetchAll();
 	}
 
+	public function getBEmailForContact() {
+		$SQL = "SELECT * FROM contact CROSS JOIN buyer on contact.buyer_id=buyer.buyer_id";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute();
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Contact');
+		return $STMT->fetchAll();
+	}
+
+	public function getSEmailForContact() {
+		$SQL = "SELECT * FROM contact CROSS JOIN seller on contact.seller_id=seller.seller_id";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute();
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Contact');
+		return $STMT->fetchAll();
+	}
+
+
 	public function insert(){
 		$SQL = "INSERT INTO contact (buyer_id, seller_id, title, message) VALUES (:buyer_id, :seller_id, :title, :message)";
 		$STMT = self::$_connection->prepare($SQL);

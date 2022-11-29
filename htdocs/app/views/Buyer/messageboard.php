@@ -66,11 +66,12 @@ background-color: steelblue;
           	
             foreach ($data as $contact) {
           		echo "<tr>
-              <td type=name>$contact->seller_id</td> 
+              <td type=name>$contact->seller_email</td> 
           		<td type=name>$contact->title</td>
               <td type=name>$contact->message</td>
               <td type=action>
-          		</td>
+              <button class='btn btn-info'><a class='nav-link' href='/Buyer/contact/$contact->seller_id'>Contact seller</a></button>
+              </td>     
           		</tr>";
           	}
           ?>
