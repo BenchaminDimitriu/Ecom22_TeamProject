@@ -4,7 +4,7 @@ Feature: search item
      I need to be able to write search terms and get results back
      
  Scenario: search "vase"
-     Given I am on "Main/index" 
+     Given I am on "Main/catalogue" 
      When I input "vase" on the search bar 
      And I click on the "search" icon 
      Then I see "vase"

@@ -54,7 +54,7 @@ if(isset($_GET['message'])){
 
 
 <form action='' method='post'>
-	<label><?=_("Username:")?> <?= $_SESSION['username']?> <input type="text" name="username" /></label><br>
+	<label><?=_("Username:")?> <input type="text" name="username" /></label><br>
 	<label><?=_("2fa verification code:")?><input type="text" name="currentcode" /></label><br>
 	<input type="submit" name="action" value="Check" />
 </form>

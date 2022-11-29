@@ -33,16 +33,16 @@ background-color: steelblue;
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
 
+<!--         how to localise that? -->
    <form action="/Main/search" method="get" style='display:inline-block'>         
         <div class="input-group">
-        <input type="search" name='search_term' class="form-control" placeholder="<?= _('Enter search term')?>" />
-        <button type="submit" class="btn btn-primary" value="<?=_('Search')?>"><i class="bi-search"></i></button>
-
-        <!-- gamble on solving this -->        
+        <input type="search" name='search_term' class="form-control" placeholder="Enter search term" />
+        <button type="submit" class="btn btn-primary" value="Search"><i class="bi-search"></i></button>
+        
     <!--         <label>Filter by price:</label>
     <select name="filter">
-        <option value="asc" <?php if(isset($_GET['search_term']) && $_GET['search_term'] == "asc") {echo _("selected");} ?>>Lowest to Highest</option>
-        <option value="desc"  <?php if(isset($_GET['search_term']) && $_GET['search_term'] == "desc") {echo _("selected");} ?>>Highest to Lowest</option>
+        <option value="asc" <?php if(isset($_GET['search_term']) && $_GET['search_term'] == "asc") {echo "selected";} ?>>Lowest to Highest</option>
+        <option value="desc"  <?php if(isset($_GET['search_term']) && $_GET['search_term'] == "desc") {echo "selected";} ?>>Highest to Lowest</option>
     </select> -->
       </div>
 <!--                      ^
@@ -56,6 +56,9 @@ background-color: steelblue;
       </li>
        <li class="nav-item">
         <a class="nav-link" href="http://localhost/Buyer/profile"><?=_("Profile")?></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost/Buyer/watchlist"><?=_("Watchlist")?></a>
       </li>
        <li class="nav-item">
         <a class="nav-link" href="http://localhost/Login/logout"><?=_("Logout")?></a>
@@ -82,6 +85,7 @@ background-color: steelblue;
 
 <tr><th><?=_("Name")?></th><th><?=_("Description")?></th><th><?=_("Price")?></th><th><?=_("Image")?></th><th><?=_("Action")?></th><th><?=_("Action")?></th><th><?=_("Action")?></th></tr>
                 	
+<!--                     how to localise that? -->
                       	<?php
                       	$item = new \app\models\Item();
                       	$items = $item->getAll();
@@ -95,7 +99,7 @@ background-color: steelblue;
                           <button class='btn btn-info'><a class='nav-link' href='/Buyer/contact/$item->seller_id'>Contact seller</a></button>
                           </td>
                           <td type=action>
-                          <button class='btn btn-secondary'><a class='nav-link' href='/Buyer/watchlist/$item->item_id'>Add to watchlist</a></button>
+                          <button class='btn btn-secondary'><a class='nav-link' href='/Buyer/addToWatchlist/$item->item_id'>Add to watchlist</a></button>
                           </td>
                       		<td type=action>
                       	  <button class='btn btn-warning'><a class='nav-link' href='/Buyer/addToCart/$item->item_id'>Add to cart</a></button>
@@ -114,9 +118,6 @@ background-color: steelblue;
     </div>
   </div>
 </div>
-
-<h1><?= _("Hello World!") ?></h1>
-<p><?= _("I like cats.") ?></p>
 
 </body>
 </html>

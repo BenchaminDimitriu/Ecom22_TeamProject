@@ -66,14 +66,14 @@ if(isset($_GET['error'])){
 
               <form action='' method='post'>
                 <div class="form-outline mb-4">
-                  <input type="text" id="inputLname" class="form-control form-control-lg" name="buyer_lname" required/>
-                  <label class="form-label" for="inputLname"><?=_("Last Name"?></label>
+                  <input type="text" id="inputLname" value="<?= $data->buyer_lname ?>"class="form-control form-control-lg" name="buyer_lname" required/>
+                  <label class="form-label" for="inputLname"><?=_("Last Name")?></label>
                 </div>
 
 
               <form action='' method='post'>
                 <div class="form-outline mb-4">
-                  <input type="text" id="inputEmail" class="form-control form-control-lg" name="buyer_email" required/>
+                  <input type="text" id="inputEmail" value="<?= $data->buyer_email ?>" class="form-control form-control-lg" name="buyer_email" required/>
                   <label class="form-label" for="inputEmail"><?=_("Email")?></label>
                 </div>
                 

@@ -9,7 +9,7 @@ Feature: confirm 2fa
       When I record the "secret_key"
       And I input the 6-digit code to "currentcode"
       And I click "Check"
-      Then I see "Welcome"
+      Then I see "Buyer/createProfile" or "Seller/createProfile"
 
   Scenario: try to check 2fa incorrectly
       Given I am logged in
@@ -17,4 +17,4 @@ Feature: confirm 2fa
       When I record the "secret_key"
       And I input the 6-digit code to "currentcode" 
       And I click "check"
-      Then I should not see "Welcome"
+      Then I should not see "Buyer/createProfile" or "Seller/createProfile"

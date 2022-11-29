@@ -27,10 +27,13 @@ background-color: steelblue;
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
        <li class="nav-item">
+       <a class="nav-link" href="http://localhost/Main/catalogue"><?=_("Catalogue")?></a>
+      </li>
+       <li class="nav-item">
         <a class="nav-link" href="http://localhost/Seller/profile"><?=_("Profile")?></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Seller/listings"><?=_("Listing")?></a>
+        <li class="nav-item">
+        <a class="nav-link" href="http://localhost/Buyer/messageboard"><?=_("Message Board")?></a>
       </li>
        <li class="nav-item">
         <a class="nav-link" href="http://localhost/Login/logout"><?=_("Logout")?></a>
@@ -65,14 +68,16 @@ background-color: steelblue;
                               <td type=name>$cartUser->qty</td>
                               <td type=name>$cartUser->price</td>
                               <td type=action>
-                              <button class='btn btn-warning'><a class='nav-link' href='/Cart/addToCart/$cartUser->item_id'>-</a></button>
+                              <button class='btn btn-warning'><a class='nav-link' href='/Buyer/deleteFromCart/$cartUser->cart_id'>Delete</a></button>
                               </td>
                               </tr>";
           	}
           ?>
 </table>
 
-       <button class='btn btn-dark'><a class='nav-link' href='/Buyer/delete/$order->order_id'>Checkout</a></button>
+       </br>
+       <button class='btn btn-dark'><a class='nav-link' href='/Main/catalogue'>Continue shopping</a></button>
+       <button class='btn btn-dark'><a class='nav-link' href='/Buyer/deleteFromCart/$cartUser->cart_id'>Checkout</a></button>
 
     
                  

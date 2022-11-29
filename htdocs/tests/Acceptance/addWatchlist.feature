@@ -5,7 +5,7 @@ Feature: add to watchlist
 
   Scenario: try adding "vase" to watchlist
     Given I am logged in
-    And I am on "Main/index"
+    And I am on "Main/catalogue"
     And I click "save to watchlist" on "vase"
     Then I see "vase"  in my watchlist
 

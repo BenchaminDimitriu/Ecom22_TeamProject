@@ -43,7 +43,7 @@ background-color: steelblue;
           <div class="card" style="border-radius: 20px;">
             <div class="card-body p-5">
 
-<h2 class="text-center mb-5"><?=_("Add Item"?></h2>
+<h2 class="text-center mb-5"><?=_("Add Item")?></h2>
 
 <form action='' method='post' enctype='multipart/form-data'>
 <div class="form-outline mb-4">
