@@ -18,13 +18,13 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 ## As a buyer I can:
 • view catalogue. (1 feature) - DONE
 
-• access a search bar and filter by price. (2 feature) - DONE 
+• access a search bar and filter by price ASC. (2 feature) - DONE 
 
 • access my order history. I can view my list of complete orders in detail. (1 feature) 
 
 • send/view messages sent to buyers.(2 features) - DONE 
 
-• access a cart that can add/delete/view details of purchased items. (2 features)
+• access a cart that can add/delete of purchased items. (2 features) - DONE
 
 • save/delete watchlist item before purchase.(2 features) DONE
 
