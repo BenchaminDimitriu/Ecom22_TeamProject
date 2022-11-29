@@ -73,6 +73,16 @@ class Buyer extends \app\core\Controller{
 		$this->view('Buyer/messageboard' , $contacts);
 	}
 
+	/*---------------------------CART--------------------------------------*/
+
+	#[\app\filters\Buyer]
+	#[\app\filters\Login]
+	public function cart(){
+		$cart = new \app\models\Cart();
+		$cartUser = $cart->getCart($_SESSION['user_id']);
+		$this->view('Buyer/cart', $cartUser);
+	}
+
 	#[\app\filters\Buyer]
 	#[\app\filters\Login]
 	public function addToCart($item_id){
@@ -97,26 +107,41 @@ class Buyer extends \app\core\Controller{
 		header('location:/Buyer/cart');
 	}
 
-	#[\app\filters\Buyer]
-	#[\app\filters\Login]
-	public function deleteFromCart($cart_id){
+	public function deleteFromCart($item_id){
 		$cart = new \app\models\Cart();
-		$cart = $cart->get($cart_id);
-		$cart->delete();
+		$item = new \app\models\Item();
+		$item = $item->get($item_id);
+
+		$cartUser = $cart->getCartProduct($_SESSION['user_id'], $item_id);
+		if($cartUser){
+			if($cartUser->qty > 1){
+				$cart->user_id = $_SESSION['user_id'];
+				$cart->item_id = $item_id;
+				$cart->removeProduct();
+				$cart->updatePrice();
+			}else{
+			$cart->user_id = $_SESSION['user_id'];
+			$cart->item_id = $item_id;
+			$cart->deleteProduct();
+			}
+		}
 		header('location:/Buyer/cart');
 	}
-
-	#[\app\filters\Buyer]
-	#[\app\filters\Login]
-	public function cart(){
-		$cart = new \app\models\Cart();
-		$cartUser = $cart->getCart($_SESSION['user_id']);
-		$this->view('Buyer/cart', $cartUser);
-	}
+	
 
     // public function checkout(){
     // 	$this->view('Buyer/checkout');
 	// }
+
+	/*---------------------------WATCHLIST--------------------------------------*/
+
+	#[\app\filters\Buyer]
+	#[\app\filters\Login]
+	public function watchlist(){
+		$cart = new \app\models\Cart();
+		$cartUser = $cart->getWatchlist($_SESSION['user_id']);
+		$this->view('Buyer/watchlist', $cartUser);
+	}
 
 	#[\app\filters\Buyer]
 	#[\app\filters\Login]
@@ -141,23 +166,21 @@ class Buyer extends \app\core\Controller{
 		}
 		header('location:/Buyer/watchlist');
 	}
-
-	#[\app\filters\Buyer]
-	#[\app\filters\Login]
-	public function watchlist(){
-		$cart = new \app\models\Cart();
-		$cartUser = $cart->getCart($_SESSION['user_id']);
-		$this->view('Buyer/watchlist', $cartUser);
-	}
 	
 	#[\app\filters\Buyer]
 	#[\app\filters\Login]
-	public function deleteFromWatchlist($cart_id){
+	public function deleteFromWatchlist($item_id){
 		$cart = new \app\models\Cart();
-		$cart = $cart->get($cart_id);
-		$cart->delete();
-		header('location:/Buyer/watchlist');
+		$item = new \app\models\Item();
+		$item = $item->get($item_id);
+
+		$cartUser = $cart->getWatchlistItem($_SESSION['user_id'], $item_id);
+		if($cartUser){
+			$cart->user_id = $_SESSION['user_id'];
+			$cart->item_id = $item_id;
+			$cart->deleteWItem();
+		}
+			header('location:/Buyer/watchlist');
 	}
-
-
 }
+

@@ -61,8 +61,6 @@ background-color: steelblue;
 
           	<?php
 
-                    
-
                       foreach ($data as $cartUser) {
                         echo "<tr>
                               <td type=name id='prName'>$cartUser->item_name</td>
@@ -72,7 +70,7 @@ background-color: steelblue;
                               <button class='btn btn-warning'><a class='nav-link' href='/Buyer/addToCart/$cartUser->item_id'>Add to cart</a></button>
                               </td>
                               <td type=action>
-                              <button class='btn btn-danger'><a class='nav-link' href='/Buyer/deleteFromWatchlist/$cartUser->cart_id'>Delete</a></button>
+                              <button class='btn btn-danger'><a class='nav-link' href='/Buyer/deleteFromWatchlist/$cartUser->item_id'>Delete</a></button>
                               </td>
                               </tr>";
           	}

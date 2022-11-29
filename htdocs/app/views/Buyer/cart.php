@@ -57,7 +57,7 @@ background-color: steelblue;
 <div class="form-outline mb-4">
                     
 <table width="100%" border="1" cellpadding="5" cellspacing="5">
-<tr><th><?=_("Name")?></th><th><?=_("Image")?><th><?=_("Quantity")?></th><th><?=_("Price")?></th><th><?=_("Action")?></th></tr>
+<tr><th><?=_("Name")?></th><th><?=_("Image")?><th><?=_("Quantity")?></th><th><?=_("Price")?></th><th><?=_("Action")?></th><th><?=_("Action")?></th></tr>
 
           	<?php
 
@@ -68,7 +68,10 @@ background-color: steelblue;
                               <td type=name>$cartUser->qty</td>
                               <td type=name>$cartUser->price</td>
                               <td type=action>
-                              <button class='btn btn-warning'><a class='nav-link' href='/Buyer/deleteFromCart/$cartUser->cart_id'>Delete</a></button>
+                              <button class='btn btn-dark'><a class='nav-link' href='/Buyer/addToCart/$cartUser->item_id'>Add</a></button>
+                              </td>
+                              <td type=action>
+                              <button class='btn btn-dark'><a class='nav-link' href='/Buyer/deleteFromCart/$cartUser->item_id'>Delete</a></button>
                               </td>
                               </tr>";
           	}

@@ -20,14 +20,22 @@ class Cart extends \app\core\Model{
 		return $STMT->fetch();
 	}
 
-	public function getCart()
-	{
-		$SQL = "SELECT * FROM cart CROSS JOIN item on cart.item_id=item.item_id";
+	public function getCart(){
+		$SQL = "SELECT * FROM cart CROSS JOIN item on cart.item_id=item.item_id WHERE status=:status";
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute();
+		$STMT->execute(['status'=>'cart']);
 		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Cart');
 		return $STMT->fetchAll();
 	}
+
+	public function getWatchlist(){
+		$SQL = "SELECT * FROM cart CROSS JOIN item on cart.item_id=item.item_id WHERE status=:status";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['status'=>'watchlist']);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Cart');
+		return $STMT->fetchAll();
+	}
+
 
 	public function getCartProduct($user_id, $item_id){
 		$SQL = "SELECT * FROM cart WHERE user_id=:user_id AND status=:status AND item_id=:item_id";
@@ -39,9 +47,18 @@ class Cart extends \app\core\Model{
 		return $STMT->fetch();
 	}
 
+	public function getWatchlistItem($user_id, $item_id){
+		$SQL = "SELECT * FROM cart WHERE user_id=:user_id AND status=:status AND item_id=:item_id";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['user_id'=>$user_id,
+						'status'=>'watchlist',
+						'item_id'=>$item_id]);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Cart');
+		return $STMT->fetch();
+	}
 
-	public function insertIntoCart()
-	{
+
+	public function insertIntoCart(){
 		$SQL = "INSERT INTO cart(user_id, item_id, qty, price, status) VALUES (:user_id, :item_id, :qty, :price, :status)";
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['user_id'=>$this->user_id,
@@ -51,8 +68,7 @@ class Cart extends \app\core\Model{
 						'status'=>'cart']);
 	}
 
-		public function insertIntoWatchlist()
-	{
+		public function insertIntoWatchlist(){
 		$SQL = "INSERT INTO cart(user_id, item_id, qty, price, status) VALUES (:user_id, :item_id, :qty, :price, :status)";
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['user_id'=>$this->user_id,
@@ -95,9 +111,28 @@ class Cart extends \app\core\Model{
 						'initStatus'=>$this->initStatus]);
 	}
 
-	public function delete(){
-		$SQL = "DELETE FROM cart WHERE cart_id=:cart_id";
+	public function deleteProduct(){
+		$SQL = "DELETE FROM cart WHERE item_id = :item_id AND user_id = :user_id AND status = :status";
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['cart_id'=>$this->cart_id]);
+		$STMT->execute(['item_id'=>$this->item_id,
+						'user_id'=>$this->user_id,
+						'status'=>'cart']);
+	}
+
+	public function removeProduct(){
+		$SQL = "UPDATE cart SET qty=qty-:qty WHERE user_id = :user_id AND status = :status AND item_id = :item_id";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['qty'=>1,
+						'user_id'=>$this->user_id,
+						'status'=>'cart',
+						'item_id'=>$this->item_id]);
+	}
+
+	public function deleteWItem(){
+		$SQL = "DELETE FROM cart WHERE item_id = :item_id AND user_id = :user_id AND status = :status";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['item_id'=>$this->item_id,
+						'user_id'=>$this->user_id,
+						'status'=>'watchlist']);
 	}
 }
