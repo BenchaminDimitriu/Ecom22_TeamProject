@@ -16,13 +16,17 @@ are close to them. Somewhat similar to Ebay.
 We will be using Sublime Text as our text editor. We will be using PHP, HTML and CSS to create our Web Application. 
 
 ## As a buyer I can:
+• view catalogue. (1 feature) - DONE
+
+• access a search bar and filter by price. (2 feature) - DONE 
+
 • access my order history. I can view my list of complete orders in detail. (1 feature) 
 
-• send a message to seller and view my messageboard(2 features) - DONE 
+• send/view messages sent to buyers.(2 features) - DONE 
 
 • access a cart that can add/delete/view details of purchased items. (2 features)
 
-• save/delete watchlist item before purchase.(2 features)
+• save/delete watchlist item before purchase.(2 features) DONE
 
 • access a checkout/payment where I can input my information to pay for my purchases. (1 feature)
 
@@ -31,10 +35,6 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 
 • create/edit my profile. (4 features) - DONE
 
-• view catalogue. (1 feature) - DONE
-
-• access a search bar and filter by price. (2 feature) - DONE 
-
 • view the homepage change based on the holiday. (1 feature) - might remove 
 
 ## As a seller I can:
@@ -42,7 +42,7 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 
 • view my listings. (1 feature) - DONE
 
-• view messages sent by (potential)buyers. (1 feature) - DONE
+• send/view messages sent to buyers. (2 feature) - DONE
 
 ## 5. Estimated Time:
 We estimate that we will need about 80 hours per person to complete this project. At a total of 160 hours.  
