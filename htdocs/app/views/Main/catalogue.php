@@ -1,7 +1,7 @@
 <html>
 <head>
 
-	<title><?= _("Index") ?></title>
+	<title><?= _("Catalog") ?></title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
@@ -52,13 +52,16 @@ background-color: steelblue;
     </form>
 
        <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Main/catalogue"><?=_("Catalogue")?></a>
+        <a class="nav-link" href="http://localhost/Main/catalogue"><?=_("Catalog")?></a>
       </li>
        <li class="nav-item">
         <a class="nav-link" href="http://localhost/Buyer/profile"><?=_("Profile")?></a>
       </li>
        <li class="nav-item">
         <a class="nav-link" href="http://localhost/Buyer/messageboard"><?=_("Message Board")?></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost/Buyer/history"><?=_("Order History")?></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="http://localhost/Buyer/watchlist"><?=_("Watchlist")?></a>
@@ -83,7 +86,7 @@ background-color: steelblue;
 <div class="card-body p-200" style="" >
 
 
-<h2 class="text-center mb-5"><?=_("Catalogue")?></h2>
+<h2 class="text-center mb-5"><?=_("Catalog")?></h2>
      
 <form action='' enctype="multipart/form-data" method='post'>
 <div class="form-outline mb-4">

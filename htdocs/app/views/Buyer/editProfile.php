@@ -32,7 +32,7 @@ if(isset($_GET['error'])){
         <a class="nav-link" href="http://localhost/Main/home"><?=_("Home")?> <span class="sr-only"></span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Main/catalogue"><?=_("Catalogue")?></a>
+        <a class="nav-link" href="http://localhost/Main/catalogue"><?=_("Catalog")?></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="http://localhost/Buyer/profile"><?=_("Profile")?></a>

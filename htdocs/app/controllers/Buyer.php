@@ -80,7 +80,11 @@ class Buyer extends \app\core\Controller{
 	public function cart(){
 		$cart = new \app\models\Cart();
 		$cartUser = $cart->getCart($_SESSION['user_id']);
-		$this->view('Buyer/cart', $cartUser);
+		$total_price = 0;
+		foreach ($cartUser as $data){
+			$total_price += $data->item_price;
+		}
+		$this->view('Buyer/cart', ['cartUser'=>$cartUser, 'total_price'=>$total_price]);
 	}
 
 	#[\app\filters\Buyer]
@@ -107,6 +111,8 @@ class Buyer extends \app\core\Controller{
 		header('location:/Buyer/cart');
 	}
 
+	#[\app\filters\Buyer]
+	#[\app\filters\Login]
 	public function deleteFromCart($item_id){
 		$cart = new \app\models\Cart();
 		$item = new \app\models\Item();
@@ -126,6 +132,14 @@ class Buyer extends \app\core\Controller{
 			}
 		}
 		header('location:/Buyer/cart');
+	}
+
+	#[\app\filters\Buyer]
+	#[\app\filters\Login]
+	public function history(){
+		$order = new \app\models\Cart();
+		$order_history = $order->getByUser($_SESSION['user_id']);
+		$this->view('Buyer/history', $order_history);
 	}
 	
 

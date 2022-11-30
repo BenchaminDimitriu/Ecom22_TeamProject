@@ -23,7 +23,7 @@ background-color: steelblue;
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
        <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Main/catalogue"><?=_("Catalogue")?></a>
+        <a class="nav-link" href="http://localhost/Main/catalogue"><?=_("Catalog")?></a>
       </li>
        <li class="nav-item">
         <a class="nav-link" href="http://localhost/Seller/profile"><?=_("Profile")?></a>

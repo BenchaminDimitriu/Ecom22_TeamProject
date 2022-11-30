@@ -27,7 +27,7 @@ background-color: steelblue;
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
        <li class="nav-item">
-       <a class="nav-link" href="http://localhost/Main/catalogue"><?=_("Catalogue")?></a>
+       <a class="nav-link" href="http://localhost/Main/catalogue"><?=_("Catalog")?></a>
       </li>
        <li class="nav-item">
         <a class="nav-link" href="http://localhost/Seller/profile"><?=_("Profile")?></a>
@@ -61,7 +61,7 @@ background-color: steelblue;
 
           	<?php
 
-                      foreach ($data as $cartUser) {
+                      foreach ($data['cartUser'] as $cartUser) {
                         echo "<tr>
                               <td type=name id='prName'>$cartUser->item_name</td>
                               <td> <img src='/images/".$cartUser->item_image."'style='max-width:200px;max-height:100px'/></td>
@@ -76,8 +76,11 @@ background-color: steelblue;
                               </tr>";
           	}
           ?>
-</table>
 
+</table>
+       </br>
+       <tfoot><tr>Total Price: </tr><tr><?php echo $data['total_price'] ?>$</tr></tfoot>
+       </br>
        </br>
        <button class='btn btn-dark'><a class='nav-link' href='/Main/catalogue'>Continue shopping</a></button>
        <button class='btn btn-dark'><a class='nav-link' href='/Buyer/deleteFromCart/$cartUser->cart_id'>Checkout</a></button>
