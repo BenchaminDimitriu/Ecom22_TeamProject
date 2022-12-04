@@ -58,6 +58,14 @@ class Cart extends \app\core\Model{
 		return $STMT->fetch();
 	}
 
+	public function getAllItemsUnpaidForUser($user_id){
+		$SQL = "SELECT * FROM cart CROSS JOIN item on cart.item_id=item.item_id WHERE cart.user_id = :user_id AND status=:status";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['user_id'=>$user_id, 'status'=>'cart']);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Cart');
+		return $STMT->fetchAll();
+	}
+
 
 	public function insertIntoCart(){
 		$SQL = "INSERT INTO cart(user_id, item_id, qty, price, status) VALUES (:user_id, :item_id, :qty, :price, :status)";
@@ -135,5 +143,13 @@ class Cart extends \app\core\Model{
 		$STMT->execute(['item_id'=>$this->item_id,
 						'user_id'=>$this->user_id,
 						'status'=>'watchlist']);
+	}
+
+	public function updateCartCheckout($user_id){
+		$SQL = "UPDATE cart SET status=:status WHERE user_id=:user_id AND status=:initStatus";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['status'=>'paid',
+						'user_id'=>$user_id,
+						'initStatus'=>'cart']);
 	}
 }

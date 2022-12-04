@@ -48,30 +48,7 @@
                 <form action='' enctype="multipart/form-data" method='post'>
 
                   <h2 class='text-center mb-5'>Order History</h2>
-                              <div class='form-outline mb-4'>
-                                <table width="100%" border="1" cellpadding="5" cellspacing="5">
-                                <tr><th>Name</th><th>Image</th><th>Quantity</th><th>Price</th></tr>
-
-
-                  <?php 
-
-                      foreach ($data as $order_history) {
-                        if($order_history->status == 'cart'){
-                            echo "
-                                    <tr>
-                                          <td type=name id='prName'>$order_history->item_name</td>
-                                          <td> <img src='/images/".$order_history->item_image."'style='max-width:200px;max-height:100px'/></td>
-                                          <td type=name>$order_history->qty</td>
-                                          <td type=name>$order_history->item_price</td>
-                                          </td>
-                                          </tr>
-                                         ";
-                           }
-
-                      }
-
-                    ?>
-                    </table>
+                       
                     <br>
 
                     <h2 class='text-center mb-5'>Paid Items</h2>
@@ -101,7 +78,7 @@
                     </table>
                     <br>
 
-                    <h2 class='text-center mb-5'>Shipped Items</h2>
+                    <h2 class='text-center mb-5'>Watchlist Items</h2>
                               <div class='form-outline mb-4'>
                                 <table width="100%" border="1" cellpadding="5" cellspacing="5">
                                 <tr><th>Name</th><th>Image</th><th>Quantity</th><th>Price</th></tr>
@@ -110,7 +87,7 @@
                   <?php 
 
                       foreach ($data as $order_history) {
-                        if($order_history->status == 'shipped'){
+                        if($order_history->status == 'watchlist'){
                             echo "
                                     <tr>
                                           <td type=name id='prName'>$order_history->item_name</td>

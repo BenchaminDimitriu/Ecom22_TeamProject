@@ -197,24 +197,20 @@ class Buyer extends \app\core\Controller{
 
 	
     public function checkout(){
-    	$cart = new \app\models\Cart();
-		$cartUser = $cart->getCart($_SESSION['user_id']);
+    	$cartTemp = new \app\models\Cart();
+		$cartUser = $cartTemp->getAllItemsUnpaidForUser($_SESSION['user_id']);
 		$total_price = 0;
 		foreach ($cartUser as $data){
 			$total_price += $data->item_price;
 		}
-		$this->view('Buyer/checkout', ['cartUser'=>$cartUser, 'total_price'=>$total_price]);
-	}
 
-	 public function order(){
-    	if(isset($_POST['action'])){
-			$cart = \app\models\Cart();
-			$cart->updateCartStatus($_SESSION['user_id']);
+		if(isset($_POST['action'])){
+			$cart = new \app\models\Cart();
+			$cart->updateCartCheckout($_SESSION['user_id']);
 			header('location:/Buyer/history');
 		}
-		$order = new \app\models\Cart();
-		$order_history = $order->getByUser($_SESSION['user_id']);
-		$this->view('Buyer/history', $order_history);
+		$this->view('Buyer/checkout' , $total_price);
 	}
+
 }
 
