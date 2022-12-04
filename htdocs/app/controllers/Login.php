@@ -19,7 +19,7 @@ class Login extends \app\core\Controller{
 				header('location:/Login/account');
 			}else{
 				/*how to localise that?*/
-				header('location:/Login/index?error=Wrong username/password combination!');
+				header('location:/Login/index?error='.('Wrong username/password combination!'));
 			}
 		}else{
 			$this->view('Login/index');
@@ -72,11 +72,11 @@ class Login extends \app\core\Controller{
 					header('location:/Login/index');
 				}else{
 					/*this aswell */
-					header('location:/Login/register?error=The username "'.$_POST['username'].'" is already in use. Select another.');
+					header('location:/Login/register?error=The username "'.$_POST['username'].''.('" is already in use. Select another.'));
 				}
 			}else{ 
 				/*that too*/
-				header('location:/Login/register?error=Passwords do not match.');
+				header('location:/Login/register?error='.('Passwords do not match.'));
 			}
 
 		}else{
@@ -104,7 +104,7 @@ class Login extends \app\core\Controller{
 		 	 header('location:/Login/account');
 		 }else{
 		 	/*and finally this one*/
-		     header('location:/Login/setup2fa?error=token not verified!');//reload
+		     header('location:/Login/setup2fa?error='.('token not verified!'));//reload
 		 	}
 		 }else{
 			 $secretkey = \app\core\TokenAuth6238::generateRandomClue();

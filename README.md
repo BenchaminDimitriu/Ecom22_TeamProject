@@ -16,17 +16,17 @@ are close to them. Somewhat similar to Ebay.
 We will be using Sublime Text as our text editor. We will be using PHP, HTML and CSS to create our Web Application. 
 
 ## As a buyer I can:
-• view catalogue. (1 feature) - DONE
+• view catalog. (1 feature) - DONE
 
 • access a search bar and filter by price ASC. (2 feature) - DONE 
 
-• access my order history. I can view my list of complete orders in detail. (1 feature) 
+• access my order history. I can view my list of paid/shipped orders. (1 feature) - DONE 
 
 • send/view messages sent to buyers.(2 features) - DONE 
 
-• access a cart that can add/delete of purchased items. (2 features) - DONE
+• access a cart that can add/delete items. (2 features) - DONE
 
-• save/delete watchlist item before purchase.(2 features) DONE
+• add/delete watchlist item before purchase.(2 features) DONE
 
 • access a checkout/payment where I can input my information to pay for my purchases. (1 feature)
 
@@ -34,8 +34,6 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 • access registration, login, logout, 2-factor authentication (as per class instruction). (0 feature)
 
 • create/edit my profile. (4 features) - DONE
-
-• view the homepage change based on the holiday. (1 feature) - might remove 
 
 ## As a seller I can:
 • add/edit/delete items (3 features) - DONE
