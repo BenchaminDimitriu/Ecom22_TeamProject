@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2022 at 09:41 PM
+-- Generation Time: Dec 04, 2022 at 11:43 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -69,7 +69,10 @@ CREATE TABLE `cart` (
 
 INSERT INTO `cart` (`cart_id`, `user_id`, `item_id`, `status`, `qty`, `price`) VALUES
 (16, 5, 3, 'watchlist', 1, 500.99),
-(19, 5, 4, 'cart', 1, 40.99);
+(19, 5, 4, 'paid', 1, 40.99),
+(20, 5, 2, 'cart', 1, 300.99),
+(21, 5, 7, 'cart', 1, 172.99),
+(22, 5, 5, 'watchlist', 1, 12.99);
 
 -- --------------------------------------------------------
 
@@ -302,7 +305,7 @@ ALTER TABLE `buyer`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `contact`
