@@ -47,7 +47,7 @@
 
                 <form action='' enctype="multipart/form-data" method='post'>
 
-                  <h2 class='text-center mb-5'>Shopping cart</h2>
+                  <h2 class='text-center mb-5'>Order History</h2>
                               <div class='form-outline mb-4'>
                                 <table width="100%" border="1" cellpadding="5" cellspacing="5">
                                 <tr><th>Name</th><th>Image</th><th>Quantity</th><th>Price</th></tr>

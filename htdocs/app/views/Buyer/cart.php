@@ -83,7 +83,7 @@ background-color: steelblue;
        </br>
        </br>
        <button class='btn btn-dark'><a class='nav-link' href='/Main/catalogue'>Continue shopping</a></button>
-       <button class='btn btn-dark'><a class='nav-link' href='/Buyer/deleteFromCart/$cartUser->cart_id'>Checkout</a></button>
+       <button class='btn btn-dark'><a class='nav-link' href='/Buyer/checkout'>Checkout</a></button>
 
     
                  

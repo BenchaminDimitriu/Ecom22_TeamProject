@@ -143,10 +143,6 @@ class Buyer extends \app\core\Controller{
 	}
 	
 
-    // public function checkout(){
-    // 	$this->view('Buyer/checkout');
-	// }
-
 	/*---------------------------WATCHLIST--------------------------------------*/
 
 	#[\app\filters\Buyer]
@@ -195,6 +191,30 @@ class Buyer extends \app\core\Controller{
 			$cart->deleteWItem();
 		}
 			header('location:/Buyer/watchlist');
+	}
+
+/*--------------------CHECKOUT-------------------------*/
+
+	
+    public function checkout(){
+    	$cart = new \app\models\Cart();
+		$cartUser = $cart->getCart($_SESSION['user_id']);
+		$total_price = 0;
+		foreach ($cartUser as $data){
+			$total_price += $data->item_price;
+		}
+		$this->view('Buyer/checkout', ['cartUser'=>$cartUser, 'total_price'=>$total_price]);
+	}
+
+	 public function order(){
+    	if(isset($_POST['action'])){
+			$cart = \app\models\Cart();
+			$cart->updateCartStatus($_SESSION['user_id']);
+			header('location:/Buyer/history');
+		}
+		$order = new \app\models\Cart();
+		$order_history = $order->getByUser($_SESSION['user_id']);
+		$this->view('Buyer/history', $order_history);
 	}
 }
 

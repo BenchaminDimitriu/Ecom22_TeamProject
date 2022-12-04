@@ -69,7 +69,7 @@ class Cart extends \app\core\Model{
 						'status'=>'cart']);
 	}
 
-		public function insertIntoWatchlist(){
+	public function insertIntoWatchlist(){
 		$SQL = "INSERT INTO cart(user_id, item_id, qty, price, status) VALUES (:user_id, :item_id, :qty, :price, :status)";
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['user_id'=>$this->user_id,
