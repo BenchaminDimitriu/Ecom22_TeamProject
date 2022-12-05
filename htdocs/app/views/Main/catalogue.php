@@ -26,7 +26,7 @@ background-color: steelblue;
 <body>
 
  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="http://localhost/Main/home"><?=_("ShopMart")?></a>
+  <a class="navbar-brand" href="http://localhost/Main/catalogue"><?=_("ShopMart")?></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
   </button>
@@ -45,15 +45,10 @@ background-color: steelblue;
         <option value="desc"  <?php if(isset($_GET['search_term']) && $_GET['search_term'] == "desc") {echo "selected";} ?>>Highest to Lowest</option>
     </select> -->
       </div>
-<!--                      ^
-                          |
-                        ?????            -->
+
 
     </form>
 
-       <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Main/catalogue"><?=_("Catalog")?></a>
-      </li>
        <li class="nav-item">
         <a class="nav-link" href="http://localhost/Buyer/profile"><?=_("Profile")?></a>
       </li>
