@@ -23,7 +23,7 @@
        <a class="nav-link" href="http://localhost/Main/catalogue"><?=_("Catalog")?></a>
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Seller/profile"><?=_("Profile")?></a>
+        <a class="nav-link" href="http://localhost/Buyer/profile"><?=_("Profile")?></a>
       </li>
         <li class="nav-item">
         <a class="nav-link" href="http://localhost/Buyer/messageboard"><?=_("Message Board")?></a>
