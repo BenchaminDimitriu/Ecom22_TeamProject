@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2022 at 11:43 AM
+-- Generation Time: Dec 05, 2022 at 08:58 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -43,9 +43,8 @@ CREATE TABLE `buyer` (
 --
 
 INSERT INTO `buyer` (`buyer_id`, `user_id`, `buyer_fname`, `buyer_lname`, `buyer_email`) VALUES
-(1, 3, 'buyer1', 'b1', 'b1@gmail.com'),
-(2, 4, 'b2', 'b2', 'b2@gmail.com'),
-(3, 5, 'buyer3', 'bb3', 'b3@gmail.com ');
+(6, 33, 'Psycho', 'Craycray', 'loudmeowling@gmail.com'),
+(7, 28, 'Dino', 'Saur', 'rawr@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -68,11 +67,13 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`cart_id`, `user_id`, `item_id`, `status`, `qty`, `price`) VALUES
-(16, 5, 3, 'watchlist', 1, 500.99),
-(19, 5, 4, 'paid', 1, 40.99),
-(20, 5, 2, 'cart', 1, 300.99),
-(21, 5, 7, 'cart', 1, 172.99),
-(22, 5, 5, 'watchlist', 1, 12.99);
+(28, 33, 9, 'watchlist', 1, 200.99),
+(29, 33, 13, 'watchlist', 1, 400.99),
+(30, 33, 9, 'paid', 1, 200.99),
+(31, 33, 10, 'paid', 3, 542.97),
+(32, 33, 11, 'paid', 1, 500.99),
+(33, 28, 10, 'watchlist', 1, 180.99),
+(35, 28, 14, 'paid', 1, 300.99);
 
 -- --------------------------------------------------------
 
@@ -94,11 +95,8 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`contact_id`, `buyer_id`, `seller_id`, `title`, `message`) VALUES
-(4, 2, 1, 'About this ', 'Hello '),
-(5, 2, 1, 'Question about', 'For item...'),
-(6, 2, 2, 'Is this product', 'Washable with... '),
-(7, 3, 3, 'Discount?', 'Can I negotiate the price for item#? '),
-(8, 3, 3, 'About item...', 'The price is non-negotiable');
+(14, 6, 5, 'Discount', 'Discount for your pet pls '),
+(15, 6, 5, 'No', 'No discount for you');
 
 -- --------------------------------------------------------
 
@@ -122,12 +120,11 @@ CREATE TABLE `item` (
 --
 
 INSERT INTO `item` (`item_id`, `user_id`, `seller_id`, `item_name`, `item_description`, `item_image`, `item_price`) VALUES
-(2, 1, 1, 'Greek Amphora', 'Ancient vessel form used as a storage jar', '636ebd66c61df.jpg', 300.99),
-(3, 2, 2, 'Commode', 'A chest of drawers or chiffonier of a decorative', '636ebdb7144db.jpg', 500.99),
-(4, 2, 2, 'Brass Planter Pot ', 'Used for growing plants', '636ebde038d64.jpg', 40.99),
-(5, 1, 1, 'Greek Vase ', 'Knock off Greek Amphora', '637272e27cd68.jpg', 12.99),
-(6, 1, 1, 'Commode', 'A replica', '6384d815dd371.jpg', 15.99),
-(7, 6, 3, 'Typewriter', 'Part of the Martin Howard Collection', '6386398f84715.jpg', 172.99);
+(9, 25, 5, 'Greek Vase ', 'Amphora from Ancient Greece ', '638e435910434.jpg', 200.99),
+(10, 26, 6, 'Chinese Vase ', 'Porcelain vase from a forgotten dynasty', '638e448f88ae5.jpg', 180.99),
+(11, 26, 6, 'Commode', 'Old Victorian drawer ', '638e44b643ac8.jpg', 500.99),
+(14, 27, 7, 'Typewriter', 'Loud and requires ink', '638e4bb64b812.jpg', 300.99),
+(15, 27, 7, 'Brass Planter', 'Made for plants ', '638e4bce3eb8a.jpg', 80.99);
 
 -- --------------------------------------------------------
 
@@ -149,58 +146,11 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`user_id`, `username`, `password_hash`, `secret_key`, `role`) VALUES
-(1, 'seller1', '$2y$10$zBs/SyOug5MX3vunTRnNr.NuOrxRl48Y3DgHIVfgL2uPNA1u1lfBC', NULL, 'seller'),
-(2, 'seller2', '$2y$10$Wm5qrVciVlrAE1khrQKfKeBkblPKQ/WVh4jNYPFSIBZMcwcvqF2nq', NULL, 'seller'),
-(3, 'buyer1', '$2y$10$oINKO7x/t8nyhcASASnnr.OXXRqk1yTe46ePW242WpMg.3RpkfA2C', NULL, 'buyer'),
-(4, 'buyer2', '$2y$10$iNYhlhyvdHBIJeeMGtVu3.sBwkZrVAaa7HiIwiphTc5Zp64pPEw3S', 'WFIMQPPTZN5XJWF7', 'buyer'),
-(5, 'buyer3', '$2y$10$VsJTEAkWLVEFOU6HMHBhXOzEm3Sv6B2yQD4ucD3tv0EObNjdihCHS', '7TMJMLTIM2OXSOEH', 'buyer'),
-(6, 'seller3', '$2y$10$Lfvw6lkC4fbKqEHA/chynu4/JqCdElOr.OnxPEQRobx.lz5dpZAUq', 'RNRMIM5B2EVNSXYC', 'seller'),
-(7, 'buyer4', '$2y$10$PMxZ.LSIwxtBsONgz5ehFu7utBUrCEt8qxdh6AYWsHBenfibkFMnC', '26SZFO24CRZ5S6HS', 'buyer');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `order`
---
-
-DROP TABLE IF EXISTS `order`;
-CREATE TABLE `order` (
-  `order_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `status` enum('cart','paid','shipped') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `order`
---
-
-INSERT INTO `order` (`order_id`, `user_id`, `status`) VALUES
-(3, 4, 'cart'),
-(4, 3, 'cart');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `order_detail`
---
-
-DROP TABLE IF EXISTS `order_detail`;
-CREATE TABLE `order_detail` (
-  `order_detail_id` int(11) NOT NULL,
-  `order_id` int(11) NOT NULL,
-  `item_id` int(11) NOT NULL,
-  `qty` int(11) NOT NULL,
-  `price` decimal(6,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `order_detail`
---
-
-INSERT INTO `order_detail` (`order_detail_id`, `order_id`, `item_id`, `qty`, `price`) VALUES
-(34, 3, 2, 1, '300.99'),
-(35, 3, 2, 1, '300.99'),
-(36, 4, 2, 1, '300.99');
+(25, 'Esteban', '$2y$10$DBALb6mwxONNttQ0vLz6fOo6V9DlLvUQecd4otHiOKe4LWwrMFJ5e', 'Z7W3QVWO3S5NEAG3', 'seller'),
+(26, 'Jake', '$2y$10$HDjvuFFtzyQBnAXiGEckFeXp/jjVKmNkDiDNBFzkjyG2E.v1eIe5e', '5I3I5GPTA3GIOMRE', 'seller'),
+(27, 'Mimi', '$2y$10$Xme3ry0mycnBe9pPLsvQoOTL6IXNI/juv7cMQARWbyfo8McN6SuZG', 'UPKWOFORGZH2IFUD', 'seller'),
+(28, 'Dino', '$2y$10$qSJA0FGT9Rdf1DjEQ8Z9iez2pUNdgrJ2t5nQzDZLiMVU5N/EEPTPK', 'QYOT6T7FCEBGCMBC', 'buyer'),
+(33, 'Psycho', '$2y$10$mp5VSlq0rggWuTZRm4W1KeJFAbY2W1g3KbQvELeF0NcbPP/TxQL9S', 'J5LZ6ZA5YYKZIVS3', 'buyer');
 
 -- --------------------------------------------------------
 
@@ -214,18 +164,17 @@ CREATE TABLE `seller` (
   `user_id` int(11) NOT NULL,
   `seller_fname` varchar(50) NOT NULL,
   `seller_lname` varchar(50) NOT NULL,
-  `seller_email` varchar(50) NOT NULL,
-  `seller_totalSold` int(11) DEFAULT NULL
+  `seller_email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `seller`
 --
 
-INSERT INTO `seller` (`seller_id`, `user_id`, `seller_fname`, `seller_lname`, `seller_email`, `seller_totalSold`) VALUES
-(1, 1, 'seller1', 's1', 's1@gmail.com', NULL),
-(2, 2, 'seller2', 's2', 's2@gmail.com', NULL),
-(3, 6, 'seller3', 's3', 's3@gmail.com', NULL);
+INSERT INTO `seller` (`seller_id`, `user_id`, `seller_fname`, `seller_lname`, `seller_email`) VALUES
+(5, 25, 'Esteban', 'Psycho', 'meow@gmail.com'),
+(6, 26, 'Jake', 'The Dog', 'woof@gmail.com'),
+(7, 27, 'Mimi', 'Yuan', 'kitty@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -270,21 +219,6 @@ ALTER TABLE `login`
   ADD UNIQUE KEY `username` (`username`);
 
 --
--- Indexes for table `order`
---
-ALTER TABLE `order`
-  ADD PRIMARY KEY (`order_id`),
-  ADD KEY `order_to_user` (`user_id`);
-
---
--- Indexes for table `order_detail`
---
-ALTER TABLE `order_detail`
-  ADD PRIMARY KEY (`order_detail_id`),
-  ADD KEY `order_detail_to_order` (`order_id`),
-  ADD KEY `order_detail_to_item` (`item_id`);
-
---
 -- Indexes for table `seller`
 --
 ALTER TABLE `seller`
@@ -299,49 +233,37 @@ ALTER TABLE `seller`
 -- AUTO_INCREMENT for table `buyer`
 --
 ALTER TABLE `buyer`
-  MODIFY `buyer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `buyer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `order`
---
-ALTER TABLE `order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `order_detail`
---
-ALTER TABLE `order_detail`
-  MODIFY `order_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `seller`
 --
 ALTER TABLE `seller`
-  MODIFY `seller_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `seller_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
@@ -373,19 +295,6 @@ ALTER TABLE `contact`
 ALTER TABLE `item`
   ADD CONSTRAINT `item_to_login` FOREIGN KEY (`user_id`) REFERENCES `login` (`user_id`),
   ADD CONSTRAINT `item_to_seller` FOREIGN KEY (`seller_id`) REFERENCES `seller` (`seller_id`);
-
---
--- Constraints for table `order`
---
-ALTER TABLE `order`
-  ADD CONSTRAINT `order_to_user` FOREIGN KEY (`user_id`) REFERENCES `login` (`user_id`);
-
---
--- Constraints for table `order_detail`
---
-ALTER TABLE `order_detail`
-  ADD CONSTRAINT `order_detail_to_item` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`),
-  ADD CONSTRAINT `order_detail_to_order` FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`);
 
 --
 -- Constraints for table `seller`
