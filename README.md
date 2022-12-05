@@ -20,15 +20,15 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 
 • access a search bar and filter by price ASC. (2 feature) - DONE 
 
-• access my order history. I can view my list of paid/shipped orders. (1 feature) - DONE 
+• access my order history. I can view my list of paid/watchlist orders. (1 feature) - DONE 
 
 • send/view messages sent to buyers.(2 features) - DONE 
 
-• access a cart that can add/delete items. (2 features) - DONE
+• add to cart and delete from cart(2 features) - DONE
 
-• add/delete watchlist item before purchase.(2 features) DONE
+• add to watchlist and delete from watchlist.(2 features) DONE
 
-• access a checkout/payment where I can input my information to pay for my purchases. (1 feature)
+• checkout my purchases. (1 feature) - DONE
 
 ## As a seller and a buyer I can:
 • access registration, login, logout, 2-factor authentication (as per class instruction). (0 feature)
