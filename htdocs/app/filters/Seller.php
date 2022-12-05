@@ -6,7 +6,6 @@ namespace app\filters;
 class Seller extends \app\core\AccessFilter{
 	public function execute(){
 		if($_SESSION['role'] != 'seller'){
-			/*and this?*/
 			header('location:/Main/index?error=You may not access the seller features.');
 			return true;
 		}

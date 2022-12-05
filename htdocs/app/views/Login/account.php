@@ -40,9 +40,6 @@ if(isset($_GET['message'])){
       <li class="nav-item">
         <a class="nav-link" href="http://localhost/Login/register"><?=_("Register")?></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Login/login"><?=_("Login")?></a>
-      </li>
        <li class="nav-item">
         <a class="nav-link" href="http://localhost/Login/logout"><?=_("Logout")?></a>
       </li>

@@ -16,7 +16,7 @@ background-color: steelblue;
 
 <body>
  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="http://localhost/Main/home"><?=_("ShopMart")?></a>
+  <a class="navbar-brand" href="http://localhost/Seller/contact"><?=_("ShopMart")?></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
@@ -24,9 +24,6 @@ background-color: steelblue;
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" href="http://localhost/Seller/profile"><?=_("Profile")?></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Seller/messageboard"><?=_("Message Board")?></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="http://localhost/Seller/listings"><?=_("Listing")?></a>
