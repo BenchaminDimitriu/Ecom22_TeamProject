@@ -62,9 +62,6 @@
             <li class="nav-item">
               <a class="nav-link" href="http://localhost/Login/index" id="login"><?=_("Login")?></a>
             </li>
-              <li class="nav-item">
-              <a class="nav-link" href="/Login/logout" id="logout"><?=_("Logout")?></a>
-            </li>
             <div class="dropdown">
                         <a class="nav-link" data-bs-toggle="dropdown"><?= _("Language")?></a>
                         <div class="dropdown-menu">
