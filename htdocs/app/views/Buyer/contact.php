@@ -15,28 +15,34 @@ background-color: steelblue;
 </head>
 
 <body>
- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="http://localhost/Main/home"><?=_("ShopMart")?></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
        <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Main/catalogue"><?=_("Catalog")?></a>
+       <a class="nav-link" href="http://localhost/Main/catalogue"><?=_("Catalog")?></a>
       </li>
        <li class="nav-item">
         <a class="nav-link" href="http://localhost/Seller/profile"><?=_("Profile")?></a>
       </li>
-      <li class="nav-item">
+        <li class="nav-item">
         <a class="nav-link" href="http://localhost/Buyer/messageboard"><?=_("Message Board")?></a>
       </li>
        <li class="nav-item">
         <a class="nav-link" href="http://localhost/Login/logout"><?=_("Logout")?></a>
       </li>
-    </div>
-      </li>
+     <div class="dropdown">
+                        <a class="nav-link" data-bs-toggle="dropdown"><?= _("Language")?></a>
+                        <div class="dropdown-menu">
+                          <a href="?lang=en_CA" class="dropdown-item">English</a>
+                         <a href="?lang=fr_CA" class="dropdown-item">Français</a>
+                      </div>
+                    </div>  
     </ul>
+  </div>
 </nav>
   
   <div class="mask d-flex align-items-center h-100 gradient-custom-3">

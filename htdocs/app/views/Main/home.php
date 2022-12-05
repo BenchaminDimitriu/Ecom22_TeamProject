@@ -65,6 +65,13 @@
               <li class="nav-item">
               <a class="nav-link" href="/Login/logout" id="logout"><?=_("Logout")?></a>
             </li>
+            <div class="dropdown">
+                        <a class="nav-link" data-bs-toggle="dropdown"><?= _("Language")?></a>
+                        <div class="dropdown-menu">
+                          <a href="?lang=en_CA" class="dropdown-item">English</a>
+                         <a href="?lang=fr_CA" class="dropdown-item">Français</a>
+                      </div>
+                    </div>  
           </ul>
 
          
