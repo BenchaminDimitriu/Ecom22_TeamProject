@@ -55,7 +55,9 @@ if(isset($_GET['message'])){
 
 
 <form action='' method='post'>
-	<label><?=_("Username:")?> <input type="text" name="username" /></label><br>
+	<!-- <label><?=_("Username:")?> <input type="text" name="username" /></label><br> -->
+  <h1>Welcome!</h1>
+  <h5>Please check 2FA</h5>
 	<label><?=_("2fa verification code:")?><input type="text" name="currentcode" /></label><br>
 	<input type="submit" name="action" value="Check" />
 </form>

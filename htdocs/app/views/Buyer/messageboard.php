@@ -60,7 +60,7 @@ background-color: steelblue;
 <div class="form-outline mb-4">
                     
 <table width="100%" border="1" cellpadding="5" cellspacing="5">
-<tr><th><?=_("Seller")?></th><th><?=_("Title")?></th><th><?=_("Message")?></th></tr>
+<tr><th><?=_("Seller")?><th><?=_("Seller Email")?></th><th><?=_("Title")?></th><th><?=_("Message")?></th></tr>
 	
   <!-- localise like that? ??? -->
           	<?php
@@ -69,6 +69,7 @@ background-color: steelblue;
           	
             foreach ($data as $contacts) {
           		echo "<tr>
+              <td type=name>$contacts->seller_fname</td> 
               <td type=name>$contacts->seller_email</td> 
           		<td type=name>$contacts->title</td>
               <td type=name>$contacts->message</td>

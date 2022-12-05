@@ -76,7 +76,7 @@ background-color: steelblue;
                               <button class='btn btn-warning'><a class='nav-link' href='/Buyer/addToCart/$cartUser->item_id'>Add to cart</a></button>
                               </td>
                               <td type=action>
-                              <button class='btn btn-danger'><a class='nav-link' href='/Buyer/deleteFromWatchlist/$cartUser->item_id'>Delete</a></button>
+                              <button class='btn btn-danger'><a class='nav-link' href='/Buyer/deleteFromWatchlist/$cartUser->item_id'>Remove</a></button>
                               </td>
                               </tr>";
           	}

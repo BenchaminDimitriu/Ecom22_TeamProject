@@ -35,12 +35,12 @@ class Login extends \app\core\Controller{
 		 if(\app\core\TokenAuth6238::verify(
 		 	$_SESSION['secret_key'],$currentcode) && $_SESSION['role'] == 'buyer'){
 		 	$_SESSION['secret_key'] = null;
-		 	header('location:/Buyer/createProfile');
+		 	header('location:/Login/homeBuyer');
 		 }
 		 if(\app\core\TokenAuth6238::verify(
 		 	$_SESSION['secret_key'],$currentcode) && $_SESSION['role'] == 'seller'){
 		 	$_SESSION['secret_key'] = null;
-		 	header('location:/Seller/createProfile');
+		 	header('location:/Login/homeSeller');
 		 }
 		}else{
 			$this->view('Login/check2fa');
@@ -90,20 +90,40 @@ class Login extends \app\core\Controller{
 		\QRcode::png($data);
 	}
 
+	#[\app\filters\Buyer]
+	#[\app\filters\Login]
+	public function homeBuyer(){
+		$this->view('Login/homeBuyer');
+	}
+
+	#[\app\filters\Seller]
+	#[\app\filters\Login]
+	public function homeSeller(){
+		$this->view('Login/homeSeller');
+	}
+
 	#[\app\filters\Login]
 	public function setup2fa(){
 		 if(isset($_POST['action'])){
+
 		 	$currentcode = $_POST['currentCode'];
+
 		 if(\app\core\TokenAuth6238::verify(
-		 	$_SESSION['secretkey'],$currentcode)){
-		//the user has verified their proper 2-factor authentication setup
+		 	$_SESSION['secretkey'],$currentcode) && $_SESSION['role'] == 'buyer'){
 			 $user = new \app\models\Login();
 			 $user->user_id = $_SESSION['user_id'];
 			 $user->secret_key = $_SESSION['secretkey'];
 			 $user->update2fa();
-		 	 header('location:/Main/home');
-		 }else{
-		 	/*and finally this one*/
+		 	 header('location:/Buyer/createProfile');
+		 }
+		 elseif(\app\core\TokenAuth6238::verify(
+		 	$_SESSION['secretkey'],$currentcode) && $_SESSION['role'] == 'seller'){
+			 $user = new \app\models\Login();
+			 $user->user_id = $_SESSION['user_id'];
+			 $user->secret_key = $_SESSION['secretkey'];
+			 $user->update2fa();
+		 	 header('location:/Seller/createProfile');
+		 	}else{
 		     header('location:/Login/setup2fa?error=token not verified!');//reload
 		 	}
 		 }else{
