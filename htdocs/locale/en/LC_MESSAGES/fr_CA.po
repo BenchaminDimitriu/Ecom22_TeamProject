@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-17 12:23-0500\n"
-"PO-Revision-Date: 2022-11-17 12:30-0500\n"
+"POT-Creation-Date: 2022-12-04 23:30-0500\n"
+"PO-Revision-Date: 2022-12-04 23:43-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_CA\n"
@@ -18,39 +18,417 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.2\n"
 
-#: app/views/Login/index.php:3 app/views/Login/index.php:35
-#: app/views/Login/index.php:54
-msgid "Login"
-msgstr "Connexion"
+#: core/Model.php:18
+msgid "Failed connecting to the database"
+msgstr "Échec de la connexion à la base de données"
 
-#: app/views/Login/index.php:25
+#: views/Buyer/cart.php:4
+msgid "My cart"
+msgstr "Mon panier"
+
+#: views/Buyer/cart.php:23 views/Buyer/checkout.php:17
+#: views/Buyer/contact.php:19 views/Buyer/createProfile.php:25
+#: views/Buyer/editProfile.php:25 views/Buyer/history.php:14
+#: views/Buyer/messageboard.php:23 views/Buyer/profile.php:21
+#: views/Buyer/watchlist.php:23 views/Login/account.php:34
+#: views/Login/check2fa.php:34 views/Login/index.php:25
+#: views/Login/register.php:24 views/Main/catalogue.php:29
+#: views/Main/home.php:57 views/Seller/add.php:19 views/Seller/contact.php:19
+#: views/Seller/createProfile.php:29 views/Seller/edit.php:19
+#: views/Seller/editProfile.php:29 views/Seller/listings.php:23
+#: views/Seller/messageboard.php:23 views/Seller/profile.php:19
 msgid "ShopMart"
 msgstr "MarchéMagasin"
 
-#: app/views/Login/index.php:32
-msgid "Register"
-msgstr "S'inscrire"
+#: views/Buyer/cart.php:30 views/Buyer/checkout.php:25
+#: views/Buyer/contact.php:26 views/Buyer/createProfile.php:32
+#: views/Buyer/editProfile.php:35 views/Buyer/history.php:21
+#: views/Buyer/messageboard.php:30 views/Buyer/profile.php:28
+#: views/Buyer/watchlist.php:30 views/Main/catalogue.php:4
+#: views/Main/catalogue.php:55 views/Main/catalogue.php:89
+msgid "Catalog"
+msgstr "Catalogue"
 
-#: app/views/Login/index.php:38
+#: views/Buyer/cart.php:33 views/Buyer/checkout.php:28
+#: views/Buyer/contact.php:29 views/Buyer/editProfile.php:38
+#: views/Buyer/history.php:24 views/Buyer/messageboard.php:33
+#: views/Buyer/profile.php:31 views/Buyer/watchlist.php:33
+#: views/Main/catalogue.php:58 views/Seller/add.php:26
+#: views/Seller/contact.php:26 views/Seller/createProfile.php:36
+#: views/Seller/edit.php:26 views/Seller/editProfile.php:36
+#: views/Seller/listings.php:30 views/Seller/messageboard.php:30
+#: views/Seller/profile.php:26
+msgid "Profile"
+msgstr "Profil"
+
+#: views/Buyer/cart.php:36 views/Buyer/checkout.php:31
+#: views/Buyer/contact.php:32 views/Buyer/history.php:27
+#: views/Buyer/messageboard.php:36 views/Buyer/profile.php:34
+#: views/Buyer/watchlist.php:36 views/Main/catalogue.php:61
+#: views/Seller/contact.php:29 views/Seller/createProfile.php:39
+#: views/Seller/listings.php:33 views/Seller/messageboard.php:33
+#: views/Seller/profile.php:29
+msgid "Message Board"
+msgstr "Babillard"
+
+#: views/Buyer/cart.php:39 views/Buyer/checkout.php:43
+#: views/Buyer/contact.php:35 views/Buyer/createProfile.php:35
+#: views/Buyer/editProfile.php:41 views/Buyer/history.php:30
+#: views/Buyer/messageboard.php:39 views/Buyer/profile.php:37
+#: views/Buyer/watchlist.php:39 views/Login/account.php:47
+#: views/Login/check2fa.php:47 views/Login/index.php:38
+#: views/Login/register.php:37 views/Main/catalogue.php:73
+#: views/Main/home.php:66 views/Seller/add.php:32 views/Seller/contact.php:35
+#: views/Seller/createProfile.php:45 views/Seller/edit.php:32
+#: views/Seller/editProfile.php:42 views/Seller/listings.php:39
+#: views/Seller/messageboard.php:39 views/Seller/profile.php:35
 msgid "Logout"
 msgstr "Déconnexion"
 
-#: app/views/Login/index.php:59
+#: views/Buyer/cart.php:54
+msgid "My Cart"
+msgstr "Mon panier"
+
+#: views/Buyer/cart.php:60 views/Buyer/checkout.php:65
+#: views/Buyer/watchlist.php:60 views/Main/catalogue.php:95
+#: views/Seller/edit.php:50 views/Seller/listings.php:64
+msgid "Name"
+msgstr "Nom"
+
+#: views/Buyer/cart.php:60 views/Buyer/checkout.php:65
+#: views/Buyer/watchlist.php:60 views/Main/catalogue.php:95
+#: views/Seller/listings.php:64
+msgid "Image"
+msgstr "Image"
+
+#: views/Buyer/cart.php:60 views/Buyer/checkout.php:65
+msgid "Quantity"
+msgstr "Quantité"
+
+#: views/Buyer/cart.php:60 views/Buyer/checkout.php:65
+#: views/Buyer/watchlist.php:60 views/Main/catalogue.php:95
+#: views/Seller/listings.php:64
+msgid "Price"
+msgstr "Prix"
+
+#: views/Buyer/cart.php:60 views/Buyer/watchlist.php:60
+#: views/Main/catalogue.php:95 views/Seller/listings.php:64
+#: views/Seller/messageboard.php:60
+msgid "Action"
+msgstr ""
+
+#: views/Buyer/checkout.php:34 views/Main/catalogue.php:64
+msgid "Order History"
+msgstr "Historique des commandes"
+
+#: views/Buyer/checkout.php:37 views/Main/catalogue.php:67
+msgid "Watchlist"
+msgstr "Liste de surveillance"
+
+#: views/Buyer/checkout.php:40 views/Main/catalogue.php:70
+msgid "Cart"
+msgstr "Mon panier"
+
+#: views/Buyer/contact.php:4
+msgid "Contact Seller"
+msgstr "Contacter le vendeur"
+
+#: views/Buyer/contact.php:49 views/Seller/contact.php:49
+msgid "Send a message"
+msgstr "Envoyer un message"
+
+#: views/Buyer/contact.php:53 views/Seller/contact.php:53
+msgid "Title:"
+msgstr "Titre:"
+
+#: views/Buyer/contact.php:57 views/Seller/add.php:58
+#: views/Seller/contact.php:57
+msgid "Description:"
+msgstr ""
+
+#: views/Buyer/contact.php:60 views/Seller/contact.php:60
+msgid "Send"
+msgstr "Envoyer"
+
+#: views/Buyer/createProfile.php:3
+msgid "Create Buyer Profile"
+msgstr "Créer un profil d'acheteur"
+
+#: views/Buyer/createProfile.php:52 views/Seller/createProfile.php:58
+msgid "Create a Profile"
+msgstr "Créer un profil"
+
+#: views/Buyer/createProfile.php:57 views/Buyer/editProfile.php:63
+#: views/Seller/createProfile.php:63 views/Seller/editProfile.php:60
+msgid "First Name"
+msgstr "Prénom"
+
+#: views/Buyer/createProfile.php:64 views/Buyer/editProfile.php:70
+#: views/Seller/createProfile.php:70 views/Seller/editProfile.php:67
+msgid "Last Name"
+msgstr "Nom"
+
+#: views/Buyer/createProfile.php:71 views/Buyer/editProfile.php:77
+#: views/Seller/createProfile.php:77 views/Seller/editProfile.php:74
+msgid "Email"
+msgstr "Courriel"
+
+#: views/Buyer/createProfile.php:76 views/Seller/createProfile.php:82
+msgid "Create Profile"
+msgstr "Créer un profil"
+
+#: views/Buyer/createProfile.php:78
+msgid "Already have a profile?"
+msgstr "Vous avez déjà un profil ?"
+
+#: views/Buyer/createProfile.php:79 views/Seller/createProfile.php:85
+msgid "Go to Profile"
+msgstr "Aller au profil"
+
+#: views/Buyer/editProfile.php:3
+msgid "Edit Buyer Profile"
+msgstr "Modifier le profil de l'acheteur"
+
+#: views/Buyer/editProfile.php:32
+msgid "Home"
+msgstr "Accueil"
+
+#: views/Buyer/editProfile.php:58 views/Buyer/editProfile.php:82
+#: views/Buyer/profile.php:53 views/Seller/editProfile.php:55
+#: views/Seller/editProfile.php:79 views/Seller/profile.php:51
+msgid "Edit Profile"
+msgstr "Editer le profil"
+
+#: views/Buyer/messageboard.php:4 views/Seller/messageboard.php:4
+msgid "My Message Board"
+msgstr "Mon babillard"
+
+#: views/Buyer/messageboard.php:54 views/Seller/messageboard.php:54
+msgid "My Messages"
+msgstr "Mes messages"
+
+#: views/Buyer/messageboard.php:60 views/Login/register.php:76
+msgid "Seller"
+msgstr "Vendeur"
+
+#: views/Buyer/messageboard.php:60 views/Seller/messageboard.php:60
+msgid "Title"
+msgstr "Titre"
+
+#: views/Buyer/messageboard.php:60 views/Seller/messageboard.php:60
+msgid "Message"
+msgstr "Message"
+
+#: views/Buyer/profile.php:4
+msgid "Buyer Profile"
+msgstr "Profil de l'acheteur"
+
+#: views/Buyer/profile.php:50 views/Seller/profile.php:48
+msgid "My Profile"
+msgstr "Mon Profil"
+
+#: views/Buyer/profile.php:63 views/Seller/profile.php:61
+msgid "First name:"
+msgstr "Prénom:"
+
+#: views/Buyer/profile.php:69 views/Seller/profile.php:67
+msgid "Last name:"
+msgstr "Nom:"
+
+#: views/Buyer/profile.php:75 views/Seller/profile.php:73
+msgid "Email:"
+msgstr "Courriel:"
+
+#: views/Buyer/watchlist.php:4 views/Buyer/watchlist.php:54
+msgid "My Watchlist"
+msgstr "Mes listes de surveillance"
+
+#: views/Login/account.php:3
+msgid "2FA Account"
+msgstr "Compte 2FA"
+
+#: views/Login/account.php:41 views/Login/check2fa.php:41
+#: views/Login/index.php:32 views/Login/register.php:3
+#: views/Login/register.php:31 views/Login/register.php:95
+#: views/Main/home.php:60
+msgid "Register"
+msgstr "S'inscrire"
+
+#: views/Login/account.php:44 views/Login/check2fa.php:44
+#: views/Login/index.php:3 views/Login/index.php:35 views/Login/index.php:54
+#: views/Login/register.php:34 views/Main/home.php:63
+msgid "Login"
+msgstr "Connexion"
+
+#: views/Login/account.php:57
+msgid "Set up 2-factor authentication"
+msgstr "Configurer l'authentification à 2 facteurs"
+
+#: views/Login/account.php:62
+msgid "Verify 2-factor authentication"
+msgstr "Vérifier l'authentification à 2 facteurs"
+
+#: views/Login/check2fa.php:3
+msgid "2fa Check"
+msgstr "Verifier 2fa"
+
+#: views/Login/check2fa.php:57
+msgid "Username:"
+msgstr "Nom d'utilisateur:"
+
+#: views/Login/check2fa.php:58
+msgid "2fa verification code:"
+msgstr "Code de vérification 2fa :"
+
+#: views/Login/index.php:59 views/Login/register.php:58
 msgid "Username"
 msgstr "Nom d'utilisateur"
 
-#: app/views/Login/index.php:64
+#: views/Login/index.php:64 views/Login/register.php:85
 msgid "Password"
 msgstr "Mot de passe"
 
-#: app/views/Login/index.php:69
+#: views/Login/index.php:69
 msgid "Get Started"
 msgstr "Commencer"
 
-#: app/views/Login/index.php:71
+#: views/Login/index.php:71
 msgid "New here?"
 msgstr "Nouveau ici?"
 
-#: app/views/Login/index.php:72
+#: views/Login/index.php:72
 msgid "Create an Account"
 msgstr "Créer un compte"
+
+#: views/Login/register.php:53
+msgid "Create an account"
+msgstr "Créer un compte"
+
+#: views/Login/register.php:71 views/Seller/messageboard.php:60
+msgid "Buyer"
+msgstr "Acheteur"
+
+#: views/Login/register.php:90
+msgid "Password Confirmation"
+msgstr "Confirmation mot de passe"
+
+#: views/Login/register.php:98
+msgid "Already a user?"
+msgstr "Déjà utilisateur ?"
+
+#: views/Login/register.php:99
+msgid "Login here"
+msgstr "Connectez-vous ici"
+
+#: views/Login/twofasetup.php:3
+msgid "2fa set up"
+msgstr "configuration 2fa"
+
+#: views/Login/twofasetup.php:6
+msgid ""
+"\n"
+"\t\tPlease scan the QR-code on the screen with your favorite\n"
+"\t\tAuthenticator software, such as Google Authenticator. The\n"
+"\t\tauthenticator software will generate codes that are valid for 30\n"
+"\t\tseconds only. Enter such a code while and submit it while it is\n"
+"\t\tstill valid to confirm that the 2-factor authentication can be\n"
+"\t\tapplied to your account."
+msgstr ""
+"\n"
+" Veuillez scanner le code QR à l'écran avec votre logiciel Authenticator préféré, tel que Google Authenticator. Le logiciel d'authentification générera des codes valides pendant 30 secondes seulement. Entrez un tel code et soumettez-le pendant qu'il est encore valide pour confirmer que l'authentification à 2 facteurs peut être appliquée à votre compte."
+
+#: views/Login/twofasetup.php:14
+msgid "Current code:"
+msgstr "Code actuel :"
+
+#: views/Main/catalogue.php:95 views/Seller/edit.php:60
+#: views/Seller/listings.php:64
+msgid "Description"
+msgstr ""
+
+#: views/Main/home.php:4 views/Main/home.php:86
+msgid "Welcome to ShopMart"
+msgstr "MarchéMagasin"
+
+#: views/Main/home.php:87
+msgid "By Jonathan Dimitriu and Emmy Ea"
+msgstr "Par Jonathan Dimitriu et Emmy Ea"
+
+#: views/Seller/add.php:4
+msgid "Add Seller Item"
+msgstr "Ajouter un article vendeur"
+
+#: views/Seller/add.php:29 views/Seller/contact.php:32
+#: views/Seller/createProfile.php:42 views/Seller/edit.php:29
+#: views/Seller/editProfile.php:39 views/Seller/listings.php:36
+#: views/Seller/messageboard.php:36 views/Seller/profile.php:32
+msgid "Listing"
+msgstr "Référencement"
+
+#: views/Seller/add.php:46
+msgid "Add Item"
+msgstr "Ajouter un item"
+
+#: views/Seller/add.php:50
+msgid "Item Name:"
+msgstr "Nom de l'article:"
+
+#: views/Seller/add.php:54
+msgid "Price:"
+msgstr "Prix:"
+
+#: views/Seller/add.php:62
+msgid "Image:"
+msgstr ""
+
+#: views/Seller/add.php:68
+msgid "Add new item"
+msgstr "Ajoute un nouvel objet"
+
+#: views/Seller/contact.php:4
+msgid "Contact Buyer"
+msgstr "Contacter l'acheteur"
+
+#: views/Seller/createProfile.php:4
+msgid "Create Seller Profile"
+msgstr "Créer un profil de vendeur"
+
+#: views/Seller/edit.php:4
+msgid "Edit Seller Item"
+msgstr "Modifier l'article du vendeur"
+
+#: views/Seller/edit.php:46
+msgid "Edit Item"
+msgstr "Modifier l'article"
+
+#: views/Seller/edit.php:55
+msgid ">Price"
+msgstr ">Prix"
+
+#: views/Seller/edit.php:65
+msgid "Select Picture"
+msgstr "Sélectionnez l'image"
+
+#: views/Seller/edit.php:71
+msgid "Edit"
+msgstr "Éditer"
+
+#: views/Seller/editProfile.php:4
+msgid "Edit Seller Profile"
+msgstr "Modifier le profil du vendeur"
+
+#: views/Seller/listings.php:4
+msgid "Seller listings"
+msgstr "Listes de vendeurs"
+
+#: views/Seller/listings.php:54
+msgid "My Listing"
+msgstr "Mon annonce"
+
+#: views/Seller/listings.php:56
+msgid "Add a new item"
+msgstr "Ajouter un nouvel élément"
+
+#: views/Seller/profile.php:4
+msgid "Seller Profile"
+msgstr "Profil du vendeur"
