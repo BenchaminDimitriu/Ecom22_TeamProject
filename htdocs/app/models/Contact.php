@@ -35,18 +35,18 @@ class Contact extends \app\core\Model{
 		return $STMT->fetchAll();
 	}
 
-	public function getBEmailForContact() {
-		$SQL = "SELECT * FROM contact CROSS JOIN buyer on contact.buyer_id=buyer.buyer_id";
+	public function getBEmailForContact($seller_id) {
+		$SQL = "SELECT * FROM contact CROSS JOIN buyer on contact.buyer_id=buyer.buyer_id  WHERE seller_id=:seller_id";
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute();
+		$STMT->execute(['seller_id'=>$seller_id]);
 		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Contact');
 		return $STMT->fetchAll();
 	}
 
-	public function getSEmailForContact() {
-		$SQL = "SELECT * FROM contact CROSS JOIN seller on contact.seller_id=seller.seller_id";
+	public function getSEmailForContact($buyer_id) {
+		$SQL = "SELECT * FROM contact CROSS JOIN seller on contact.seller_id=seller.seller_id WHERE buyer_id=:buyer_id";
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute();
+		$STMT->execute(['buyer_id'=>$buyer_id]);
 		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Contact');
 		return $STMT->fetchAll();
 	}

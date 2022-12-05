@@ -29,10 +29,11 @@ class Cart extends \app\core\Model{
 		return $STMT->fetchAll();
 	}
 
-	public function getWatchlist(){
-		$SQL = "SELECT * FROM cart CROSS JOIN item on cart.item_id=item.item_id WHERE status=:status";
+	public function getWatchlist($user_id){
+		$SQL = "SELECT * FROM cart CROSS JOIN item on cart.item_id=item.item_id WHERE status=:status AND cart.user_id=:user_id";
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['status'=>'watchlist']);
+		$STMT->execute(['status'=>'watchlist',
+						'user_id'=>$user_id]);
 		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Cart');
 		return $STMT->fetchAll();
 	}

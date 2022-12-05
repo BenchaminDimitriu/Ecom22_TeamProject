@@ -67,16 +67,16 @@ background-color: steelblue;
 	
   <!-- localise like that? ??? -->
           	<?php
-          	$contact = new \app\models\Contact();
-          	$contacts = $contact->getAll();
+          	// $contact = new \app\models\Contact();
+          	// $contacts = $contact->getAll();
           	
-            foreach ($data as $contact) {
+            foreach ($data as $contacts) {
           		echo "<tr>
-              <td type=name>$contact->seller_email</td> 
-          		<td type=name>$contact->title</td>
-              <td type=name>$contact->message</td>
+              <td type=name>$contacts->seller_email</td> 
+          		<td type=name>$contacts->title</td>
+              <td type=name>$contacts->message</td>
               <td type=action>
-              <button class='btn btn-info'><a class='nav-link' href='/Buyer/contact/$contact->seller_id'>Contact seller</a></button>
+              <button class='btn btn-info'><a class='nav-link' href='/Buyer/contact/$contacts->seller_id'>Contact seller</a></button>
               </td>     
           		</tr>";
           	}

@@ -101,7 +101,7 @@ class Login extends \app\core\Controller{
 			 $user->user_id = $_SESSION['user_id'];
 			 $user->secret_key = $_SESSION['secretkey'];
 			 $user->update2fa();
-		 	 header('location:/Login/account');
+		 	 header('location:/Main/home');
 		 }else{
 		 	/*and finally this one*/
 		     header('location:/Login/setup2fa?error=token not verified!');//reload
