@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2022 at 08:58 PM
+-- Generation Time: Dec 06, 2022 at 03:54 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -73,7 +73,8 @@ INSERT INTO `cart` (`cart_id`, `user_id`, `item_id`, `status`, `qty`, `price`) V
 (31, 33, 10, 'paid', 3, 542.97),
 (32, 33, 11, 'paid', 1, 500.99),
 (33, 28, 10, 'watchlist', 1, 180.99),
-(35, 28, 14, 'paid', 1, 300.99);
+(35, 28, 14, 'paid', 1, 300.99),
+(36, 28, 9, 'paid', 1, 200.99);
 
 -- --------------------------------------------------------
 
@@ -155,6 +156,30 @@ INSERT INTO `login` (`user_id`, `username`, `password_hash`, `secret_key`, `role
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `review`
+--
+
+DROP TABLE IF EXISTS `review`;
+CREATE TABLE `review` (
+  `review_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `item_id` int(11) NOT NULL,
+  `rating` int(5) NOT NULL,
+  `comment` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `review`
+--
+
+INSERT INTO `review` (`review_id`, `user_id`, `item_id`, `rating`, `comment`) VALUES
+(3, 33, 9, 5, 'Nice!'),
+(5, 28, 14, 1, 'Too loud '),
+(6, 28, 9, 5, 'Love it!');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `seller`
 --
 
@@ -219,6 +244,14 @@ ALTER TABLE `login`
   ADD UNIQUE KEY `username` (`username`);
 
 --
+-- Indexes for table `review`
+--
+ALTER TABLE `review`
+  ADD PRIMARY KEY (`review_id`),
+  ADD KEY `review_to_login` (`user_id`),
+  ADD KEY `review_to_item` (`item_id`);
+
+--
 -- Indexes for table `seller`
 --
 ALTER TABLE `seller`
@@ -239,7 +272,7 @@ ALTER TABLE `buyer`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `contact`
@@ -258,6 +291,12 @@ ALTER TABLE `item`
 --
 ALTER TABLE `login`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+
+--
+-- AUTO_INCREMENT for table `review`
+--
+ALTER TABLE `review`
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `seller`
@@ -295,6 +334,13 @@ ALTER TABLE `contact`
 ALTER TABLE `item`
   ADD CONSTRAINT `item_to_login` FOREIGN KEY (`user_id`) REFERENCES `login` (`user_id`),
   ADD CONSTRAINT `item_to_seller` FOREIGN KEY (`seller_id`) REFERENCES `seller` (`seller_id`);
+
+--
+-- Constraints for table `review`
+--
+ALTER TABLE `review`
+  ADD CONSTRAINT `review_to_item` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`),
+  ADD CONSTRAINT `review_to_login` FOREIGN KEY (`user_id`) REFERENCES `login` (`user_id`);
 
 --
 -- Constraints for table `seller`

@@ -135,4 +135,14 @@ class Seller extends \app\core\Controller{
 			$this->view('Seller/contact',['buyer'=>$buyers]);
 		}
 	}
+
+	public function myReviews($item_id){
+		$item = new \app\models\Item();
+		$items = $item->get($item_id);
+
+
+		$review = new \app\models\Review();
+	    $reviews = $review->getForSellerReviews($item_id);
+		$this->view('Seller/myReviews' , $reviews);
+	}
 }

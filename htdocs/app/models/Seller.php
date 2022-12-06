@@ -29,7 +29,7 @@ class Seller extends \app\core\Model{
 		return self::$_connection->lastInsertId();
 	}
 
-		public function getForContact($seller_id){
+	public function getForContact($seller_id){
 		$SQL = "SELECT * FROM seller WHERE seller_id=:seller_id";
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['seller_id'=>$seller_id]);

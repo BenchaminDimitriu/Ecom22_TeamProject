@@ -59,6 +59,9 @@ background-color: steelblue;
         <a class="nav-link" href="http://localhost/Buyer/history"><?=_("Order History")?></a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="http://localhost/Buyer/myReviews"><?=_("My Reviews")?></a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="http://localhost/Buyer/watchlist"><?=_("Watchlist")?></a>
       </li>
        <li class="nav-item">

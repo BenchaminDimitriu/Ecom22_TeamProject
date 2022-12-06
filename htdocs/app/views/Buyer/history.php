@@ -64,7 +64,7 @@
 
 
                   <?php 
-
+               
                       foreach ($data as $order_history) {
                         if($order_history->status == 'paid'){
                             echo "
@@ -73,6 +73,9 @@
                                           <td> <img src='/images/".$order_history->item_image."'style='max-width:200px;max-height:100px'/></td>
                                           <td type=name>$order_history->qty</td>
                                           <td type=name>$order_history->item_price</td>
+                                          </td>
+                                          <td type=action>
+                                          <button class='btn btn-warning'><a class='nav-link' href='/Buyer/review/$order_history->item_id'>Review Item</a></button>
                                           </td>
                                           </tr>
                                          ";

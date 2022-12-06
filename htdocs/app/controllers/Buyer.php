@@ -43,6 +43,8 @@ class Buyer extends \app\core\Controller{
 		}
 	}
 
+	/*----------------------Contact---------------------------------------*/
+
 	#[\app\filters\Buyer]
 	#[\app\filters\Login]
 	public function contact($seller_id){
@@ -210,6 +212,37 @@ class Buyer extends \app\core\Controller{
 			header('location:/Buyer/history');
 		}
 		$this->view('Buyer/checkout' , $total_price);
+	}
+/*-------------------Review----------------------------*/
+
+	#[\app\filters\Buyer]
+	#[\app\filters\Login]
+	public function review($item_id){
+		$item = new \app\models\Item();
+		$items = $item->get($item_id);
+
+		// $seller = new \app\models\Seller();
+		// $sellers = $seller->getForContact();
+
+
+		if(isset($_POST['action'])){
+			$review = new \app\models\Review();
+			$review->user_id = $_SESSION['user_id'];
+			$review->item_id = $item_id;
+			// $review->seller_id = $seller_id;
+		    $review->rating = $_POST['rating'];
+			$review->comment = $_POST['comment'];
+			$review->insert();
+		$this->view('Buyer/review',['item'=>$items]);
+		}else{
+			$this->view('Buyer/review',['item'=>$items]);
+		}
+	}
+
+	public function myReviews(){
+		$review = new \app\models\Review();
+	    $reviews = $review->getReviews($_SESSION['user_id']);
+		$this->view('Buyer/myReviews' , $reviews);
 	}
 
 }
