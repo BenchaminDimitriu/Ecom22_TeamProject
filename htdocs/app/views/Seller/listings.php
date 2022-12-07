@@ -78,7 +78,7 @@ background-color: steelblue;
           		<td> <img src='/images/".$item->item_image."'style='max-width:200px;max-height:100px'/></td></td>
               <td type=name>$item->item_price</td>
               <td type=action>
-              <button class='btn btn-info'><a class='nav-link' href='/Seller/myReviews/$item->item_id'>Item Reviews</a></button>
+              <button class='btn btn-info'><a class='nav-link' href='/Seller/myReviews/$item->item_id'>View Reviews</a></button>
               </td>
               <td type=action>
               <button class='btn btn-warning'><a class='nav-link' href='/Seller/edit/$item->item_id'>edit</a></button>

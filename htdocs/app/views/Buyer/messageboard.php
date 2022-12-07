@@ -60,7 +60,7 @@ background-color: steelblue;
 <div class="form-outline mb-4">
                     
 <table width="100%" border="1" cellpadding="5" cellspacing="5">
-<tr><th><?=_("Seller")?><th><?=_("Seller Email")?></th><th><?=_("Title")?></th><th><?=_("Message")?></th></tr>
+<tr><th><?=_("Seller")?><th><?=_("Seller Email")?></th><th><?=_("Title")?></th><th><?=_("Message")?></th><th><?=_("Action")?></th></tr>
 	
   <!-- localise like that? ??? -->
           	<?php
@@ -75,7 +75,7 @@ background-color: steelblue;
               <td type=name>$contacts->message</td>
               <td type=action>
               <button class='btn btn-info'><a class='nav-link' href='/Buyer/contact/$contacts->seller_id'>Contact seller</a></button>
-              </td>     
+              </td>    
           		</tr>";
           	}
           ?>

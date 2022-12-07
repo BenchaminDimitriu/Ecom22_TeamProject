@@ -2,6 +2,11 @@
 <head>
 <title><?=_("2fa set up")?></title>
 </head>
+<style>
+body{
+background-color: steelblue;
+}  
+</style>
 <body>
 	<img src="/Login/makeQRCode?data=<?= $data ?>" /><?=_("
 		Please scan the QR-code on the screen with your favorite

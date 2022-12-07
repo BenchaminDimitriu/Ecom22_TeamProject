@@ -55,7 +55,7 @@ class Login extends \app\core\Controller{
 
 	public function logout(){
 		session_destroy();
-		header('location:/Login/index');
+		header('location:/Main/home');
 	}
 
 	public function register(){

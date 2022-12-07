@@ -28,9 +28,6 @@ if(isset($_GET['error'])){
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Main/catalogue"><?=_("Catalog")?></a>
-      </li>
        <li class="nav-item">
         <a class="nav-link" href="http://localhost/Login/logout"><?=_("Logout")?></a>
       </li>

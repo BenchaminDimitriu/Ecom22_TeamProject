@@ -84,7 +84,7 @@
                       }
 
                     ?>
-                    </table>
+           <!--          </table>
                     <br>
 
                     <h2 class='text-center mb-5'>Watchlist Items</h2>
@@ -114,7 +114,7 @@
 
 
                   </table>
-                </div>
+                </div> -->
 
                 </div>
               </form>
