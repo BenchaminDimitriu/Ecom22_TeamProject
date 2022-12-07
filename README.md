@@ -30,6 +30,8 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 
 • checkout my purchases. (1 feature) - DONE
 
+• review purchased items. (1 feature) - DONE
+
 ## As a seller and a buyer I can:
 • access registration, login, logout, 2-factor authentication (as per class instruction). (0 feature)
 
@@ -41,6 +43,8 @@ We will be using Sublime Text as our text editor. We will be using PHP, HTML and
 • view my listings. (1 feature) - DONE
 
 • send/view messages sent to buyers. (2 feature) - DONE
+
+• view review for items. (1 feature) - DONE
 
 ## 5. Estimated Time:
 We estimate that we will need about 80 hours per person to complete this project. At a total of 160 hours.  
