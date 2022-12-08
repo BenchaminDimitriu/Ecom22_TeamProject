@@ -5,7 +5,9 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 <style>
 body{
-background-color: steelblue;
+background: rgb(2,0,36);
+background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(1,57,95,1) 30%, rgba(0,212,255,1) 100%);
+;
 }  
 </style>
 </head>
@@ -46,7 +48,7 @@ if(isset($_GET['error'])){
 
 <div class="bg-image"style="background-image: url('../../images/listing.png');">
   
-<div class="mask d-flex align-items-center h-100 gradient-custom-3">
+<div class="mask d-flex align-items-center h-100 gradient-custom-3" style="opacity:80%;">
     <div class="container h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
