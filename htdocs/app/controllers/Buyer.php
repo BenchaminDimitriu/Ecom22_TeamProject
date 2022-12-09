@@ -58,6 +58,7 @@ class Buyer extends \app\core\Controller{
 			$contact->message = $_POST['message'];
 			$contact->insert();
 		$this->view('Buyer/contact',['seller'=>$sellers]);
+		header('location:/Buyer/messageboard?success=message sent'); 
 		}else{
 			$this->view('Buyer/contact',['seller'=>$sellers]);
 		}
@@ -234,6 +235,7 @@ class Buyer extends \app\core\Controller{
 			$review->comment = $_POST['comment'];
 			$review->insert();
 		$this->view('Buyer/review',['item'=>$items]);
+		header('location:/Buyer/myReviews?success=Review applied'); 
 		}else{
 			$this->view('Buyer/review',['item'=>$items]);
 		}
