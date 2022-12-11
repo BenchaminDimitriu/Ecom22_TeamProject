@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2022 at 11:44 PM
+-- Generation Time: Dec 11, 2022 at 03:44 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -44,8 +44,7 @@ CREATE TABLE `buyer` (
 
 INSERT INTO `buyer` (`buyer_id`, `user_id`, `buyer_fname`, `buyer_lname`, `buyer_email`) VALUES
 (6, 33, 'Psycho', 'Craycray', 'loudmeowling@gmail.com'),
-(7, 28, 'Dino', 'Saur', 'rawr@gmail.com'),
-(8, 36, 'buyer', 'changesweremadehere', 'b@gmail.com');
+(7, 28, 'Dino', 'Saur', 'rawr@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -73,13 +72,15 @@ INSERT INTO `cart` (`cart_id`, `user_id`, `item_id`, `status`, `qty`, `price`) V
 (30, 33, 9, 'paid', 1, 200.99),
 (31, 33, 10, 'paid', 3, 542.97),
 (32, 33, 11, 'paid', 1, 500.99),
-(33, 28, 10, 'watchlist', 1, 180.99),
 (35, 28, 14, 'paid', 1, 300.99),
 (36, 28, 9, 'paid', 1, 200.99),
 (38, 36, 11, 'watchlist', 1, 500.99),
 (39, 36, 11, 'paid', 1, 500.99),
 (40, 36, 14, 'paid', 1, 300.99),
-(41, 36, 9, 'cart', 1, 200.99);
+(41, 36, 9, 'cart', 1, 200.99),
+(43, 28, 9, 'watchlist', 1, 200.99),
+(44, 28, 14, 'watchlist', 1, 300.99),
+(45, 28, 10, 'paid', 2, 361.98);
 
 -- --------------------------------------------------------
 
@@ -101,9 +102,8 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`contact_id`, `buyer_id`, `seller_id`, `title`, `message`) VALUES
-(14, 6, 5, 'Discount', 'Discount for your pet pls '),
-(15, 6, 5, 'No', 'No discount for you'),
-(16, 8, 6, 'hi', 'can I....? ');
+(18, 7, 5, 'Discount', 'pls?'),
+(19, 7, 5, 'What', '?');
 
 -- --------------------------------------------------------
 
@@ -127,7 +127,7 @@ CREATE TABLE `item` (
 --
 
 INSERT INTO `item` (`item_id`, `user_id`, `seller_id`, `item_name`, `item_description`, `item_image`, `item_price`) VALUES
-(9, 25, 5, 'Greek Vase ', 'Amphora from Ancient Greece. Made to store oil. ', '638e435910434.jpg', 200.99),
+(9, 25, 5, 'Greek Vase ', 'Amphora from Ancient Greece. Made to store oil. ', '638e435910434.jpg', 250.99),
 (10, 26, 6, 'Chinese Vase ', 'Porcelain vase from a forgotten dynasty', '638e448f88ae5.jpg', 180.99),
 (11, 26, 6, 'Commode', 'Old Victorian drawer ', '638e44b643ac8.jpg', 500.99),
 (14, 27, 7, 'Typewriter', 'Loud and requires ink', '638e4bb64b812.jpg', 300.99),
@@ -158,8 +158,7 @@ INSERT INTO `login` (`user_id`, `username`, `password_hash`, `secret_key`, `role
 (26, 'Jake', '$2y$10$HDjvuFFtzyQBnAXiGEckFeXp/jjVKmNkDiDNBFzkjyG2E.v1eIe5e', '5I3I5GPTA3GIOMRE', 'seller'),
 (27, 'Mimi', '$2y$10$Xme3ry0mycnBe9pPLsvQoOTL6IXNI/juv7cMQARWbyfo8McN6SuZG', 'UPKWOFORGZH2IFUD', 'seller'),
 (28, 'Dino', '$2y$10$qSJA0FGT9Rdf1DjEQ8Z9iez2pUNdgrJ2t5nQzDZLiMVU5N/EEPTPK', 'QYOT6T7FCEBGCMBC', 'buyer'),
-(33, 'Psycho', '$2y$10$mp5VSlq0rggWuTZRm4W1KeJFAbY2W1g3KbQvELeF0NcbPP/TxQL9S', 'J5LZ6ZA5YYKZIVS3', 'buyer'),
-(36, 'buyer', '$2y$10$kUGBQ.Bvvllyip20xI7cq.KFEZ6inxTcbyQj0rM7lvv4klop0jxXG', 'H433YXDTR6W2GNWO', 'buyer');
+(33, 'Psycho', '$2y$10$mp5VSlq0rggWuTZRm4W1KeJFAbY2W1g3KbQvELeF0NcbPP/TxQL9S', 'J5LZ6ZA5YYKZIVS3', 'buyer');
 
 -- --------------------------------------------------------
 
@@ -181,10 +180,7 @@ CREATE TABLE `review` (
 --
 
 INSERT INTO `review` (`review_id`, `user_id`, `item_id`, `rating`, `comment`) VALUES
-(3, 33, 9, 5, 'Nice!'),
-(5, 28, 14, 1, 'Too loud '),
-(6, 28, 9, 5, 'Love it!'),
-(7, 36, 11, 5, 'Excellent!');
+(28, 28, 9, 1, 'Love it!');
 
 -- --------------------------------------------------------
 
@@ -275,43 +271,43 @@ ALTER TABLE `seller`
 -- AUTO_INCREMENT for table `buyer`
 --
 ALTER TABLE `buyer`
-  MODIFY `buyer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `buyer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `seller`
 --
 ALTER TABLE `seller`
-  MODIFY `seller_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `seller_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables

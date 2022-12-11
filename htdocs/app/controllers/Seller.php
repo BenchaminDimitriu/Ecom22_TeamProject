@@ -43,7 +43,7 @@ class Seller extends \app\core\Controller{
 		}
 	}
 
-	
+	/**********************************Listing***********************************/
 	#[\app\filters\Seller]
 	#[\app\filters\Login]
 	public function listings(){
@@ -56,7 +56,6 @@ class Seller extends \app\core\Controller{
 	#[\app\filters\Login]
 	public function add(){
 		if(isset($_POST['action'])){
-			//if(isset($_POST['action']) && $item->seller_id == $_SESSION['seller_id']){
 			$item = new \app\models\Item();
 			$item->item_name = $_POST['item_name'];
 			$item->item_price = $_POST['item_price'];
@@ -66,7 +65,7 @@ class Seller extends \app\core\Controller{
 			
 			$item->user_id = $_SESSION['user_id'];
 			$item->seller_id = $_SESSION['seller_id'];
-			$_SESSION['item_id'] = $item->insert();
+			$item->insert();
 			header('location:/Seller/listings');
 		}else{
 			$this->view('Seller/add');
@@ -79,7 +78,6 @@ class Seller extends \app\core\Controller{
 		$item = $item->get($item_id);
 		unlink("images/$item->item_image");
 		$item->delete();
-		//$this->view('Seller/delete');
 	    header('location:/Seller/listings');
 	}
 
@@ -100,13 +98,14 @@ class Seller extends \app\core\Controller{
 			$item->user_id = $_SESSION['user_id'];
 			$item->seller_id = $_SESSION['seller_id'];
 			$item->update();
-			//$sellers = $seller->get($item);
 			header('location:/Seller/listings');
 		}else{
 			$items = $item->get($item_id);
 			$this->view("Seller/edit",['item'=>$items]);
 		}
 	}
+
+    /**********************************Contact***********************************/
 
 	#[\app\filters\Seller]
 	#[\app\filters\Login]
@@ -135,6 +134,8 @@ class Seller extends \app\core\Controller{
 			$this->view('Seller/contact',['buyer'=>$buyers]);
 		}
 	}
+
+	/**********************************Review***********************************/
 
 	public function myReviews($item_id){
 		$item = new \app\models\Item();

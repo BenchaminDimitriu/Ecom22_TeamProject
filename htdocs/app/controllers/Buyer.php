@@ -67,10 +67,6 @@ class Buyer extends \app\core\Controller{
 	#[\app\filters\Buyer]
 	#[\app\filters\Login]
 	public function messageboard(){
-		// $contact = new \app\models\Contact();
-	    // $contacts = $contact->getForBuyer($_SESSION['buyer_id']);
-		// $this->view('Buyer/messageboard' , $contacts);
-
 		$contact = new \app\models\Contact();
 	    $contacts = $contact->getSEmailForContact($_SESSION['buyer_id']);
 		$this->view('Buyer/messageboard' , $contacts);

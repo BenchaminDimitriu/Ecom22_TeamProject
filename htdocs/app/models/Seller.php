@@ -19,6 +19,14 @@ class Seller extends \app\core\Model{
 		return $STMT->fetch();
 	}
 
+	public function getForContact($seller_id){
+		$SQL = "SELECT * FROM seller WHERE seller_id=:seller_id";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['seller_id'=>$seller_id]);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Seller');
+		return $STMT->fetchAll();
+	}
+
 	public function insert(){
 		$SQL = "INSERT INTO seller (user_id, seller_fname, seller_lname, seller_email) VALUES (:user_id, :seller_fname, :seller_lname, :seller_email)";
 		$STMT = self::$_connection->prepare($SQL);
@@ -27,14 +35,6 @@ class Seller extends \app\core\Model{
 						'seller_lname'=>$this->seller_lname,
 						'seller_email'=>$this->seller_email]);
 		return self::$_connection->lastInsertId();
-	}
-
-	public function getForContact($seller_id){
-		$SQL = "SELECT * FROM seller WHERE seller_id=:seller_id";
-		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['seller_id'=>$seller_id]);
-		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Seller');
-		return $STMT->fetchAll();
 	}
 
 	public function update(){

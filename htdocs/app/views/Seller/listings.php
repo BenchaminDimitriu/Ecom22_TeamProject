@@ -6,9 +6,11 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
 <style>
 body{
-background-color: steelblue;
+background: rgb(2,0,36);
+background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(1,57,95,1) 30%, rgba(0,212,255,1) 100%);
 } 
 .card {
         margin: 0 auto; /* Added */
@@ -19,11 +21,14 @@ background-color: steelblue;
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="http://localhost/Seller/listings"><?=_("ShopMart")?></a>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
   </button>
+
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
        <li class="nav-item">
@@ -40,11 +45,8 @@ background-color: steelblue;
                         <div class="dropdown-menu">
                           <a href="?lang=en_CA" class="dropdown-item">English</a>
                          <a href="?lang=fr_CA" class="dropdown-item">Français</a>
-                      </div>
-                    </div>  
-      </li>
-    </ul>
-  </div>
+                        </div>
+        </div>  
 </nav>
 
 </br>
@@ -67,32 +69,27 @@ background-color: steelblue;
 <table width="100%" border="1" cellpadding="5" cellspacing="5">
 <tr><th><?=_("Name")?></th><th><?=_("Description")?></th><th><?=_("Image")?></th><th><?=_("Price")?></th><th><?=_("Action")?></th><th><?=_("Action")?></th><th><?=_("Action")?></th></tr>
 	
-<!--   how to localise that? -->
           	<?php
-          	$item = new \app\models\Item();
-          	$items = $item->getAll();
-          	foreach ($data as $item) {
+          	foreach ($data as $items) {
           		echo "<tr>
-          		<td type=name>$item->item_name</td>
-              <td type=name>$item->item_description</td>
-          		<td> <img src='/images/".$item->item_image."'style='max-width:200px;max-height:100px'/></td></td>
-              <td type=name>$item->item_price</td>
+          		<td type=name>$items->item_name</td>
+              <td type=name>$items->item_description</td>
+          		<td> <img src='/images/".$items->item_image."'style='max-width:200px;max-height:100px'/></td></td>
+              <td type=name>$items->item_price</td>
               <td type=action>
-              <button class='btn btn-info'><a class='nav-link' href='/Seller/myReviews/$item->item_id'>View Reviews</a></button>
+              <button class='btn btn-info'><a class='nav-link' href='/Seller/myReviews/$items->item_id'>View Reviews</a></button>
               </td>
               <td type=action>
-              <button class='btn btn-warning'><a class='nav-link' href='/Seller/edit/$item->item_id'>edit</a></button>
+              <button class='btn btn-warning'><a class='nav-link' href='/Seller/edit/$items->item_id'>edit</a></button>
               </td>
           		<td type=action>
-          		<button class='btn btn-danger'><a class='nav-link' href='/Seller/delete/$item->item_id'>delete</a></button>
+          		<button class='btn btn-danger'><a class='nav-link' href='/Seller/delete/$items->item_id'>delete</a></button>
           		</td>
           		</tr>";
           	}
           ?>
-
 </table>
     
-                 
                 </div>
               </form>
             </div>

@@ -3,6 +3,7 @@ namespace app\controllers;
 
 class Login extends \app\core\Controller{
 
+	//login
 	public function home(){
 		if(isset($_POST['action'])){
 			$user = new \app\models\Login();
@@ -26,42 +27,9 @@ class Login extends \app\core\Controller{
 		}
 	}
 
-
-	public function check2fa(){
-		if(!isset($_SESSION['user_id'])) header('location/Login/index');
-
-		if(isset($_POST['action'])){
-			$currentcode = $_POST['currentcode'];
-		 if(\app\core\TokenAuth6238::verify(
-		 	$_SESSION['secret_key'],$currentcode) && $_SESSION['role'] == 'buyer'){
-		 	$_SESSION['secret_key'] = null;
-		 	header('location:/Login/homeBuyer');
-		 }
-		 if(\app\core\TokenAuth6238::verify(
-		 	$_SESSION['secret_key'],$currentcode) && $_SESSION['role'] == 'seller'){
-		 	$_SESSION['secret_key'] = null;
-		 	header('location:/Login/homeSeller');
-		 }
-		}else{
-			$this->view('Login/check2fa');
-		}
-	}
-
-	public function account(){
-		$user = new \app\models\Login();
-		$users = $user->get($_SESSION['username']);
-		$this->view('Login/account' , ['user'=>$users]);
-	}
-
-	public function logout(){
-		session_destroy();
-		header('location:/Main/home');
-	}
-
 	public function register(){
-		if(isset($_POST['action'])){//form submitted
-
-			if($_POST['password'] == $_POST['password_confirm']){//match
+		if(isset($_POST['action'])){
+			if($_POST['password'] == $_POST['password_confirm']){
 				$user = new \app\models\Login();//TODO
 				$check = $user->get($_POST['username']);
 				if(!$check){
@@ -85,21 +53,10 @@ class Login extends \app\core\Controller{
 
 	}
 
-	public function makeQRCode(){
-		$data = $_GET['data'];
-		\QRcode::png($data);
-	}
 
-	#[\app\filters\Buyer]
-	#[\app\filters\Login]
-	public function homeBuyer(){
-		$this->view('Login/homeBuyer');
-	}
-
-	#[\app\filters\Seller]
-	#[\app\filters\Login]
-	public function homeSeller(){
-		$this->view('Login/homeSeller');
+	public function logout(){
+		session_destroy();
+		header('location:/Main/home');
 	}
 
 	#[\app\filters\Login]
@@ -133,5 +90,49 @@ class Login extends \app\core\Controller{
 			 'Awesome.com', $secretkey,'Awesome App');
 			 $this->view('Login/twofasetup', $url);
 		 }
+	}
+
+	public function check2fa(){
+		if(!isset($_SESSION['user_id'])) header('location/Login/index');
+
+		if(isset($_POST['action'])){
+			$currentcode = $_POST['currentcode'];
+		 if(\app\core\TokenAuth6238::verify(
+		 	$_SESSION['secret_key'],$currentcode) && $_SESSION['role'] == 'buyer'){
+		 	$_SESSION['secret_key'] = null;
+		 	header('location:/Login/homeBuyer');
+		 }
+		 if(\app\core\TokenAuth6238::verify(
+		 	$_SESSION['secret_key'],$currentcode) && $_SESSION['role'] == 'seller'){
+		 	$_SESSION['secret_key'] = null;
+		 	header('location:/Login/homeSeller');
+		 }
+		}else{
+			$this->view('Login/check2fa');
+		}
+	}
+
+	public function makeQRCode(){
+		$data = $_GET['data'];
+		\QRcode::png($data);
+	}
+
+	#[\app\filters\Login]
+	public function account(){
+		$user = new \app\models\Login();
+		$users = $user->get($_SESSION['username']);
+		$this->view('Login/account' , ['user'=>$users]);
+	}
+
+	#[\app\filters\Buyer]
+	#[\app\filters\Login]
+	public function homeBuyer(){
+		$this->view('Login/homeBuyer');
+	}
+
+	#[\app\filters\Seller]
+	#[\app\filters\Login]
+	public function homeSeller(){
+		$this->view('Login/homeSeller');
 	}
 }

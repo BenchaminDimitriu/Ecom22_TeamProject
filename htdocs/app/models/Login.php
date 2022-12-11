@@ -11,13 +11,6 @@ class Login extends \app\core\Model{
 		return $STMT->fetch();
 	}
 
-	public function getUserID($user_id){
-		$SQL = "SELECT * FROM login WHERE user_id=:user_id";
-		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['user_id'=>$user_id]);
-		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Login');
-		return $STMT->fetch();
-	}
 
 	public function getSeller(){
 		$SQL = "SELECT * FROM seller WHERE user_id=:user_id";
@@ -27,7 +20,7 @@ class Login extends \app\core\Model{
 		return $STMT->fetch();
 	}
 
-		public function getBuyer(){
+	public function getBuyer(){
 		$SQL = "SELECT * FROM buyer WHERE user_id=:user_id";
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['user_id'=>$this->user_id]);
@@ -44,12 +37,12 @@ class Login extends \app\core\Model{
 						'role'=>$this->role]);
 	}
 
-	public function updatePassword(){
-		$SQL = "UPDATE login SET password_hash=:password_hash WHERE user_id=:user_id";
-		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['password_hash'=>$this->password_hash,
-						'user_id'=>$this->user_id]);
-	}
+	// public function updatePassword(){
+	// 	$SQL = "UPDATE login SET password_hash=:password_hash WHERE user_id=:user_id";
+	// 	$STMT = self::$_connection->prepare($SQL);
+	// 	$STMT->execute(['password_hash'=>$this->password_hash,
+	// 					'user_id'=>$this->user_id]);
+	// }
 
 	public function update2fa(){
 		$SQL = "UPDATE login SET secret_key=:secret_key WHERE user_id=:user_id";

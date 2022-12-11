@@ -45,20 +45,19 @@
 </head>
 
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
-    <div class="container-fluid">
-      <!-- Navbar brand -->
 
-      <div class="collapse navbar-collapse" id="navbarExample01">
+<nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+<div class="container-fluid">
+<div class="collapse navbar-collapse" id="navbarExample01">
 
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item active">
-                <a class="nav-link" href="http://localhost/Main/home"><strong><?=_("ShopMart")?></strong></a>
+                <a class="nav-link" href="http://localhost/Login/homeSeller"><strong><?=_("ShopMart")?></strong></a>
             </li>
-           <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-       <li class="nav-item">
+
+<div class="collapse navbar-collapse" id="navbarNavDropdown">
+<ul class="navbar-nav">
+      <li class="nav-item">
         <a class="nav-link" href="http://localhost/Seller/profile"><?=_("Profile")?></a>
       </li>
       <li class="nav-item">
@@ -70,13 +69,13 @@
        <li class="nav-item">
         <a class="nav-link" href="http://localhost/Login/logout"><?=_("Logout")?></a>
       </li>
-        <div class="dropdown">
+      <div class="dropdown">
                         <a class="nav-link" data-bs-toggle="dropdown"><?= _("Language")?></a>
                         <div class="dropdown-menu">
                           <a href="?lang=en_CA" class="dropdown-item">English</a>
                          <a href="?lang=fr_CA" class="dropdown-item">Français</a>
-                      </div>
-                    </div>  
+                        </div>
+      </div>  
       </li>
     </ul>
   </div>

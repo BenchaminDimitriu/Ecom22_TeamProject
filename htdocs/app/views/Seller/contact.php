@@ -9,19 +9,22 @@
 
 <style>
 body{
-background-color: steelblue;
+background: rgb(2,0,36);
+background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(1,57,95,1) 30%, rgba(0,212,255,1) 100%);
 }  
 </style>
 </head>
 
 <body>
- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="http://localhost/Seller/contact"><?=_("ShopMart")?></a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="http://localhost/Seller/contact"><?=_("ShopMart")?></a>
+    
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
+
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
+      <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" href="http://localhost/Seller/profile"><?=_("Profile")?></a>
       </li>
@@ -36,11 +39,10 @@ background-color: steelblue;
                         <div class="dropdown-menu">
                           <a href="?lang=en_CA" class="dropdown-item">English</a>
                          <a href="?lang=fr_CA" class="dropdown-item">Français</a>
-                      </div>
-                    </div>  
-    </div>
-      </li>
-    </ul>
+                        </div>
+        </div>  
+  </div>
+      </ul>
 </nav>
   
   <div class="mask d-flex align-items-center h-100 gradient-custom-3">

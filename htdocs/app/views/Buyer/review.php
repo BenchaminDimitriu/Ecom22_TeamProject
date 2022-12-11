@@ -9,7 +9,8 @@
 
 <style>
 body{
-background-color: steelblue;
+background: rgb(2,0,36);
+background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(1,57,95,1) 30%, rgba(0,212,255,1) 100%);
 }  
 </style>
 </head>
@@ -26,11 +27,13 @@ if(isset($_POST['success'])){
 }
 ?>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href=#><?=_("ShopMart")?></a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href=#><?=_("ShopMart")?></a>
+  
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
   </button>
+  
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
        <li class="nav-item">

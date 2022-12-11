@@ -12,7 +12,8 @@
 
 <style>
 body{
-background-color: steelblue;
+background: rgb(2,0,36);
+background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(1,57,95,1) 30%, rgba(0,212,255,1) 100%);
 } 
 
 .card {
@@ -25,29 +26,22 @@ background-color: steelblue;
 
 <body>
 
- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="http://localhost/Main/catalogue"><?=_("ShopMart")?></a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="http://localhost/Main/catalogue"><?=_("ShopMart")?></a>
+  
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
 
-<!--         how to localise that? -->
+<div class="collapse navbar-collapse" id="navbarNavDropdown">
+<ul class="navbar-nav">
+
    <form action="/Main/search" method="get" style='display:inline-block'>         
         <div class="input-group">
         <input type="search" name='search_term' class="form-control" placeholder="Enter search term" />
         <button type="submit" class="btn btn-primary" value="Search"><i class="bi-search"></i></button>
-        
-    <!--         <label>Filter by price:</label>
-    <select name="filter">
-        <option value="asc" <?php if(isset($_GET['search_term']) && $_GET['search_term'] == "asc") {echo "selected";} ?>>Lowest to Highest</option>
-        <option value="desc"  <?php if(isset($_GET['search_term']) && $_GET['search_term'] == "desc") {echo "selected";} ?>>Highest to Lowest</option>
-    </select> -->
-      </div>
-
-
-    </form>
+       </div>
+  </form>
 
        <li class="nav-item">
         <a class="nav-link" href="http://localhost/Buyer/profile"><?=_("Profile")?></a>
@@ -75,8 +69,8 @@ background-color: steelblue;
                         <div class="dropdown-menu">
                           <a href="?lang=en_CA" class="dropdown-item">English</a>
                          <a href="?lang=fr_CA" class="dropdown-item">Français</a>
-                      </div>
-                    </div>  
+                       </div>
+      </div>  
     </ul>
   </div>
 </nav>
@@ -98,24 +92,21 @@ background-color: steelblue;
 
 <tr><th><?=_("Name")?></th><th><?=_("Description")?></th><th><?=_("Price")?></th><th><?=_("Image")?></th><th><?=_("Action")?></th><th><?=_("Action")?></th><th><?=_("Action")?></th></tr>
                 	
-<!--                     how to localise that? -->
                       	<?php
-                      	$item = new \app\models\Item();
-                      	$items = $item->getAll();
-                      	foreach ($data as $item) {
+                      	foreach ($data as $items) {
                       		echo "<tr>
-                      		<td type=name>$item->item_name</td>
-                      		<td type=name>$item->item_description</td>
-                          <td type=name>$item->item_price</td>
-                      		<td> <img src='/images/".$item->item_image."'style='max-width:200px;max-height:100px'/></td></td>
+                      		<td type=name>$items->item_name</td>
+                      		<td type=name>$items->item_description</td>
+                          <td type=name>$items->item_price</td>
+                      		<td> <img src='/images/".$items->item_image."'style='max-width:200px;max-height:100px'/></td></td>
                           <td type=action>
-                          <button class='btn btn-info'><a class='nav-link' href='/Buyer/contact/$item->seller_id'>Contact seller</a></button>
+                          <button class='btn btn-info'><a class='nav-link' href='/Buyer/contact/$items->seller_id'>Contact seller</a></button>
                           </td>
                           <td type=action>
-                          <button class='btn btn-secondary'><a class='nav-link' href='/Buyer/addToWatchlist/$item->item_id'>Add to watchlist</a></button>
+                          <button class='btn btn-secondary'><a class='nav-link' href='/Buyer/addToWatchlist/$items->item_id'>Add to watchlist</a></button>
                           </td>
                       		<td type=action>
-                      	  <button class='btn btn-warning'><a class='nav-link' href='/Buyer/addToCart/$item->item_id'>Add to cart</a></button>
+                      	  <button class='btn btn-warning'><a class='nav-link' href='/Buyer/addToCart/$items->item_id'>Add to cart</a></button>
                       		</td>
                       		</tr>";
                       	}

@@ -9,7 +9,8 @@
 
 <style>
 body{
-background-color: steelblue;
+background: rgb(2,0,36);
+background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(1,57,95,1) 30%, rgba(0,212,255,1) 100%);
 } 
 </style>
 </head>
@@ -24,19 +25,24 @@ if(isset($_GET['error'])){
 <?php
 }
 ?>
-
- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+ 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="http://localhost/Seller/editProfile"><?=_("ShopMart")?></a>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
   </button>
+
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
-        <li class="nav-item">
+       <li class="nav-item">
         <a class="nav-link" href="http://localhost/Seller/profile"><?=_("Profile")?></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Seller/listings"><?=_("Listing")?></a>
+        <a class="nav-link" href="http://localhost/Seller/messageboard"><?=_("Message Board")?></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost/Seller/listings"><?=_("Listings")?></a>
       </li>
        <li class="nav-item">
         <a class="nav-link" href="http://localhost/Login/logout"><?=_("Logout")?></a>
@@ -46,11 +52,8 @@ if(isset($_GET['error'])){
                         <div class="dropdown-menu">
                           <a href="?lang=en_CA" class="dropdown-item">English</a>
                          <a href="?lang=fr_CA" class="dropdown-item">Français</a>
-                      </div>
-                    </div>  
-      </li>
-    </ul>
-  </div>
+                        </div>
+        </div>  
 </nav>
 
   <div class="mask d-flex align-items-center h-100 gradient-custom-3">

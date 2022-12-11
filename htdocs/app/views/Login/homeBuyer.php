@@ -45,15 +45,19 @@
 </head>
 
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
-    <div class="container-fluid">
-      <!-- Navbar brand -->
 
-      <div class="collapse navbar-collapse" id="navbarExample01">
+<nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+<div class="container-fluid">
+<div class="collapse navbar-collapse" id="navbarExample01">
 
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li class="nav-item active">
+     <a class="nav-link" href="http://localhost/Login/homeBuyer"><strong><?=_("ShopMart")?></strong></a>
+    </li>
+
+
+<div class="collapse navbar-collapse" id="navbarNavDropdown">
+<ul class="navbar-nav">
        <li class="nav-item">
        <a class="nav-link" href="http://localhost/Main/catalogue"><?=_("Catalog")?></a>
       </li>
@@ -71,10 +75,10 @@
                         <div class="dropdown-menu">
                           <a href="?lang=en_CA" class="dropdown-item">English</a>
                          <a href="?lang=fr_CA" class="dropdown-item">Français</a>
-                      </div>
-                    </div>  
-    </ul>
-  </div>
+                        </div>
+      </div>  
+</ul>
+</div>
 </nav>
 
   <!-- Carousel wrapper -->

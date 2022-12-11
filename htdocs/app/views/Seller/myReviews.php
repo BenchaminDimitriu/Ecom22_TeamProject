@@ -6,9 +6,11 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
 <style>
 body{
-background-color: steelblue;
+background: rgb(2,0,36);
+background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(1,57,95,1) 30%, rgba(0,212,255,1) 100%);
 } 
 .card {
         margin: 0 auto; /* Added */
@@ -62,9 +64,7 @@ background-color: steelblue;
 <table width="100%" border="1" cellpadding="5" cellspacing="5">
 <tr><th><?=_("Rating")?></th><th><?=_("Comment")?></th></tr>
 	
-  <!-- localise like that? ??? -->
-          	<?php
-          	
+            <?php
             foreach ($data as $reviews) {
           		echo "<tr>
               <td type=name>$reviews->rating</td> 
@@ -72,8 +72,6 @@ background-color: steelblue;
           		</tr>";
           	}
           ?>
-      <!-- ??? -->
-
 </table>
     
                  

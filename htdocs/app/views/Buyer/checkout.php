@@ -1,43 +1,64 @@
 <html>
+
 <head>
+
   <title><?= _("Checkout")?></title>
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
 <style>
   body{
-    background-color: steelblue;
-  }
+background: rgb(2,0,36);
+background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(1,57,95,1) 30%, rgba(0,212,255,1) 100%);
+}
 </style>
+
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="http://localhost/Buyer/checkout"><?=_("ShopMart")?></a>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="http://localhost/Main/catalogue"><?=_("ShopMart")?></a>
+  
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-       <li class="nav-item">
-       <a class="nav-link" href="http://localhost/Main/catalogue"><?=_("Catalog")?></a>
+
+<div class="collapse navbar-collapse" id="navbarNavDropdown">
+<ul class="navbar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost/Main/catalogue"><?=_("Catalog")?></a>
       </li>
-       <li class="nav-item">
-        <a class="nav-link" href="http://localhost/Buyer/profile"><?=_("Profile")?></a>
-      </li>
-        <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link" href="http://localhost/Buyer/messageboard"><?=_("Message Board")?></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost/Buyer/history"><?=_("Order History")?></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost/Buyer/myReviews"><?=_("My Reviews")?></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost/Buyer/watchlist"><?=_("Watchlist")?></a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="http://localhost/Buyer/cart"><?=_("Cart")?></a>
       </li>
        <li class="nav-item">
         <a class="nav-link" href="http://localhost/Login/logout"><?=_("Logout")?></a>
       </li>
-     <div class="dropdown">
+      <div class="dropdown">
                         <a class="nav-link" data-bs-toggle="dropdown"><?= _("Language")?></a>
                         <div class="dropdown-menu">
                           <a href="?lang=en_CA" class="dropdown-item">English</a>
                          <a href="?lang=fr_CA" class="dropdown-item">Français</a>
-                      </div>
-                    </div>  
+                       </div>
+      </div>  
     </ul>
   </div>
 </nav>
@@ -76,17 +97,16 @@
                   <input type="email" name="email" class="form-control form-control-lg" placeholder="norah123@gmail.com"/>
                 </div>
 
-              <div class="form-outline mb-4">
+                <div class="form-outline mb-4">
                   <label for="address"><i class="fa fa-address-card-o"></i> <?= _("Address")?>: </label>
                   <input type="text" name="address" class="form-control form-control-lg" placeholder="4089 Chapmans Lane">
                 </div>
 
-              <div class="form-outline mb-4">
+                <div class="form-outline mb-4">
                   <label for="phone"><i class="fa fa-address-book-o"></i> <?= _("Phone Number")?>: </label>
                   <input type="tel" name="phone" class="form-control form-control-lg" placeholder="123-456-789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"><br><br>
                                 <hr>
-
-              </div>
+                </div>
 
               <h4>Payment Methods</h4>
               <div class="form-outline mb-4">

@@ -6,9 +6,11 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
 <style>
 body{
-background-color: steelblue;
+background: rgb(2,0,36);
+background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(1,57,95,1) 30%, rgba(0,212,255,1) 100%);
 } 
 .card {
         margin: 0 auto; /* Added */
@@ -24,7 +26,8 @@ background-color: steelblue;
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+<div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" href="http://localhost/Seller/profile"><?=_("Profile")?></a>
@@ -40,11 +43,8 @@ background-color: steelblue;
                         <div class="dropdown-menu">
                           <a href="?lang=en_CA" class="dropdown-item">English</a>
                          <a href="?lang=fr_CA" class="dropdown-item">Français</a>
-                      </div>
-                    </div>  
-      </li>
-    </ul>
-  </div>
+                        </div>
+        </div> 
 </nav>
 
 </br>
@@ -63,18 +63,17 @@ background-color: steelblue;
 <table width="100%" border="1" cellpadding="5" cellspacing="5">
 <tr><th><?=_("Buyer")?><th><?=_("Buyer Email")?></th><th><?=_("Title")?></th><th><?=_("Message")?></th><th><?=_("Action")?></th></tr>
   
-<!--   how to localise that? -->
             <?php
-            $contact = new \app\models\Contact();
-            $contacts = $contact->getAll();
-            foreach ($data as $contact) {
+            // $contact = new \app\models\Contact();
+            // $contacts = $contact->getAll();
+            foreach ($data as $contacts) {
               echo "<tr>
-               <td type=name>$contact->buyer_fname</td> 
-              <td type=name>$contact->buyer_email</td> 
-              <td type=name>$contact->title</td>
-              <td type=name>$contact->message</td>
+               <td type=name>$contacts->buyer_fname</td> 
+              <td type=name>$contacts->buyer_email</td> 
+              <td type=name>$contacts->title</td>
+              <td type=name>$contacts->message</td>
               <td type=action>
-              <button class='btn btn-info'><a class='nav-link' href='/Seller/contact/$contact->buyer_id'>Contact buyer</a></button>
+              <button class='btn btn-info'><a class='nav-link' href='/Seller/contact/$contacts->buyer_id'>Contact buyer</a></button>
               </td>             
               </tr>";
             }
