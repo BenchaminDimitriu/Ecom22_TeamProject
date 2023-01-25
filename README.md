@@ -1,5 +1,7 @@
 # Ecom22_TeamProject
 
+test
+
 Name of Team: The Crying kids
 
 Contributors: Dimitriu Jonathan, Emmy Ea
